@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="left-panel">
+            <h3>Subjects</h3>
+            <ul>
+                {% for subject, chapters in chapters.items() %}
+                <li><a href="{{ url_for('dashboard', subject=subject) }}">{{ subject.capitalize() }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="content-area">
+            <div class="header">
+                <div class="profile-summary">
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                    <div>
+                        <div>{{ username }}</div>
+                        <div>{{ school }}</div>
+                    </div>
+                </div>
+                <div class="hamburger-menu">
+                    ☰
+                </div>
+            </div>
+            <div class="main-content">
+                <h2>Welcome, {{ username }}</h2>
+                <p>Grade: {{ grade }}</p>
+                <p>School: {{ school }}</p>
+                <p>This is your dashboard. Select a subject from the left panel to start a quiz.</p>
+                {% if subject %}
+                <h3>Chapters in {{ subject.capitalize() }}</h3>
+                <ul>
+                    {% for chapter in chapters[subject] %}
+                    <li><a href="{{ url_for('quiz', subject=subject, chapter=loop.index + 1) }}">{{ chapter }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

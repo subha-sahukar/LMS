@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz - {{ subject }} Chapter {{ chapter }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .question-container {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .question-container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .question-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004494;
+        }
+
+        #timer {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        let timeRemaining = {{ time_limit }} * 60;
+
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            setInterval(() => {
+                if (timeRemaining <= 0) {
+                    alert('Time is up!');
+                    document.getElementById('quiz-form').submit();
+                } else {
+                    timeRemaining--;
+                    const minutes = Math.floor(timeRemaining / 60);
+                    const seconds = timeRemaining % 60;
+                    timerElement.textContent = `${minutes} minutes and ${seconds} seconds remaining`;
+                }
+            }, 1000);
+        }
+
+        window.onload = startTimer;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ subject.capitalize() }} Quiz - Chapter {{ chapter }}</h2>
+        <div id="timer"></div>
+        <form id="quiz-form" method="post" action="{{ url_for('next_question') }}">
+            <input type="hidden" name="grade" value="{{ grade }}">
+            <input type="hidden" name="subject" value="{{ subject }}">
+            <input type="hidden" name="chapter" value="{{ chapter }}">
+            <div class="question-container">
+                <p>Question {{ current_question }} of {{ total_questions }}</p>
+                <p>{{ question.question }}</p>
+                {% for option in question.options %}
+                <label>
+                    <input type="radio" name="answer" value="{{ option }}"> {{ option }}
+                </label><br>
+                {% endfor %}
+            </div>
+            <input type="submit" value="Next">
+        </form>
+    </div>
+</body>
+</html>

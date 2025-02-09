@@ -1,0 +1,174 @@
+[
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 2,
+        "total_questions": 3,
+        "rating": "Average",
+        "date": "2025-02-09 02:06:59"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 0,
+        "total_questions": 3,
+        "rating": "Needs Improvement",
+        "date": "2025-02-09 02:07:19"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 0,
+        "total_questions": 3,
+        "rating": "Needs Improvement",
+        "date": "2025-02-09 02:13:49"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 3,
+        "total_questions": 3,
+        "rating": "Excellent",
+        "date": "2025-02-09 02:19:16"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 2,
+        "total_questions": 3,
+        "rating": "Average",
+        "date": "2025-02-09 02:26:44"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 1,
+        "total_questions": 3,
+        "rating": "Needs Improvement",
+        "date": "2025-02-09 02:38:36"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 2,
+        "total_questions": 3,
+        "rating": "Average",
+        "date": "2025-02-09 03:15:34"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 3,
+        "total_questions": 3,
+        "rating": "Excellent",
+        "date": "2025-02-09 08:50:35"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 0,
+        "total_questions": 3,
+        "rating": "Needs Improvement",
+        "date": "2025-02-09 08:51:42"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 0,
+        "total_questions": 3,
+        "rating": "Needs Improvement",
+        "date": "2025-02-09 08:55:00"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 2,
+        "total_questions": 3,
+        "rating": "Average",
+        "date": "2025-02-09 08:59:17"
+    },
+    {
+        "username": "as7",
+        "subject": "biology",
+        "chapter": "2",
+        "score": 3,
+        "total_questions": 5,
+        "rating": "Average",
+        "date": "2025-02-09 09:02:45"
+    },
+    {
+        "username": "as7",
+        "subject": "math",
+        "chapter": "2",
+        "score": 5,
+        "total_questions": 5,
+        "rating": "Excellent",
+        "date": "2025-02-09 12:04:47",
+        "time_taken": "3 minutes and 57 seconds"
+    },
+    {
+        "username": "as7",
+        "subject": "math",
+        "chapter": "2",
+        "score": 5,
+        "total_questions": 5,
+        "rating": "Excellent",
+        "date": "2025-02-09 12:06:46",
+        "time_taken": "1 minutes and 18 seconds"
+    },
+    {
+        "username": "akku",
+        "grade": "Grade 5",
+        "subject": "Math",
+        "chapter": "2",
+        "score": 7,
+        "total_questions": 8,
+        "rating": "Good",
+        "date": "2025-02-09 13:04:44",
+        "time_taken": "1 minutes and 50 seconds"
+    },
+    {
+        "username": "akku",
+        "grade": "Grade 5",
+        "subject": "Math",
+        "chapter": "3",
+        "score": 14,
+        "total_questions": 14,
+        "rating": "Excellent",
+        "date": "2025-02-09 13:06:38",
+        "time_taken": "1 minutes and 29 seconds"
+    },
+    {
+        "username": "akku",
+        "grade": "Grade 5",
+        "subject": "Math",
+        "chapter": "4",
+        "score": 7,
+        "total_questions": 8,
+        "rating": "Good",
+        "date": "2025-02-09 13:08:47",
+        "time_taken": "1 minutes and 44 seconds"
+    },
+    {
+        "username": "as7",
+        "grade": "Grade 7",
+        "subject": "Biology",
+        "chapter": "2",
+        "score": 4,
+        "total_questions": 8,
+        "rating": "Average",
+        "date": "2025-02-09 13:56:25",
+        "time_taken": "0 minutes and 30 seconds"
+    }
+]

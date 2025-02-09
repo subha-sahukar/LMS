@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the average of 10, 20, and 30?",
+    "options": ["10", "20", "30", "40"],
+    "answer": "20"
+  },
+  {
+    "id": "q2",
+    "question": "The mean of 5, 10, 15, and 20 is:",
+    "options": ["10", "12.5", "15", "20"],
+    "answer": "12.5"
+  },
+  {
+    "id": "q3",
+    "question": "What is the mean of 8, 12, 16, and 20?",
+    "options": ["10", "14", "16", "18"],
+    "answer": "14"
+  },
+  {
+    "id": "q4",
+    "question": "The sum of five numbers is 100. What is the mean?",
+    "options": ["10", "15", "20", "25"],
+    "answer": "20"
+  },
+  {
+    "id": "q5",
+    "question": "Find the average of 4, 6, 8, 10, and 12.",
+    "options": ["6", "7", "8", "9"],
+    "answer": "8"
+  },
+  {
+    "id": "q6",
+    "question": "If the average of three numbers is 30 and the sum is 90, what is one of the numbers?",
+    "options": ["10", "20", "30", "It cannot be determined"],
+    "answer": "It cannot be determined"
+  },
+  {
+    "id": "q7",
+    "question": "A student scored 80, 90, and 70 on three tests. What is the average score?",
+    "options": ["75", "80", "85", "90"],
+    "answer": "80"
+  },
+  {
+    "id": "q8",
+    "question": "If the average of four numbers is 25, what is their total sum?",
+    "options": ["50", "75", "100", "125"],
+    "answer": "100"
+  }
+]

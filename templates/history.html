@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        td {
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quiz History for {{ session['username'] }}</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Subject</th>
+                <th>Chapter</th>
+                <th>Score</th>
+                <th>Total Questions</th>
+                <th>Rating</th>
+            </tr>
+            {% for entry in history %}
+            <tr>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.chapter }}</td>
+                <td>{{ entry.score }}</td>
+                <td>{{ entry.total_questions }}</td>
+                <td>{{ entry.rating }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        .dashboard-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .left-panel {
+            width: 250px;
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-panel h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .left-panel ul {
+            list-style: none;
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .left-panel li {
+            margin: 15px 0;
+        }
+
+        .left-panel a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .left-panel a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #004494;
+            color: white;
+            box-sizing: border-box;
+            width: calc(100% - 250px);
+            position: fixed;
+            top: 0;
+            left: 250px;
+            height: 60px;
+            z-index: 1000;
+        }
+
+        .header .profile-summary {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .profile-summary img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .header .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .header .nav-links a:hover {
+            background-color: #003366;
+        }
+
+        .content-area {
+            flex-grow: 1;
+            padding: 80px 20px 20px 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .main-content {
+            margin-top: 20px;
+        }
+
+        .main-content h2 {
+            margin-top: 0;
+        }
+
+        .main-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .main-content li {
+            margin: 10px 0;
+        }
+
+        .main-content a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .main-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="left-panel">
+            <h3>Subjects</h3>
+            <ul>
+                {% for subject, chapters in subjects.items() %}
+                    <li><a href="{{ url_for('dashboard', subject=subject) }}">{{ subject.capitalize() }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="content-area">
+            <div class="header">
+                <div class="profile-summary">
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture">
+                    <div>
+                        <div>{{ username }}</div>
+                        <div>{{ school }}</div>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+                    <a href="{{ url_for('history') }}">History</a>
+                    <a href="{{ url_for('reset_password') }}">Reset Password</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+            <div class="main-content">
+                <h2>Welcome, {{ username }}</h2>
+                <p>Grade: {{ grade }}</p>
+                <p>School: {{ school }}</p>
+                <p>This is your dashboard. Select a subject from the left panel to start a quiz.</p>
+                {% if subject %}
+                    <h3>Chapters in {{ subject.capitalize() }}</h3>
+                    <ul>
+                        {% for chapter in subjects[subject] %}
+                            <li><a href="{{ url_for('quiz', grade=grade, subject=subject, chapter=loop.index + 1) }}">{{ chapter }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

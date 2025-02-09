@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q1",
+    "question": "What is 50% of 100?",
+    "options": ["25", "50", "75", "100"],
+    "answer": "50"
+  },
+  {
+    "id": "q2",
+    "question": "What percentage of 20 is 5?",
+    "options": ["10%", "20%", "25%", "50%"],
+    "answer": "25%"
+  },
+  {
+    "id": "q3",
+    "question": "What is 10% of 200?",
+    "options": ["10", "20", "30", "40"],
+    "answer": "20"
+  },
+  {
+    "id": "q4",
+    "question": "What is 60% of 50?",
+    "options": ["20", "30", "40", "50"],
+    "answer": "30"
+  },
+  {
+    "id": "q5",
+    "question": "What is 25% of 80?",
+    "options": ["15", "20", "25", "30"],
+    "answer": "20"
+  },
+  {
+    "id": "q6",
+    "question": "What is 90% of 200?",
+    "options": ["160", "180", "190", "200"],
+    "answer": "180"
+  },
+  {
+    "id": "q7",
+    "question": "What is 15% of 300?",
+    "options": ["35", "45", "55", "65"],
+    "answer": "45"
+  },
+  {
+    "id": "q8",
+    "question": "What is 5% of 400?",
+    "options": ["10", "15", "20", "25"],
+    "answer": "20"
+  }
+]
