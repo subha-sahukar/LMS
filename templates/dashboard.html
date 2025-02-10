@@ -136,15 +136,15 @@
         <div class="left-panel">
             <h3>Subjects</h3>
             <ul>
-                {% for subject, chapters in subjects.items() %}
-                    <li><a href="{{ url_for('dashboard', subject=subject) }}">{{ subject.capitalize() }}</a></li>
+                {% for subject, details in subjects.items() %}
+                    <li><a href="{{ url_for('dashboard', subject=subject) }}">{{ subject }}</a></li>
                 {% endfor %}
             </ul>
         </div>
         <div class="content-area">
             <div class="header">
                 <div class="profile-summary">
-                    <img src="https://via.placeholder.com/40" alt="Profile Picture">
+    <!-- <img src="https://via.placeholder.com/40" alt="Profile Picture">-->
                     <div>
                         <div>{{ username }}</div>
                         <div>{{ school }}</div>
@@ -153,22 +153,20 @@
                 <div class="nav-links">
                     <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
                     <a href="{{ url_for('history') }}">History</a>
-                    <a href="{{ url_for('reset_password') }}">Reset Password</a>
                     <a href="{{ url_for('logout') }}">Logout</a>
                 </div>
             </div>
             <div class="main-content">
                 <h2>Welcome, {{ username }}</h2>
-                <p>Grade: {{ grade }}</p>
-                <p>School: {{ school }}</p>
-                <p>This is your dashboard. Select a subject from the left panel to start a quiz.</p>
                 {% if subject %}
-                    <h3>Chapters in {{ subject.capitalize() }}</h3>
+                    <h3>Chapters in {{ subject }}</h3>
                     <ul>
                         {% for chapter in subjects[subject] %}
-                            <li><a href="{{ url_for('quiz', grade=grade, subject=subject, chapter=loop.index + 1) }}">{{ chapter }}</a></li>
+                            <li><a href="{{ url_for('quiz', grade=grade, subject=subject, chapter=loop.index0 + 1) }}">{{ chapter }}</a></li>
                         {% endfor %}
                     </ul>
+                {% else %}
+                    <p>Select a subject to view chapters.</p>
                 {% endif %}
             </div>
         </div>

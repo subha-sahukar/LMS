@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quiz Results</title>
+    <title>Quiz Result</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
     <style>
         body {
@@ -21,60 +21,64 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            width: 600px;
             text-align: center;
         }
 
-        .container h2 {
+        h2 {
             color: #0056b3;
-            margin-top: 0;
         }
 
-        .result-details {
+        .result {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .incorrect {
             text-align: left;
             margin-top: 20px;
         }
 
-        .result-details p {
-            font-size: 16px;
+        .incorrect h3 {
+            color: #d9534f;
+        }
+
+        .question {
             margin-bottom: 10px;
         }
 
-        .result-details p span {
-            font-weight: bold;
+        .correct-answer, .given-answer {
+            margin-bottom: 5px;
         }
 
-        .button {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
+        .correct-answer {
+            color: #5cb85c;
         }
 
-        .button:hover {
-            background-color: #004494;
+        .given-answer {
+            color: #d9534f;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Quiz Results</h2>
-        <div class="result-details">
-            <p><span>Student Name:</span> {{ username }}</p>
-            <p><span>Grade:</span> {{ grade }}</p>
-            <p><span>Subject:</span> {{ subject.capitalize() }}</p>
-            <p><span>Chapter:</span> {{ chapter }}</p>
-            <p><span>Score:</span> {{ score }} / {{ total_questions }}</p>
-            <p><span>Rating:</span> {{ rating }}</p>
-            <p><span>Time Taken:</span> {{ time_taken }}</p>
+        <h2>Quiz Result</h2>
+        <div class="result">
+            <p>Score: {{ score }} / {{ total_questions }}</p>
+            <p>Rating: {{ rating }}</p>
+            <p>Time Taken: {{ time_taken }}</p>
         </div>
-        <a href="{{ url_for('dashboard') }}" class="button">Return to Dashboard</a>
+        <div class="incorrect">
+            <h3>Incorrect Answers</h3>
+            {% for item in incorrect %}
+                <div class="question">
+                    <p><strong>Question:</strong> {{ item.question }}</p>
+                    <p class="given-answer"><strong>Your Answer:</strong> {{ item.given_answer }}</p>
+                    <p class="correct-answer"><strong>Correct Answer:</strong> {{ item.correct_answer }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
     </div>
 </body>
 </html>

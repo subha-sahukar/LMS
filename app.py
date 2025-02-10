@@ -3,16 +3,9 @@ import os
 import json
 import random
 from datetime import datetime, timedelta
-import firebase_admin
-from firebase_admin import credentials, firestore
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
-
-# Initialize Firebase Admin SDK
-cred = credentials.Certificate('path/to/your/firebase-adminsdk.json')
-firebase_admin.initialize_app(cred)
-db = firestore.client()
 
 # Load user data from JSON file
 with open('users.json') as f:
@@ -28,10 +21,10 @@ def home():
 
 @app.route('/login', methods=['POST'])
 def login():
-    username = request.form['username']
-    password = request.form['password']
-    grade = request.form['grade']
-    school = request.form['school']
+    username = request.form.get('username')
+    password = request.form.get('password')
+    grade = request.form.get('grade')
+    school = request.form.get('school')
 
     if username in users and users[username] == password:
         session['username'] = username
@@ -66,6 +59,7 @@ def quiz(grade, subject, chapter):
     session['questions'] = questions
     session['current_question'] = 0
     session['score'] = 0
+    session['incorrect'] = []
     session['start_time'] = datetime.utcnow()
     return render_template('quiz.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=15)
 
@@ -76,6 +70,12 @@ def next_question():
     questions = session.get('questions')
     if answer == questions[current_question]['answer']:
         session['score'] += 1
+    else:
+        session['incorrect'].append({
+            'question': questions[current_question]['question'],
+            'given_answer': answer,
+            'correct_answer': questions[current_question]['answer']
+        })
     session['current_question'] += 1
 
     if session['current_question'] < len(questions):
@@ -100,6 +100,7 @@ def quiz_result():
     chapter = request.args.get('chapter')
     score = session.get('score')
     total_questions = len(session.get('questions'))
+    incorrect = session.get('incorrect')
     percentage = (score / total_questions) * 100
 
     # Calculate time taken
@@ -132,10 +133,20 @@ def quiz_result():
         "time_taken": time_taken_str
     }
 
-    # Save history to Firestore
-    db.collection('quiz_history').add(history_entry)
+    # Save history locally (example implementation, adjust as necessary)
+    if not os.path.exists('history'):
+        os.makedirs('history')
+    history_file = f'history/{username}_history.json'
+    if os.path.exists(history_file):
+        with open(history_file, 'r') as f:
+            history = json.load(f)
+    else:
+        history = []
+    history.append(history_entry)
+    with open(history_file, 'w') as f:
+        json.dump(history, f, indent=4)
 
-    return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter)
+    return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter, incorrect=incorrect)
 
 @app.route('/failure')
 def failure():
@@ -148,9 +159,13 @@ def styles():
 @app.route('/history')
 def history():
     username = session.get('username')
-    history_ref = db.collection('quiz_history').where('username', '==', username).stream()
-    user_history = [doc.to_dict() for doc in history_ref]
-    return render_template('history.html', history=user_history)
+    history_file = f'history/{username}_history.json'
+    if os.path.exists(history_file):
+        with open(history_file, 'r') as f:
+            history = json.load(f)
+    else:
+        history = []
+    return render_template('history.html', history=history)
 
 @app.route('/edit_profile')
 def edit_profile():
@@ -161,8 +176,8 @@ def edit_profile():
 @app.route('/update_profile', methods=['POST'])
 def update_profile():
     username = session.get('username')
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
     users[username]['first_name'] = first_name
     users[username]['last_name'] = last_name
 
