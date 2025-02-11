@@ -129,6 +129,22 @@
         .main-content a:hover {
             text-decoration: underline;
         }
+
+        .tips-section {
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .tips-section h3 {
+            margin-top: 0;
+        }
+
+        .tips-section ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -144,14 +160,14 @@
         <div class="content-area">
             <div class="header">
                 <div class="profile-summary">
-    <!-- <img src="https://via.placeholder.com/40" alt="Profile Picture">-->
+                    <img src="https://via.placeholder.com/40" alt="Profile Picture">
                     <div>
                         <div>{{ username }}</div>
                         <div>{{ school }}</div>
                     </div>
                 </div>
                 <div class="nav-links">
-                    <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+                    <!-- <a href="{{ url_for('edit_profile') }}">Edit Profile</a> -->
                     <a href="{{ url_for('history') }}">History</a>
                     <a href="{{ url_for('logout') }}">Logout</a>
                 </div>
@@ -168,6 +184,36 @@
                 {% else %}
                     <p>Select a subject to view chapters.</p>
                 {% endif %}
+
+                <div class="tips-section">
+                    <h3>Study Tips</h3>
+                    <ul>
+                        <li>Set specific goals for each study session.</li>
+                        <li>Take regular breaks to avoid burnout. The Pomodoro Technique (25 minutes of work followed by a 5-minute break) can be very effective.</li>
+                        <li>Use active recall and spaced repetition techniques to enhance memory retention.</li>
+                        <li>Summarize what you've learned in your own words to ensure you understand the material.</li>
+                    </ul>
+                </div>
+
+                <div class="tips-section">
+                    <h3>Purpose of Taking Tests</h3>
+                    <ul>
+                        <li>Identify areas where you need improvement.</li>
+                        <li>Reinforce your knowledge and understanding of the subject.</li>
+                        <li>Build confidence in your ability to recall information under pressure.</li>
+                        <li>Develop effective time management and test-taking strategies.</li>
+                    </ul>
+                </div>
+
+                <div class="tips-section">
+                    <h3>Focus Tips from Dr. Huberman's Lab</h3>
+                    <ul>
+                        <li>Eliminate distractions by creating a dedicated study space.</li>
+                        <li>Practice mindfulness and deep breathing exercises to improve concentration.</li>
+                        <li>Get adequate sleep and maintain a healthy diet to support cognitive function.</li>
+                        <li>Incorporate physical activity into your daily routine to boost brain health.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
