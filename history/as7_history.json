@@ -1,0 +1,46 @@
+[
+    {
+        "username": "as7",
+        "grade": "Grade 7",
+        "subject": "Biology",
+        "chapter": "4",
+        "score": 9,
+        "total_questions": 10,
+        "rating": "Excellent",
+        "date": "2025-02-10 21:07:39",
+        "time_taken": "1 minutes and 30 seconds"
+    },
+    {
+        "username": "as7",
+        "grade": "Grade 7",
+        "subject": "Physics",
+        "chapter": "1",
+        "score": 13,
+        "total_questions": 15,
+        "rating": "Good",
+        "date": "2025-02-10 21:18:48",
+        "time_taken": "1 minutes and 44 seconds"
+    },
+    {
+        "username": "as7",
+        "grade": "Grade 7",
+        "subject": "Physics",
+        "chapter": "3",
+        "score": 11,
+        "total_questions": 15,
+        "rating": "Average",
+        "date": "2025-02-10 21:28:16",
+        "time_taken": "5 minutes and 59 seconds"
+    },
+    {
+        "username": "as7",
+        "grade": "Grade 7",
+        "subject": "Physics",
+        "chapter": "1",
+        "score": 0,
+        "total_questions": 15,
+        "rating": "Needs Improvement",
+        "date": "2025-02-10 21:29:35",
+        "time_taken": "0 minutes and 25 seconds"
+    }
+]

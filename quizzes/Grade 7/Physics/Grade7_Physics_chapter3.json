@@ -1,0 +1,197 @@
+[
+    {
+        "id": "q1",
+        "question": "What is the basic unit of electric current?",
+        "options": ["Volt", "Ampere", "Ohm"],
+        "answer": "Ampere"
+    },
+    {
+        "id": "q2",
+        "question": "Which material is commonly used as a conductor in electrical circuits?",
+        "options": ["Plastic", "Rubber", "Copper"],
+        "answer": "Copper"
+    },
+    {
+        "id": "q3",
+        "question": "What is the device called that is used to measure electric current?",
+        "options": ["Voltmeter", "Ammeter", "Galvanometer"],
+        "answer": "Ammeter"
+    },
+    {
+        "id": "q4",
+        "question": "Which of the following devices converts electrical energy into mechanical energy?",
+        "options": ["Electric motor", "Battery", "Light bulb"],
+        "answer": "Electric motor"
+    },
+    {
+        "id": "q5",
+        "question": "What is the name of the force that opposes the flow of electric current in a conductor?",
+        "options": ["Voltage", "Resistance", "Power"],
+        "answer": "Resistance"
+    },
+    {
+        "id": "q6",
+        "question": "Which of the following is a non-magnetic material?",
+        "options": ["Iron", "Nickel", "Plastic"],
+        "answer": "Plastic"
+    },
+    {
+        "id": "q7",
+        "question": "What is the name of the device that stores electrical energy in an electric field?",
+        "options": ["Capacitor", "Resistor", "Inductor"],
+        "answer": "Capacitor"
+    },
+    {
+        "id": "q8",
+        "question": "Which law states that the current through a conductor between two points is directly proportional to the voltage across the two points?",
+        "options": ["Ohm's Law", "Faraday's Law", "Newton's Law"],
+        "answer": "Ohm's Law"
+    },
+    {
+        "id": "q9",
+        "question": "What is the effect of passing electric current through a coil of wire wrapped around an iron core?",
+        "options": ["The iron core becomes hot", "The iron core becomes a magnet", "The iron core loses its magnetic properties"],
+        "answer": "The iron core becomes a magnet"
+    },
+    {
+        "id": "q10",
+        "question": "Which of the following materials is typically used for the filament in light bulbs?",
+        "options": ["Copper", "Tungsten", "Aluminum"],
+        "answer": "Tungsten"
+    },
+    {
+        "id": "q11",
+        "question": "What is the phenomenon called when a current-carrying conductor generates a magnetic field around it?",
+        "options": ["Electromagnetism", "Electrolysis", "Electroplating"],
+        "answer": "Electromagnetism"
+    },
+    {
+        "id": "q12",
+        "question": "Which of the following is an example of a permanent magnet?",
+        "options": ["Electromagnet", "Bar magnet", "Solenoid"],
+        "answer": "Bar magnet"
+    },
+    {
+        "id": "q13",
+        "question": "What is the function of an electric fuse in a circuit?",
+        "options": ["To increase the current", "To protect the circuit from overloading", "To decrease the voltage"],
+        "answer": "To protect the circuit from overloading"
+    },
+    {
+        "id": "q14",
+        "question": "Which scientist is credited with the discovery of the relationship between electricity and magnetism?",
+        "options": ["Isaac Newton", "Albert Einstein", "Michael Faraday"],
+        "answer": "Michael Faraday"
+    },
+    {
+        "id": "q15",
+        "question": "What happens to the magnetic field strength when the number of turns in a coil is increased, while keeping the current constant?",
+        "options": ["The magnetic field strength decreases", "The magnetic field strength increases", "The magnetic field strength remains the same"],
+        "answer": "The magnetic field strength increases"
+    },
+    {
+        "id": "q16",
+        "question": "True or False: A magnet can attract all types of metals.",
+        "options": ["True", "False"],
+        "answer": "False"
+    },
+    {
+        "id": "q17",
+        "question": "True or False: The Earth's magnetic field protects us from harmful solar radiation.",
+        "options": ["True", "False"],
+        "answer": "True"
+    },
+    {
+        "id": "q18",
+        "question": "Calculate the total resistance in a circuit if two resistors of 4 ohms and 6 ohms are connected in series.",
+        "options": ["10 ohms", "2.4 ohms", "24 ohms"],
+        "answer": "10 ohms"
+    },
+    {
+        "id": "q19",
+        "question": "Match the following:",
+        "options": {
+            "a": "Electromagnet", "b": "Permanent Magnet", "c": "Magnetic Field",
+            "1": "Temporary magnet created by electric current", "2": "Constant magnetism", "3": "Invisible lines of force around a magnet"
+        },
+        "answer": {
+            "a": "1", "b": "2", "c": "3"
+        }
+    },
+    {
+        "id": "q20",
+        "question": "True or False: Like poles of a magnet repel each other.",
+        "options": ["True", "False"],
+        "answer": "True"
+    },
+    {
+        "id": "q21",
+        "question": "What is the sum of 12 volts and 15 volts?",
+        "options": ["27 volts", "3 volts", "180 volts"],
+        "answer": "27 volts"
+    },
+    {
+        "id": "q22",
+        "question": "True or False: An electric circuit must be open to allow current to flow.",
+        "options": ["True", "False"],
+        "answer": "False"
+    },
+    {
+        "id": "q23",
+        "question": "If a wire carries a current of 5 amperes for 10 seconds, how much charge has passed through the wire?",
+        "options": ["50 coulombs", "5 coulombs", "15 coulombs"],
+        "answer": "50 coulombs"
+    },
+    {
+        "id": "q24",
+        "question": "True or False: Electrical insulators prevent the flow of electric current.",
+        "options": ["True", "False"],
+        "answer": "True"
+    },
+    {
+        "id": "q25",
+        "question": "Match the following:",
+        "options": {
+            "a": "Ohm's Law", "b": "Faraday's Law", "c": "Coulomb's Law",
+            "1": "Induced EMF in a coil", "2": "Voltage = Current * Resistance", "3": "Force between electric charges"
+        },
+        "answer": {
+            "a": "2", "b": "1", "c": "3"
+        }
+    },
+    {
+        "id": "q26",
+        "question": "True or False: A galvanometer can be used to measure both voltage and current.",
+        "options": ["True", "False"],
+        "answer": "True"
+    },
+    {
+        "id": "q27",
+        "question": "True or False: A magnetic compass aligns itself with the Earth's magnetic field.",
+        "options": ["True", "False"],
+        "answer": "True"
+    },
+    {
+        "id": "q28",
+        "question": "Calculate the power consumed if a device operates at 10 volts and draws 2 amperes of current.",
+        "options": ["20 watts", "5 watts", "12 watts"],
+        "answer": "20 watts"
+    },
+    {
+        "id": "q29",
+        "question": "Match the following:",
+        "options": {
+            "a": "Volt", "b": "Ampere", "c": "Ohm",
+            "1": "Unit of resistance", "2": "Unit of electric potential", "3": "Unit of electric current"
+        },
+        "answer": {
+            "a": "2", "b": "3", "c": "1"
+        }
+    },
+    {
+        "id": "q30",
+        "question": "True or False: Magnetic forces act only on ferromagnetic materials.",
+        "options": ["True", "False"],
+        "answer": "True"
+    }
+]
