@@ -403,6 +403,35 @@
             "Because the water molecules evaporate"
         ],
         "answer": "Because of the arrangement of water molecules in ice"
+    },
+     {
+        "id": "q56",
+        "question": "Increase in length of solid when heated is called?",
+        "options": [
+            "Thermal expansion",
+            "Linear expansion",
+            "Superficial expansion"
+        ],
+        "answer": "Linear expansion"
+    },
+      {
+        "id": "q57",
+        "question": "Small gaps are left between railway lines because",
+        "options": [
+            "contracts of rails during summer",
+            "expansion of rails during summer",
+            "rails of long length are not available"
+        ],
+        "answer": "expansion of rails during summer"
+    },
+    {
+        "id": "q58",
+        "question": "The increase in volume of a substance solid liquid gas when heated , is called ",
+        "options": [
+            "cubical expansion",
+            "radical expansion",
+            "superficial expansion"
+        ],
+        "answer": "cubical expansion"
     }
-    
 ]
