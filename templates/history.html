@@ -10,18 +10,19 @@
             margin: 0;
             padding: 0;
             display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             color: #333;
         }
 
-        .container {
+        .history-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            margin: auto;
-            margin-top: 20px;
+            width: 800px;
+            text-align: center;
         }
 
         h2 {
@@ -29,54 +30,67 @@
             margin-top: 0;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .history-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-
-        th, td {
+        .history-list li {
+            margin: 10px 0;
             padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
             text-align: left;
         }
 
-        th {
-            background-color: #0056b3;
-            color: white;
+        .history-list li p {
+            margin: 5px 0;
         }
 
-        td {
-            background-color: #f7f7f7;
+        .back-button {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #004494;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Quiz History for {{ session['username'] }}</h2>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Subject</th>
-                <th>Chapter</th>
-                <th>Score</th>
-                <th>Total Questions</th>
-                <th>Rating</th>
-            </tr>
+    <div class="history-container">
+        <div class="info">
+            <p>Student: {{ username }}</p>
+            <p>Grade: {{ grade }}</p>
+        </div>
+        <h2>Quiz History</h2>
+        <ul class="history-list">
             {% for entry in history %}
-            <tr>
-                <td>{{ entry.date }}</td>
-                <td>{{ entry.subject }}</td>
-                <td>{{ entry.chapter }}</td>
-                <td>{{ entry.score }}</td>
-                <td>{{ entry.total_questions }}</td>
-                <td>{{ entry.rating }}</td>
-            </tr>
+                <li>
+                    <p><strong>Date:</strong> {{ entry.date }}</p>
+                    <p><strong>Subject:</strong> {{ entry.subject }}</p>
+                    <p><strong>Chapter:</strong> {{ entry.chapter }}</p>
+                    <p><strong>Score:</strong> {{ entry.score }} / {{ entry.total_questions }}</p>
+                    <p><strong>Rating:</strong> {{ entry.rating }}</p>
+                    <p><strong>Time Taken:</strong> {{ entry.time_taken }}</p>
+                </li>
             {% endfor %}
-        </table>
+        </ul>
+        <form action="{{ url_for('dashboard') }}">
+            <button type="submit" class="back-button">Back to Dashboard</button>
+        </form>
     </div>
 </body>
 </html>
