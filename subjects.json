@@ -3,10 +3,6 @@
     "Math": ["Chapter 1: Percentage", "Chapter 2: Ratio", "Chapter 3: Average"],
     "Science": ["Chapter 1: Plants", "Chapter 2: Animals", "Chapter 3: Earth and Sky"]
   },
-  "Grade 6": {
-    "Math": ["Chapter 1: Geometry", "Chapter 2: Fractions", "Chapter 3: Decimals"],
-    "Science": ["Chapter 1: Matter", "Chapter 2: Motion and Forces", "Chapter 3: Energy"]
-  },
   "Grade 7": {
     "Math": ["Chapter 1: Algebra", "Chapter 2: Ratios and Proportions", "Chapter 3: Probability"],
     "Biology": ["Chapter 1: Allergy", "Chapter 2: Excretory System", "Chapter 3: Nervous System", "Chapter 4: Respiratory System", "Chapter 5: Photosynthesis"],
