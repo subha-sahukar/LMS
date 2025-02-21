@@ -1,0 +1,182 @@
+[
+    {
+        "id": "q1",
+        "question": "Photosynthesis primarily occurs in which part of the plant?",
+        "options": ["Root", "Stem", "Leaves", "Flowers", "Seeds"],
+        "answer": "3"
+    },
+    {
+        "id": "q2",
+        "question": "Which pigment is responsible for absorbing sunlight during photosynthesis?",
+        "options": ["Carotene", "Chlorophyll", "Xanthophyll", "Anthocyanin", "Melanin"],
+        "answer": "2"
+    },
+    {
+        "id": "q3",
+        "question": "The gas released during photosynthesis is ____.",
+        "options": ["Carbon dioxide", "Nitrogen", "Oxygen", "Hydrogen", "Methane"],
+        "answer": "3"
+    },
+    {
+        "id": "q4",
+        "question": "Which raw material is NOT required for photosynthesis?",
+        "options": ["Water", "Carbon dioxide", "Sunlight", "Oxygen", "Chlorophyll"],
+        "answer": "4"
+    },
+    {
+        "id": "q5",
+        "question": "Which process in plants uses carbon dioxide and releases oxygen?",
+        "options": ["Respiration", "Photosynthesis", "Transpiration", "Germination", "Pollination"],
+        "answer": "2"
+    },
+    {
+        "id": "q6",
+        "question": "The end product of photosynthesis is ____.",
+        "options": ["Starch", "Fat", "Protein", "Vitamin", "Mineral"],
+        "answer": "1"
+    },
+    {
+        "id": "q7",
+        "question": "The energy required for photosynthesis is provided by ____.",
+        "options": ["Moonlight", "Starlight", "Sunlight", "Electric light", "Fire"],
+        "answer": "3"
+    },
+    {
+        "id": "q8",
+        "question": "Stomata are present on the ____ of leaves.",
+        "options": ["Upper surface", "Lower surface", "Stem", "Roots", "Flowers"],
+        "answer": "2"
+    },
+    {
+        "id": "q9",
+        "question": "Which of these is a by-product of photosynthesis?",
+        "options": ["Carbon dioxide", "Water", "Oxygen", "Nitrogen", "Sulfur"],
+        "answer": "3"
+    },
+    {
+        "id": "q10",
+        "question": "Photosynthesis helps in maintaining the balance of ____ in the atmosphere.",
+        "options": ["Oxygen and Nitrogen", "Carbon dioxide and Oxygen", "Hydrogen and Methane", "Water vapor and Dust", "None of the above"],
+        "answer": "2"
+    },
+    {
+        "id": "q11",
+        "question": "The food produced during photosynthesis is stored in the form of ____.",
+        "options": ["Protein", "Starch", "Fat", "Vitamin", "Fiber"],
+        "answer": "2"
+    },
+    {
+        "id": "q12",
+        "question": "Which part of the leaf carries out the process of gas exchange?",
+        "options": ["Midrib", "Veins", "Stomata", "Petiole", "Blade"],
+        "answer": "3"
+    },
+    {
+        "id": "q13",
+        "question": "In which organelle does photosynthesis occur?",
+        "options": ["Mitochondria", "Chloroplast", "Nucleus", "Vacuole", "Golgi body"],
+        "answer": "2"
+    },
+    {
+        "id": "q14",
+        "question": "Which of the following is a necessary condition for photosynthesis?",
+        "options": ["Darkness", "Wind", "Sunlight", "Sound", "Pressure"],
+        "answer": "3"
+    },
+    {
+        "id": "q15",
+        "question": "Which factor does NOT affect photosynthesis?",
+        "options": ["Light intensity", "Temperature", "Water availability", "Soil type", "Carbon dioxide concentration"],
+        "answer": "4"
+    },
+    {
+        "id": "q16",
+        "question": "The green pigment in plants is called ____.",
+        "options": ["Carotene", "Chlorophyll", "Anthocyanin", "Xanthophyll", "Melanin"],
+        "answer": "2"
+    },
+    {
+        "id": "q17",
+        "question": "Photosynthesis occurs mainly during ____.",
+        "options": ["Night", "Morning", "Afternoon", "Daytime", "Evening"],
+        "answer": "4"
+    },
+    {
+        "id": "q18",
+        "question": "What is the main source of carbon dioxide for plants?",
+        "options": ["Soil", "Water", "Air", "Fertilizers", "Rocks"],
+        "answer": "3"
+    },
+    {
+        "id": "q19",
+        "question": "Which gas is absorbed by plants during photosynthesis?",
+        "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Hydrogen", "Methane"],
+        "answer": "3"
+    },
+    {
+        "id": "q20",
+        "question": "The main function of chloroplasts is to ____.",
+        "options": ["Store water", "Absorb sunlight", "Provide structural support", "Produce seeds", "Absorb nutrients"],
+        "answer": "2"
+    },
+    {
+        "id": "q21",
+        "question": "Which element is essential for chlorophyll formation?",
+        "options": ["Iron", "Magnesium", "Calcium", "Potassium", "Sodium"],
+        "answer": "2"
+    },
+    {
+        "id": "q22",
+        "question": "Which experiment shows the importance of sunlight in photosynthesis?",
+        "options": ["Potometer experiment", "Moll's half-leaf experiment", "Bell jar experiment", "Water culture experiment", "Root pressure experiment"],
+        "answer": "2"
+    },
+    {
+        "id": "q23",
+        "question": "Which part of the leaf is mainly involved in photosynthesis?",
+        "options": ["Spongy mesophyll", "Palisade mesophyll", "Epidermis", "Xylem", "Phloem"],
+        "answer": "2"
+    },
+    {
+        "id": "q24",
+        "question": "Which of these plants show CAM photosynthesis?",
+        "options": ["Rice", "Maize", "Cactus", "Wheat", "Bamboo"],
+        "answer": "3"
+    },
+    {
+        "id": "q25",
+        "question": "Which scientist discovered the process of photosynthesis?",
+        "options": ["Newton", "Einstein", "Priestley", "Darwin", "Mendel"],
+        "answer": "3"
+    },
+    {
+        "id": "q26",
+        "question": "Which tissue in plants transports water for photosynthesis?",
+        "options": ["Phloem", "Xylem", "Cortex", "Cambium", "Pith"],
+        "answer": "2"
+    },
+    {
+        "id": "q27",
+        "question": "Which component is fixed during the Calvin cycle?",
+        "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Water", "Hydrogen"],
+        "answer": "3"
+    },
+    {
+        "id": "q28",
+        "question": "Which scientist demonstrated the role of sunlight in photosynthesis?",
+        "options": ["Priestley", "Ingenhousz", "Mendel", "Darwin", "Newton"],
+        "answer": "2"
+    },
+    {
+        "id": "q29",
+        "question": "During photosynthesis, light energy is converted into ____ energy.",
+        "options": ["Mechanical", "Electrical", "Chemical", "Nuclear", "Sound"],
+        "answer": "3"
+    },
+    {
+        "id": "q30",
+        "question": "Which cycle is involved in the dark reaction of photosynthesis?",
+        "options": ["Krebs cycle", "Calvin cycle", "Glycolysis", "Pentose phosphate pathway", "Citric acid cycle"],
+        "answer": "2"
+    }
+]
