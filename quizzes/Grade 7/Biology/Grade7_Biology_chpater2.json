@@ -1,0 +1,152 @@
+[
+    {
+        "id": "q1",
+        "question": "The main excretory organ in humans is ____.",
+        "options": ["Lungs", "Heart", "Kidneys", "Liver", "Skin"],
+        "answer": "3"
+    },
+    {
+        "id": "q2",
+        "question": "Which of the following is NOT a part of the human excretory system?",
+        "options": ["Ureters", "Liver", "Urethra", "Urinary bladder", "Intestines"],
+        "answer": "5"
+    },
+    {
+        "id": "q3",
+        "question": "The functional unit of the kidney is called ____.",
+        "options": ["Neuron", "Nephron", "Glomerulus", "Tubule", "Ureter"],
+        "answer": "2"
+    },
+    {
+        "id": "q4",
+        "question": "The process of urine formation involves ____.",
+        "options": ["Filtration", "Reabsorption", "Secretion", "All of the above", "None of the above"],
+        "answer": "4"
+    },
+    {
+        "id": "q5",
+        "question": "Which blood vessel carries blood away from the kidneys?",
+        "options": ["Renal vein", "Renal artery", "Aorta", "Vena cava", "Pulmonary vein"],
+        "answer": "1"
+    },
+    {
+        "id": "q6",
+        "question": "The yellow color of urine is due to the pigment ____.",
+        "options": ["Hemoglobin", "Bilirubin", "Urochrome", "Melanin", "Chlorophyll"],
+        "answer": "3"
+    },
+    {
+        "id": "q7",
+        "question": "Which hormone regulates the amount of water excreted by the kidneys?",
+        "options": ["Adrenaline", "Insulin", "ADH (Antidiuretic Hormone)", "Thyroxine", "Estrogen"],
+        "answer": "3"
+    },
+    {
+        "id": "q8",
+        "question": "Which organ helps in excretion of carbon dioxide?",
+        "options": ["Kidneys", "Skin", "Lungs", "Liver", "Intestines"],
+        "answer": "3"
+    },
+    {
+        "id": "q9",
+        "question": "Urea is produced in the ____.",
+        "options": ["Lungs", "Kidneys", "Liver", "Pancreas", "Heart"],
+        "answer": "3"
+    },
+    {
+        "id": "q10",
+        "question": "Which part of the nephron is involved in filtration?",
+        "options": ["Glomerulus", "Loop of Henle", "Collecting duct", "Distal convoluted tubule", "Ureter"],
+        "answer": "1"
+    },
+    {
+        "id": "q11",
+        "question": "Which of the following helps in regulating body temperature?",
+        "options": ["Lungs", "Kidneys", "Skin", "Liver", "Heart"],
+        "answer": "3"
+    },
+    {
+        "id": "q12",
+        "question": "Excess amino acids are converted to urea by the ____.",
+        "options": ["Liver", "Kidneys", "Pancreas", "Stomach", "Intestines"],
+        "answer": "1"
+    },
+    {
+        "id": "q13",
+        "question": "Which of the following is a nitrogenous waste?",
+        "options": ["Carbon dioxide", "Urea", "Glucose", "Oxygen", "Bile"],
+        "answer": "2"
+    },
+    {
+        "id": "q14",
+        "question": "Dialysis is used when which organ fails?",
+        "options": ["Heart", "Lungs", "Kidneys", "Liver", "Brain"],
+        "answer": "3"
+    },
+    {
+        "id": "q15",
+        "question": "Which structure stores urine temporarily?",
+        "options": ["Kidneys", "Ureters", "Urinary bladder", "Urethra", "Rectum"],
+        "answer": "3"
+    },
+    {
+        "id": "q16",
+        "question": "The Loop of Henle is mainly responsible for ____.",
+        "options": ["Filtration", "Water reabsorption", "Secretion", "Digestion", "Exhalation"],
+        "answer": "2"
+    },
+    {
+        "id": "q17",
+        "question": "Which of the following is NOT excreted by human skin?",
+        "options": ["Sweat", "Water", "Urea", "Salt", "Bile pigments"],
+        "answer": "5"
+    },
+    {
+        "id": "q18",
+        "question": "Which acid is present in urine?",
+        "options": ["Sulfuric acid", "Uric acid", "Hydrochloric acid", "Acetic acid", "Citric acid"],
+        "answer": "2"
+    },
+    {
+        "id": "q19",
+        "question": "Urine passes out of the body through the ____.",
+        "options": ["Ureters", "Urinary bladder", "Urethra", "Nephron", "Glomerulus"],
+        "answer": "3"
+    },
+    {
+        "id": "q20",
+        "question": "Which process helps in the reabsorption of useful substances?",
+        "options": ["Filtration", "Secretion", "Reabsorption", "Diffusion", "Osmosis"],
+        "answer": "3"
+    },
+    {
+        "id": "q21",
+        "question": "Excess glucose is stored in the body as ____.",
+        "options": ["Protein", "Fat", "Glycogen", "Amino acids", "Urea"],
+        "answer": "3"
+    },
+    {
+        "id": "q22",
+        "question": "Which part of the nephron collects the filtered urine?",
+        "options": ["Glomerulus", "Loop of Henle", "Collecting duct", "Bowman's capsule", "Proximal convoluted tubule"],
+        "answer": "3"
+    },
+    {
+        "id": "q23",
+        "question": "Which component is usually absent in healthy urine?",
+        "options": ["Water", "Urea", "Glucose", "Salt", "Uric acid"],
+        "answer": "3"
+    },
+    {
+        "id": "q24",
+        "question": "Which organ is responsible for detoxification of harmful substances?",
+        "options": ["Kidneys", "Liver", "Lungs", "Skin", "Heart"],
+        "answer": "2"
+    },
+    {
+        "id": "q25",
+        "question": "Which hormone helps regulate salt and water balance?",
+        "options": ["Insulin", "Adrenaline", "Aldosterone", "Thyroxine", "Estrogen"],
+        "answer": "3"
+    }
+]
