@@ -1,0 +1,182 @@
+[
+    {
+        "id": "q1",
+        "question": "Sound is produced by ____.",
+        "options": ["Moving objects", "Vibrating objects", "Color change", "Temperature change", "Magnetic force"],
+        "answer": "2"
+    },
+    {
+        "id": "q2",
+        "question": "Which part of the human body helps us hear sounds?",
+        "options": ["Eyes", "Ears", "Nose", "Tongue", "Skin"],
+        "answer": "2"
+    },
+    {
+        "id": "q3",
+        "question": "The unit of sound frequency is ____.",
+        "options": ["Meter", "Second", "Hertz", "Newton", "Watt"],
+        "answer": "3"
+    },
+    {
+        "id": "q4",
+        "question": "Which of the following can produce sound?",
+        "options": ["A vibrating string", "A moving car", "A burning candle", "A glass of water", "A sleeping cat"],
+        "answer": "1"
+    },
+    {
+        "id": "q5",
+        "question": "Sound cannot travel through ____.",
+        "options": ["Solid", "Liquid", "Gas", "Vacuum", "Water"],
+        "answer": "4"
+    },
+    {
+        "id": "q6",
+        "question": "Which instrument is used to measure the loudness of sound?",
+        "options": ["Thermometer", "Barometer", "Oscilloscope", "Sound level meter", "Speedometer"],
+        "answer": "4"
+    },
+    {
+        "id": "q7",
+        "question": "The speed of sound is fastest in ____.",
+        "options": ["Air", "Water", "Vacuum", "Iron", "Glass"],
+        "answer": "4"
+    },
+    {
+        "id": "q8",
+        "question": "Which type of wave is sound?",
+        "options": ["Transverse", "Longitudinal", "Electromagnetic", "Ultraviolet", "Radio"],
+        "answer": "2"
+    },
+    {
+        "id": "q9",
+        "question": "Echo is produced due to ____.",
+        "options": ["Refraction", "Absorption", "Reflection", "Transmission", "Diffusion"],
+        "answer": "3"
+    },
+    {
+        "id": "q10",
+        "question": "The highness or lowness of sound is called ____.",
+        "options": ["Pitch", "Volume", "Echo", "Frequency", "Amplitude"],
+        "answer": "1"
+    },
+    {
+        "id": "q11",
+        "question": "Sound is measured in ____.",
+        "options": ["Kelvin", "Newton", "Decibel", "Joule", "Meter"],
+        "answer": "3"
+    },
+    {
+        "id": "q12",
+        "question": "Which part of the ear vibrates first when sound enters?",
+        "options": ["Cochlea", "Ear drum", "Auditory nerve", "Pinna", "Eustachian tube"],
+        "answer": "2"
+    },
+    {
+        "id": "q13",
+        "question": "Which of the following is a musical instrument?",
+        "options": ["Broom", "Flute", "Pencil", "Paper", "Stone"],
+        "answer": "2"
+    },
+    {
+        "id": "q14",
+        "question": "Which property of sound determines its loudness?",
+        "options": ["Frequency", "Amplitude", "Velocity", "Wavelength", "Duration"],
+        "answer": "2"
+    },
+    {
+        "id": "q15",
+        "question": "Sound travels slower in ____ compared to solids.",
+        "options": ["Air", "Water", "Iron", "Glass", "Diamond"],
+        "answer": "1"
+    },
+    {
+        "id": "q16",
+        "question": "The sound produced by a vibrating object is called ____.",
+        "options": ["Noise", "Pitch", "Tone", "Melody", "Rhythm"],
+        "answer": "3"
+    },
+    {
+        "id": "q17",
+        "question": "In which medium can sound not travel?",
+        "options": ["Water", "Air", "Glass", "Vacuum", "Wood"],
+        "answer": "4"
+    },
+    {
+        "id": "q18",
+        "question": "Which animal uses echolocation?",
+        "options": ["Elephant", "Dog", "Bat", "Cow", "Lion"],
+        "answer": "3"
+    },
+    {
+        "id": "q19",
+        "question": "Which device converts sound energy into electrical energy?",
+        "options": ["Speaker", "Microphone", "Amplifier", "Battery", "Light bulb"],
+        "answer": "2"
+    },
+    {
+        "id": "q20",
+        "question": "Vibrations travel from the eardrum to the inner ear through ____.",
+        "options": ["Nerves", "Bones", "Muscles", "Cartilage", "Blood vessels"],
+        "answer": "2"
+    },
+    {
+        "id": "q21",
+        "question": "Which of the following is a source of noise pollution?",
+        "options": ["Singing birds", "Flowing river", "Loudspeakers", "Whispering", "Light rain"],
+        "answer": "3"
+    },
+    {
+        "id": "q22",
+        "question": "The range of audible sound for humans is ____ Hz.",
+        "options": ["1-100", "20-20000", "100-1000", "500-5000", "1000-10000"],
+        "answer": "2"
+    },
+    {
+        "id": "q23",
+        "question": "The repetition of sound due to reflection is called ____.",
+        "options": ["Noise", "Pitch", "Echo", "Vibration", "Refraction"],
+        "answer": "3"
+    },
+    {
+        "id": "q24",
+        "question": "Which type of sound is unpleasant to hear?",
+        "options": ["Music", "Noise", "Echo", "Melody", "Rhythm"],
+        "answer": "2"
+    },
+    {
+        "id": "q25",
+        "question": "Sound waves are ____ waves.",
+        "options": ["Electromagnetic", "Transverse", "Longitudinal", "Radio", "Gamma"],
+        "answer": "3"
+    },
+    {
+        "id": "q26",
+        "question": "The intensity of sound is measured in ____.",
+        "options": ["Volts", "Watts", "Decibels", "Newtons", "Joules"],
+        "answer": "3"
+    },
+    {
+        "id": "q27",
+        "question": "Which of these is used to reduce noise pollution?",
+        "options": ["Planting trees", "Playing loud music", "Using megaphones", "Shouting", "Honking"],
+        "answer": "1"
+    },
+    {
+        "id": "q28",
+        "question": "The frequency of a sound wave is related to its ____.",
+        "options": ["Pitch", "Loudness", "Velocity", "Amplitude", "Wavelength"],
+        "answer": "1"
+    },
+    {
+        "id": "q29",
+        "question": "Which of the following materials will reflect sound the most?",
+        "options": ["Wood", "Foam", "Metal", "Cotton", "Rubber"],
+        "answer": "3"
+    },
+    {
+        "id": "q30",
+        "question": "The speed of sound in air is approximately ____ m/s.",
+        "options": ["100", "340", "500", "1000", "1500"],
+        "answer": "2"
+    }
+]
