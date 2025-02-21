@@ -148,5 +148,128 @@
         "question": "Which hormone helps regulate salt and water balance?",
         "options": ["Insulin", "Adrenaline", "Aldosterone", "Thyroxine", "Estrogen"],
         "answer": "3"
+    },
+    {
+        "id": "q31",
+        "question": "Which of the following helps in the excretion of sweat?",
+        "options": ["Liver", "Sweat glands", "Kidneys", "Lungs", "Intestines"],
+        "answer": "2"
+    },
+    {
+        "id": "q32",
+        "question": "The main nitrogenous waste excreted by humans is ____.",
+        "options": ["Ammonia", "Urea", "Uric acid", "Carbon dioxide", "Salt"],
+        "answer": "2"
+    },
+    {
+        "id": "q33",
+        "question": "Which part of the nephron surrounds the glomerulus?",
+        "options": ["Loop of Henle", "Bowman's capsule", "Collecting duct", "Ureter", "Proximal convoluted tubule"],
+        "answer": "2"
+    },
+    {
+        "id": "q34",
+        "question": "Which organ excretes bile pigments?",
+        "options": ["Kidneys", "Lungs", "Liver", "Skin", "Heart"],
+        "answer": "3"
+    },
+    {
+        "id": "q35",
+        "question": "The excretory product of birds is mainly ____.",
+        "options": ["Urea", "Ammonia", "Uric acid", "Carbon dioxide", "Sweat"],
+        "answer": "3"
+    },
+    {
+        "id": "q36",
+        "question": "Which of the following is a part of the human urinary system?",
+        "options": ["Heart", "Intestines", "Ureters", "Stomach", "Liver"],
+        "answer": "3"
+    },
+    {
+        "id": "q37",
+        "question": "Which process in the nephron involves movement from blood to tubule?",
+        "options": ["Filtration", "Reabsorption", "Secretion", "Exhalation", "Osmosis"],
+        "answer": "3"
+    },
+    {
+        "id": "q38",
+        "question": "Which structure prevents the backflow of urine?",
+        "options": ["Glomerulus", "Ureters", "Sphincters", "Collecting duct", "Loop of Henle"],
+        "answer": "3"
+    },
+    {
+        "id": "q39",
+        "question": "Water is reabsorbed in the nephron mainly by ____.",
+        "options": ["Bowman's capsule", "Proximal convoluted tubule", "Loop of Henle", "Collecting duct", "Urethra"],
+        "answer": "3"
+    },
+    {
+        "id": "q40",
+        "question": "Kidneys help in maintaining ____ balance in the body.",
+        "options": ["Glucose", "Salt and water", "Protein", "Fat", "Vitamin"],
+        "answer": "2"
+    },
+    {
+        "id": "q41",
+        "question": "Which of the following is an accessory excretory organ?",
+        "options": ["Lungs", "Kidneys", "Heart", "Intestines", "Urethra"],
+        "answer": "1"
+    },
+    {
+        "id": "q42",
+        "question": "Which hormone increases water reabsorption in kidneys?",
+        "options": ["Adrenaline", "ADH", "Insulin", "Glucagon", "Estrogen"],
+        "answer": "2"
+    },
+    {
+        "id": "q43",
+        "question": "The structural and functional unit of kidney is ____.",
+        "options": ["Neuron", "Nephron", "Glomerulus", "Alveoli", "Ureter"],
+        "answer": "2"
+    },
+    {
+        "id": "q44",
+        "question": "Which part of nephron is involved in selective reabsorption?",
+        "options": ["Bowman's capsule", "Proximal convoluted tubule", "Collecting duct", "Loop of Henle", "Urethra"],
+        "answer": "2"
+    },
+    {
+        "id": "q45",
+        "question": "The fluid that enters Bowman's capsule is called ____.",
+        "options": ["Blood", "Lymph", "Glomerular filtrate", "Plasma", "Urine"],
+        "answer": "3"
+    },
+    {
+        "id": "q46",
+        "question": "The elimination of urine is called ____.",
+        "options": ["Respiration", "Exhalation", "Micturition", "Secretion", "Diffusion"],
+        "answer": "3"
+    },
+    {
+        "id": "q47",
+        "question": "Which excretory organ also regulates body temperature?",
+        "options": ["Liver", "Lungs", "Skin", "Kidneys", "Heart"],
+        "answer": "3"
+    },
+    {
+        "id": "q48",
+        "question": "Which of the following connects kidneys to the urinary bladder?",
+        "options": ["Urethra", "Ureters", "Nephrons", "Glomerulus", "Collecting duct"],
+        "answer": "2"
+    },
+    {
+        "id": "q49",
+        "question": "Which of the following is NOT a waste product of excretion?",
+        "options": ["Urea", "Carbon dioxide", "Water", "Glucose", "Uric acid"],
+        "answer": "4"
+    },
+    {
+        "id": "q50",
+        "question": "The outer layer of the kidney is known as ____.",
+        "options": ["Medulla", "Cortex", "Pelvis", "Ureter", "Bladder"],
+        "answer": "2"
     }
+
+
+    
 ]
