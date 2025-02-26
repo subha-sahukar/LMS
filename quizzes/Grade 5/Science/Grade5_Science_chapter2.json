@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q1",
+    "question": "Which part of the plant is responsible for photosynthesis?",
+    "options": ["Root", "Stem", "Leaf", "Flower"],
+    "answer": "Leaf"
+  },
+  {
+    "id": "q2",
+    "question": "What do plants release during photosynthesis?",
+    "options": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+    "answer": "Oxygen"
+  },
+  {
+    "id": "q3",
+    "question": "Which of the following is a root vegetable?",
+    "options": ["Tomato", "Carrot", "Apple", "Grapes"],
+    "answer": "Carrot"
+  },
+  {
+    "id": "q4",
+    "question": "Which part of the plant anchors it to the soil?",
+    "options": ["Leaf", "Stem", "Root", "Flower"],
+    "answer": "Root"
+  },
+  {
+    "id": "q5",
+    "question": "Which process helps plants make their food?",
+    "options": ["Germination", "Photosynthesis", "Pollination", "Respiration"],
+    "answer": "Photosynthesis"
+  },
+  {
+    "id": "q6",
+    "question": "Which of these plants has a taproot system?",
+    "options": ["Wheat", "Rice", "Carrot", "Grass"],
+    "answer": "Carrot"
+  },
+  {
+    "id": "q7",
+    "question": "Which part of the plant becomes the fruit?",
+    "options": ["Root", "Leaf", "Stem", "Flower"],
+    "answer": "Flower"
+  },
+  {
+    "id": "q8",
+    "question": "Which gas is absorbed by plants during photosynthesis?",
+    "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+    "answer": "Carbon dioxide"
+  },
+  {
+    "id": "q9",
+    "question": "Which of these is a climber plant?",
+    "options": ["Mango", "Pumpkin", "Grapevine", "Cactus"],
+    "answer": "Grapevine"
+  },
+  {
+    "id": "q10",
+    "question": "Which part of the plant helps it stand upright?",
+    "options": ["Leaf", "Stem", "Root", "Seed"],
+    "answer": "Stem"
+  },
+  {
+    "id": "q11",
+    "question": "Which of these is NOT needed for photosynthesis?",
+    "options": ["Sunlight", "Water", "Soil", "Carbon dioxide"],
+    "answer": "Soil"
+  },
+  {
+    "id": "q12",
+    "question": "Which of these is an underground stem?",
+    "options": ["Carrot", "Potato", "Spinach", "Wheat"],
+    "answer": "Potato"
+  },
+  {
+    "id": "q13",
+    "question": "Which of these flowers is used to make perfume?",
+    "options": ["Sunflower", "Rose", "Lily", "Marigold"],
+    "answer": "Rose"
+  },
+  {
+    "id": "q14",
+    "question": "Which part of the plant absorbs water and nutrients from the soil?",
+    "options": ["Stem", "Root", "Leaf", "Flower"],
+    "answer": "Root"
+  },
+  {
+    "id": "q15",
+    "question": "Which of the following is a seed that we eat?",
+    "options": ["Potato", "Onion", "Pea", "Carrot"],
+    "answer": "Pea"
+  },
+  {
+    "id": "q16",
+    "question": "Which of these plants has fibrous roots?",
+    "options": ["Carrot", "Mango", "Wheat", "Rose"],
+    "answer": "Wheat"
+  },
+  {
+    "id": "q17",
+    "question": "Which process helps in the transfer of pollen from one flower to another?",
+    "options": ["Photosynthesis", "Respiration", "Pollination", "Germination"],
+    "answer": "Pollination"
+  },
+  {
+    "id": "q18",
+    "question": "Which of these plants is known as a herb?",
+    "options": ["Mango", "Basil", "Pine", "Rose"],
+    "answer": "Basil"
+  },
+  {
+    "id": "q19",
+    "question": "Which of these is a creeping plant?",
+    "options": ["Grapevine", "Money plant", "Pumpkin", "Rose"],
+    "answer": "Pumpkin"
+  },
+  {
+    "id": "q20",
+    "question": "Which part of the seed grows into the root?",
+    "options": ["Plumule", "Radicle", "Cotyledon", "Seed coat"],
+    "answer": "Radicle"
+  }
+]
