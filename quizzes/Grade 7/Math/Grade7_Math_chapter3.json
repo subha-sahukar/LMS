@@ -1,0 +1,110 @@
+[
+  {
+    "id": "q1",
+    "question": "A shopkeeper bought a bicycle for Rs. 1500 and sold it for Rs. 1800. What is his profit percentage?",
+    "options": ["10%", "15%", "20%", "25%"],
+    "answer": "20%"
+  },
+  {
+    "id": "q2",
+    "question": "If the cost price of an article is Rs. 500 and it is sold at a loss of 10%, what is the selling price?",
+    "options": ["Rs. 450", "Rs. 475", "Rs. 500", "Rs. 550"],
+    "answer": "Rs. 450"
+  },
+  {
+    "id": "q3",
+    "question": "A man sells a watch for Rs. 2200, making a profit of 10%. What was the cost price of the watch?",
+    "options": ["Rs. 2000", "Rs. 1980", "Rs. 2100", "Rs. 2150"],
+    "answer": "Rs. 2000"
+  },
+  {
+    "id": "q4",
+    "question": "If a shopkeeper incurs a loss of 5% by selling an article for Rs. 570, what was the cost price?",
+    "options": ["Rs. 600", "Rs. 580", "Rs. 550", "Rs. 590"],
+    "answer": "Rs. 600"
+  },
+  {
+    "id": "q5",
+    "question": "A trader bought goods worth Rs. 8000 and sold them at a profit of 12%. What is the selling price?",
+    "options": ["Rs. 8960", "Rs. 9000", "Rs. 8800", "Rs. 8500"],
+    "answer": "Rs. 8960"
+  },
+  {
+    "id": "q6",
+    "question": "If the selling price of an article is Rs. 1500 and the profit made is Rs. 300, what is the cost price?",
+    "options": ["Rs. 1200", "Rs. 1300", "Rs. 1100", "Rs. 1000"],
+    "answer": "Rs. 1200"
+  },
+  {
+    "id": "q7",
+    "question": "A person sold a book for Rs. 480, incurring a loss of 4%. What was the original cost price?",
+    "options": ["Rs. 500", "Rs. 480", "Rs. 460", "Rs. 520"],
+    "answer": "Rs. 500"
+  },
+  {
+    "id": "q8",
+    "question": "If a shopkeeper marks an article at Rs. 750 and allows a discount of 10%, what is the selling price?",
+    "options": ["Rs. 675", "Rs. 700", "Rs. 725", "Rs. 650"],
+    "answer": "Rs. 675"
+  },
+  {
+    "id": "q9",
+    "question": "A man bought a chair for Rs. 850 and sold it at a profit of 15%. What is the selling price?",
+    "options": ["Rs. 977.50", "Rs. 950", "Rs. 900", "Rs. 1020"],
+    "answer": "Rs. 977.50"
+  },
+  {
+    "id": "q10",
+    "question": "If the cost price of an article is Rs. 1200 and it is sold for Rs. 1380, what is the profit percentage?",
+    "options": ["10%", "12%", "15%", "18%"],
+    "answer": "15%"
+  },
+  {
+    "id": "q11",
+    "question": "A shopkeeper sells an article at a loss of 8%. If the selling price is Rs. 460, what was the cost price?",
+    "options": ["Rs. 500", "Rs. 480", "Rs. 450", "Rs. 520"],
+    "answer": "Rs. 500"
+  },
+  {
+    "id": "q12",
+    "question": "If a trader sells an article for Rs. 1500, making a profit of 25%, what was the cost price?",
+    "options": ["Rs. 1200", "Rs. 1250", "Rs. 1000", "Rs. 1100"],
+    "answer": "Rs. 1200"
+  },
+  {
+    "id": "q13",
+    "question": "A man bought a pen for Rs. 45 and sold it for Rs. 54. What is his profit percentage?",
+    "options": ["15%", "20%", "25%", "30%"],
+    "answer": "20%"
+  },
+  {
+    "id": "q14",
+    "question": "If the cost price of an article is Rs. 800 and it is sold at a loss of 5%, what is the selling price?",
+    "options": ["Rs. 760", "Rs. 780", "Rs. 800", "Rs. 820"],
+    "answer": "Rs. 760"
+  },
+  {
+    "id": "q15",
+    "question": "A trader bought goods for Rs. 5000 and sold them at a profit of 18%. What is the selling price?",
+    "options": ["Rs. 5900", "Rs. 5800", "Rs. 6000", "Rs. 6100"],
+    "answer": "Rs. 5900"
+  },
+  {
+    "id": "q16",
+    "question": "If the selling price of an article is Rs. 960 and the loss incurred is Rs. 40, what is the cost price?",
+    "options": ["Rs. 1000", "Rs. 980", "Rs. 920", "Rs. 940"],
+    "answer": "Rs. 1000"
+  },
+  {
+    "id": "q17",
+    "question": "A person sold a table for Rs. 1500, making a profit of 25%. What was the cost price?",
+    "options": ["Rs. 1200", "Rs. 1250", "Rs. 1000", "Rs. 1100"],
+    "answer": "Rs. 1200"
+  },
+  {
+    "id": "q18",
+    "question": "If a shopkeeper marks an article at Rs. 2000 and allows a discount of 5%, what is the selling price?",
+    "options": ["Rs. 1900", "Rs. 1950", "Rs. 1850", "Rs. 1800"],
+    "answer": "Rs. 1900"
+  }
+] 
