@@ -1,0 +1,151 @@
+[
+  {
+    "id": "q1",
+    "question": "Which part of the skeletal system protects the brain?",
+    "options": ["Rib cage", "Skull", "Spine", "Pelvis"],
+    "answer": "Skull"
+  },
+  {
+    "id": "q2",
+    "question": "How many bones are there in the adult human body?",
+    "options": ["206", "210", "205", "201"],
+    "answer": "206"
+  },
+  {
+    "id": "q3",
+    "question": "Which of these is the longest bone in the human body?",
+    "options": ["Humerus", "Femur", "Tibia", "Fibula"],
+    "answer": "Femur"
+  },
+  {
+    "id": "q4",
+    "question": "What is the main function of the rib cage?",
+    "options": ["Support the body", "Protect the heart and lungs", "Aid in digestion", "Facilitate movement"],
+    "answer": "Protect the heart and lungs"
+  },
+  {
+    "id": "q5",
+    "question": "Which part of the skeletal system protects the spinal cord?",
+    "options": ["Skull", "Rib cage", "Vertebral column", "Pelvis"],
+    "answer": "Vertebral column"
+  },
+  {
+    "id": "q6",
+    "question": "What connects muscles to bones?",
+    "options": ["Ligaments", "Tendons", "Cartilage", "Nerves"],
+    "answer": "Tendons"
+  },
+  {
+    "id": "q7",
+    "question": "Which type of joint is found in the shoulder and hip?",
+    "options": ["Hinge joint", "Ball and socket joint", "Pivot joint", "Gliding joint"],
+    "answer": "Ball and socket joint"
+  },
+  {
+    "id": "q8",
+    "question": "What is the function of ligaments?",
+    "options": ["Connect muscles to bones", "Connect bones to other bones", "Protect internal organs", "Produce blood cells"],
+    "answer": "Connect bones to other bones"
+  },
+  {
+    "id": "q9",
+    "question": "Which part of the brain controls balance and coordination?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Spinal cord"],
+    "answer": "Cerebellum"
+  },
+  {
+    "id": "q10",
+    "question": "What is the largest part of the human brain?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Brainstem"],
+    "answer": "Cerebrum"
+  },
+  {
+    "id": "q11",
+    "question": "Which part of the nervous system is responsible for reflex actions?",
+    "options": ["Brain", "Spinal cord", "Cerebellum", "Medulla"],
+    "answer": "Spinal cord"
+  },
+  {
+    "id": "q12",
+    "question": "What are the basic building blocks of the nervous system?",
+    "options": ["Neurons", "Glial cells", "Axons", "Dendrites"],
+    "answer": "Neurons"
+  },
+  {
+    "id": "q13",
+    "question": "Which nerves carry messages from the sense organs to the brain?",
+    "options": ["Motor nerves", "Sensory nerves", "Mixed nerves", "Autonomic nerves"],
+    "answer": "Sensory nerves"
+  },
+  {
+    "id": "q14",
+    "question": "What protects the brain from shocks and injuries?",
+    "options": ["Skull", "Cerebrospinal fluid", "Meninges", "All of the above"],
+    "answer": "All of the above"
+  },
+  {
+    "id": "q15",
+    "question": "Which part of the brain controls involuntary actions like heartbeat and breathing?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Spinal cord"],
+    "answer": "Medulla"
+  },
+  {
+    "id": "q16",
+    "question": "What is the function of the cerebrum?",
+    "options": ["Control voluntary actions", "Maintain balance", "Regulate heartbeat", "Coordinate reflexes"],
+    "answer": "Control voluntary actions"
+  },
+  {
+    "id": "q17",
+    "question": "Which system controls and coordinates all activities of the body?",
+    "options": ["Skeletal system", "Muscular system", "Nervous system", "Digestive system"],
+    "answer": "Nervous system"
+  },
+  {
+    "id": "q18",
+    "question": "What is the role of the spinal cord?",
+    "options": ["Transmit messages between the brain and the body", "Control digestion", "Pump blood", "Filter waste from the blood"],
+    "answer": "Transmit messages between the brain and the body"
+  },
+  {
+    "id": "q19",
+    "question": "Which part of the brain helps in learning and memory?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Spinal cord"],
+    "answer": "Cerebrum"
+  },
+  {
+    "id": "q20",
+    "question": "What type of joint is found in the knees and elbows?",
+    "options": ["Ball and socket joint", "Hinge joint", "Pivot joint", "Gliding joint"],
+    "answer": "Hinge joint"
+  },
+  {
+    "id": "q21",
+    "question": "Which part of the skeletal system is also known as the backbone?",
+    "options": ["Skull", "Rib cage", "Vertebral column", "Pelvis"],
+    "answer": "Vertebral column"
+  },
+  {
+    "id": "q22",
+    "question": "What is the function of cartilage in joints?",
+    "options": ["Connect muscles to bones", "Connect bones to other bones", "Reduce friction between bones", "Produce blood cells"],
+    "answer": "Reduce friction between bones"
+  },
+  {
+    "id": "q23",
+    "question": "Which part of the brain is responsible for balance and posture?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Spinal cord"],
+    "answer": "Cerebellum"
+  },
+  {
+    "id": "q24",
+    "question": "What are involuntary muscles?",
+    "options": ["Muscles under our control", "Muscles not under our control", "Muscles attached to bones", "Muscles that move the skeleton"],
+    "answer": "Muscles not under our control"
+  },
+  {
+    "id": "q25",
+    "question": "Which part of the nervous system controls reflex actions?",
+    "options": ["Brain", "
+      }]
+ 
