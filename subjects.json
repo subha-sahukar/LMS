@@ -4,8 +4,8 @@
     "Science": ["Chapter 1: Animal Habitat", "Chapter 2: Plants", "Chapter 3: Skeletal System]
   },
   "Grade 7": {
-    "Math": ["Chapter 1: Algebra", "Chapter 2: Ratios and Proportions", "Chapter 3: Probability"],
+    "Math": ["Chapter 1: Algebra", "Chapter 2: Ratios and Proportions", "Chapter 3: Profit Loss"],
     "Biology": ["Chapter 1: Allergy", "Chapter 2: Excretory System", "Chapter 3: Nervous System", "Chapter 4: Respiratory System", "Chapter 5: Photosynthesis"],
-    "Physics": ["Chapter 1: Heat", "Chapter 2: Sound", "Chapter 3: electricity and Magnetism"]
+    "Physics": ["Chapter 1: Heat", "Chapter 2: Sound", "Chapter 3: Electricity and Magnetism"]
   }
 }
