@@ -54,7 +54,7 @@ def quiz(grade, subject, chapter):
     except FileNotFoundError:
         return f"Quiz file {quiz_file} not found", 404
 
-    sample_size = min(len(questions), 15)
+    sample_size = min(len(questions), 10)
     questions = random.sample(list(questions), sample_size)  # Ensure questions is a list
     session['questions'] = questions
     session['current_question'] = 0
