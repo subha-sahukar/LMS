@@ -61,7 +61,7 @@ def quiz(grade, subject, chapter):
     session['score'] = 0
     session['incorrect'] = []
     session['start_time'] = datetime.utcnow()
-    return render_template('quiz.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=15)
+    return render_template('quiz.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
 
 @app.route('/next_question', methods=['POST'])
 def next_question():
