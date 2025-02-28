@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revise Chapter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .revise-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        .subtopic-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .subtopic-list li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .subtopic-list li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="revise-container">
+        <h2>Revise Chapter: {{ subject }}</h2>
+        <p>Select a subtopic to revise:</p>
+        <ul class="subtopic-list">
+            {% for subtopic in subtopics %}
+                <li onclick="reviseSubtopic('{{ grade }}', '{{ subject }}', '{{ subtopic }}')">{{ subtopic }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>
+        function reviseSubtopic(grade, subject, subtopic) {
+            window.location.href = `/revise/${grade}/${subject}/${subtopic}`;
+        }
+    </script>
+</body>
+</html>
