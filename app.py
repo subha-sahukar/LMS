@@ -90,7 +90,7 @@ def quiz_question():
     grade = request.args.get('grade')
     subject = request.args.get('subject')
     chapter = request.args.get('chapter')
-    return render_template('quiz.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=15)
+    return render_template('quiz.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=10)
 
 @app.route('/quiz_result')
 def quiz_result():
