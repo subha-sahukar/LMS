@@ -1,20 +1,182 @@
 [
     {
-        "id": "q1",
-        "question": "What is 2 + 2?",
-        "options": ["3", "4", "5"],
-        "answer": "4"
+        "id": "q11",
+        "question": "The basic unit of the nervous system is called __________.",
+        "type": "fill_in_the_blank",
+        "answer": "neuron"
     },
     {
-        "id": "q2",
-        "question": "What is the capital of France?",
-        "options": ["London", "Paris", "Berlin"],
-        "answer": "Paris"
+        "id": "q12",
+        "question": "Which of the following is the main control center of the nervous system?",
+        "type": "mcq",
+        "options": [
+            "Heart",
+            "Liver",
+            "Brain",
+            "Lungs"
+        ],
+        "answer": "Brain"
     },
     {
-        "id": "q3",
-        "question": "What is the color of the sky?",
-        "options": ["Blue", "Green", "Red"],
-        "answer": "Blue"
+        "id": "q13",
+        "question": "The brain is protected by the __________.",
+        "type": "fill_in_the_blank",
+        "answer": "skull"
+    },
+    {
+        "id": "q14",
+        "question": "Which part of the brain controls balance and coordination?",
+        "type": "mcq",
+        "options": [
+            "Cerebrum",
+            "Cerebellum",
+            "Medulla",
+            "Spinal cord"
+        ],
+        "answer": "Cerebellum"
+    },
+    {
+        "id": "q15",
+        "question": "The largest part of the human brain is the __________.",
+        "type": "fill_in_the_blank",
+        "answer": "cerebrum"
+    },
+    {
+        "id": "q16",
+        "question": "Which of the following controls involuntary actions like heartbeat and breathing?",
+        "type": "mcq",
+        "options": [
+            "Cerebrum",
+            "Cerebellum",
+            "Medulla",
+            "Spinal cord"
+        ],
+        "answer": "Medulla"
+    },
+    {
+        "id": "q17",
+        "question": "Messages are carried to and from the brain through __________.",
+        "type": "fill_in_the_blank",
+        "answer": "nerves"
+    },
+    {
+        "id": "q18",
+        "question": "The nervous system is divided into __________ and __________.",
+        "type": "fill_in_the_blank",
+        "answer": "central nervous system, peripheral nervous system"
+    },
+    {
+        "id": "q19",
+        "question": "Which part of the nervous system controls reflex actions?",
+        "type": "mcq",
+        "options": [
+            "Cerebrum",
+            "Cerebellum",
+            "Spinal cord",
+            "Medulla"
+        ],
+        "answer": "Spinal cord"
+    },
+    {
+        "id": "q20",
+        "question": "The junction between two neurons is called a __________.",
+        "type": "fill_in_the_blank",
+        "answer": "synapse"
+    },
+    {
+        "id": "q21",
+        "question": "Which type of neuron carries messages from the sense organs to the brain?",
+        "type": "mcq",
+        "options": [
+            "Sensory neuron",
+            "Motor neuron",
+            "Interneuron",
+            "Relay neuron"
+        ],
+        "answer": "Sensory neuron"
+    },
+    {
+        "id": "q22",
+        "question": "Motor neurons carry messages from the __________ to the muscles.",
+        "type": "fill_in_the_blank",
+        "answer": "brain"
+    },
+    {
+        "id": "q23",
+        "question": "Which part of the brain is responsible for thinking and memory?",
+        "type": "mcq",
+        "options": [
+            "Cerebrum",
+            "Cerebellum",
+            "Medulla",
+            "Spinal cord"
+        ],
+        "answer": "Cerebrum"
+    },
+    {
+        "id": "q24",
+        "question": "Reflex actions are __________.",
+        "type": "mcq",
+        "options": [
+            "Voluntary actions",
+            "Involuntary actions",
+            "Learned actions",
+            "Slow actions"
+        ],
+        "answer": "Involuntary actions"
+    },
+    {
+        "id": "q25",
+        "question": "The long fiber of a neuron that carries impulses away from the cell body is called __________.",
+        "type": "fill_in_the_blank",
+        "answer": "axon"
+    },
+    {
+        "id": "q26",
+        "question": "Which of the following protects the spinal cord?",
+        "type": "mcq",
+        "options": [
+            "Skull",
+            "Rib cage",
+            "Vertebral column",
+            "Pelvis"
+        ],
+        "answer": "Vertebral column"
+    },
+    {
+        "id": "q27",
+        "question": "Impulses are transmitted across a synapse by __________.",
+        "type": "fill_in_the_blank",
+        "answer": "neurotransmitters"
+    },
+    {
+        "id": "q28",
+        "question": "Which system works closely with the nervous system to maintain body functions?",
+        "type": "mcq",
+        "options": [
+            "Digestive system",
+            "Circulatory system",
+            "Endocrine system",
+            "Respiratory system"
+        ],
+        "answer": "Endocrine system"
+    },
+    {
+        "id": "q29",
+        "question": "The part of the neuron that receives messages from other neurons is called __________.",
+        "type": "fill_in_the_blank",
+        "answer": "dendrite"
+    },
+    {
+        "id": "q30",
+        "question": "Which of the following connects the brain to the rest of the body?",
+        "type": "mcq",
+        "options": [
+            "Cerebrum",
+            "Cerebellum",
+            "Spinal cord",
+            "Medulla"
+        ],
+        "answer": "Spinal cord"
     }
 ]
