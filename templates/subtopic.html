@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revise Subtopic</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .subtopic-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        .content {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .flashcard {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .flashcard:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <div class="subtopic-container">
+        <h2>Revise Subtopic: {{ subtopic }}</h2>
+        <div class="content">
+            {% if content_type == 'bullet_points' %}
+                <ul>
+                    {% for point in content %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif content_type == 'flash_cards' %}
+                {% for card in content %}
+                    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="front">{{ card.front }}</div>
+                        <div class="back">{{ card.back }}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.flashcard').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+</body>
+</html>
