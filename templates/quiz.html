@@ -89,7 +89,7 @@
         </div>
         <form method="post" action="{{ url_for('next_question') }}">
             <ul class="options">
-                {% if question.type == 'multiple_choice' %}
+                {% if question.type == 'mcq' %}
                     {% for option in question.options %}
                         <li>
                             <label>
