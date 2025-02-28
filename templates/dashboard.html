@@ -10,10 +10,18 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
             color: #333;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
         }
 
         .dashboard-container {
@@ -21,7 +29,9 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 600px;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
             text-align: center;
         }
 
@@ -41,10 +51,12 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             cursor: pointer;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s;
         }
 
         .subject-list li:hover {
-            background-color: #f0f0f0;
+            background-color: #e0e0e0;
         }
 
         .option-buttons {
@@ -61,16 +73,46 @@
             cursor: pointer;
             font-size: 16px;
             margin: 5px;
+            transition: background-color 0.3s;
         }
 
         .option-buttons button:hover {
             background-color: #004494;
         }
+
+        .footer {
+            width: 100%;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .back-button {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #d0d0d0;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        Welcome, {{ username }}
+    </div>
     <div class="dashboard-container">
-        <h2>Welcome, {{ username }}</h2>
+        <h2>Your Subjects</h2>
         <p>Select a subject to proceed:</p>
         <ul class="subject-list">
             {% for subject in subjects %}
@@ -81,6 +123,10 @@
             <button onclick="takeQuiz()">Take Quiz on Chapter</button>
             <button onclick="reviseChapter()">Revise Chapter</button>
         </div>
+        <button class="back-button" onclick="goBack()">Back to Home</button>
+    </div>
+    <div class="footer">
+        &copy; 2025 Your School
     </div>
     <script>
         function showOptions(grade, subject) {
@@ -99,6 +145,10 @@
             const grade = sessionStorage.getItem('selectedGrade');
             const subject = sessionStorage.getItem('selectedSubject');
             window.location.href = `/revise/${grade}/${subject}`;
+        }
+
+        function goBack() {
+            window.location.href = '/';
         }
     </script>
 </body>
