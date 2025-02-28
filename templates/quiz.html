@@ -43,7 +43,7 @@
             margin: 10px 0;
         }
 
-        .options input[type="radio"], .options input[type="text"] {
+        .options input[type="radio"], .options input[type="checkbox"], .options input[type="text"] {
             margin-right: 10px;
         }
 
@@ -104,6 +104,15 @@
                             <input type="text" name="answer" required>
                         </label>
                     </li>
+                {% elif question.type == 'multiple_answers' %}
+                    {% for option in question.options %}
+                        <li>
+                            <label>
+                                <input type="checkbox" name="answer" value="{{ option }}">
+                                {{ option }}
+                            </label>
+                        </li>
+                    {% endfor %}
                 {% endif %}
             </ul>
             <input type="hidden" name="grade" value="{{ grade }}">
