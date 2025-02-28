@@ -10,212 +10,96 @@
             margin: 0;
             padding: 0;
             display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             color: #333;
         }
 
         .dashboard-container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        .left-panel {
-            width: 250px;
-            background-color: #0056b3;
-            color: white;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .left-panel h3 {
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        .left-panel ul {
-            list-style: none;
-            padding: 0;
-            flex-grow: 1;
-        }
-
-        .left-panel li {
-            margin: 15px 0;
-        }
-
-        .left-panel a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .left-panel a:hover {
-            text-decoration: underline;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #004494;
-            color: white;
-            box-sizing: border-box;
-            width: calc(100% - 250px);
-            position: fixed;
-            top: 0;
-            left: 250px;
-            height: 60px;
-            z-index: 1000;
-        }
-
-        .header .profile-summary {
-            display: flex;
-            align-items: center;
-        }
-
-        .header .profile-summary img {
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .header .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .header .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .header .nav-links a:hover {
-            background-color: #003366;
-        }
-
-        .content-area {
-            flex-grow: 1;
-            padding: 80px 20px 20px 20px;
-            box-sizing: border-box;
-            overflow-y: auto;
-        }
-
-        .main-content {
-            margin-top: 20px;
-        }
-
-        .main-content h2 {
-            margin-top: 0;
-        }
-
-        .main-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .main-content li {
-            margin: 10px 0;
-        }
-
-        .main-content a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        .main-content a:hover {
-            text-decoration: underline;
-        }
-
-        .tips-section {
-            background-color: #e6f2ff;
+            background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
         }
 
-        .tips-section h3 {
+        h2 {
+            color: #0056b3;
             margin-top: 0;
         }
 
-        .tips-section ul {
-            list-style: disc;
-            margin-left: 20px;
+        .subject-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .subject-list li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .subject-list li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .option-buttons {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .option-buttons button {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .option-buttons button:hover {
+            background-color: #004494;
         }
     </style>
 </head>
 <body>
     <div class="dashboard-container">
-        <div class="left-panel">
-            <h3>Subjects</h3>
-            <ul>
-                {% for subject, details in subjects.items() %}
-                    <li><a href="{{ url_for('dashboard', subject=subject) }}">{{ subject }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="content-area">
-            <div class="header">
-                <div class="profile-summary">
-                   <!-- <img src="https://via.placeholder.com/40" alt="Profile Picture"> -->
-                    <div>
-                        <div>{{ username }}</div>
-                        <div>{{ school }}</div>
-                    </div>
-                </div>
-                <div class="nav-links">
-                    <!-- <a href="{{ url_for('edit_profile') }}">Edit Profile</a> -->
-                    <a href="{{ url_for('history') }}">History</a>
-                    <a href="{{ url_for('logout') }}">Logout</a>
-                </div>
-            </div>
-            <div class="main-content">
-                <h2>Welcome, {{ username }}</h2>
-                {% if subject %}
-                    <h3>Chapters in {{ subject }}</h3>
-                    <ul>
-                        {% for chapter in subjects[subject] %}
-                            <li><a href="{{ url_for('quiz', grade=grade, subject=subject, chapter=loop.index0 + 1) }}">{{ chapter }}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <p>Select a subject to view chapters.</p>
-                {% endif %}
-
-                <div class="tips-section">
-                    <h3>Study Tips</h3>
-                    <ul>
-                        <li>Set specific goals for each study session.</li>
-                        <li>Take regular breaks to avoid burnout. The Pomodoro Technique (25 minutes of work followed by a 5-minute break) can be very effective.</li>
-                        <li>Use active recall and spaced repetition techniques to enhance memory retention.</li>
-                        <li>Summarize what you've learned in your own words to ensure you understand the material.</li>
-                    </ul>
-                </div>
-
-                <div class="tips-section">
-                    <h3>Purpose of Taking Tests</h3>
-                    <ul>
-                        <li>Identify areas where you need improvement.</li>
-                        <li>Reinforce your knowledge and understanding of the subject.</li>
-                        <li>Build confidence in your ability to recall information under pressure.</li>
-                        <li>Develop effective time management and test-taking strategies.</li>
-                    </ul>
-                </div>
-
-                <div class="tips-section">
-                    <h3>Focus Tips from Dr. Huberman's Lab</h3>
-                    <ul>
-                        <li>Eliminate distractions by creating a dedicated study space.</li>
-                        <li>Practice mindfulness and deep breathing exercises to improve concentration.</li>
-                        <li>Get adequate sleep and maintain a healthy diet to support cognitive function.</li>
-                        <li>Incorporate physical activity into your daily routine to boost brain health.</li>
-                    </ul>
-                </div>
-            </div>
+        <h2>Welcome, {{ username }}</h2>
+        <p>Select a subject to proceed:</p>
+        <ul class="subject-list">
+            {% for subject in subjects %}
+                <li onclick="showOptions('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
+            {% endfor %}
+        </ul>
+        <div class="option-buttons" id="option-buttons">
+            <button onclick="takeQuiz()">Take Quiz on Chapter</button>
+            <button onclick="reviseChapter()">Revise Chapter</button>
         </div>
     </div>
+    <script>
+        function showOptions(grade, subject) {
+            document.getElementById('option-buttons').style.display = 'block';
+            sessionStorage.setItem('selectedGrade', grade);
+            sessionStorage.setItem('selectedSubject', subject);
+        }
+
+        function takeQuiz() {
+            const grade = sessionStorage.getItem('selectedGrade');
+            const subject = sessionStorage.getItem('selectedSubject');
+            window.location.href = `/quiz/${grade}/${subject}`;
+        }
+
+        function reviseChapter() {
+            const grade = sessionStorage.getItem('selectedGrade');
+            const subject = sessionStorage.getItem('selectedSubject');
+            window.location.href = `/revise/${grade}/${subject}`;
+        }
+    </script>
 </body>
 </html>
