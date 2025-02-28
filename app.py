@@ -30,7 +30,6 @@ def login():
         session['username'] = username
         session['grade'] = grade
         session['school'] = school
-        session['start_time'] = datetime.utcnow()
         return redirect(url_for('dashboard'))
     else:
         return redirect(url_for('failure'))
@@ -147,6 +146,10 @@ def quiz_result():
         json.dump(history, f, indent=4)
 
     return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter, incorrect=incorrect)
+
+@app.route('/abort_quiz', methods=['POST'])
+def abort_quiz():
+    return redirect(url_for('dashboard'))
 
 @app.route('/failure')
 def failure():
