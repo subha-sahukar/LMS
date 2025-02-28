@@ -15,6 +15,10 @@ with open('users.json') as f:
 with open('subjects.json') as f:
     subjects = json.load(f)
 
+# Load subtopics and their content from JSON file
+with open('subtopics.json') as f:
+    subtopics_content = json.load(f)
+
 @app.route('/')
 def home():
     return render_template('login.html')
@@ -39,14 +43,13 @@ def dashboard():
     username = session.get('username')
     grade = session.get('grade')
     school = session.get('school')
-    subject = request.args.get('subject', None)  # Default to None if subject is not provided
     grade_subjects = subjects.get(grade, {})  # Get subjects for the specific grade
-    return render_template('dashboard.html', username=username, grade=grade, school=school, subjects=grade_subjects, subject=subject)
+    return render_template('dashboard.html', username=username, grade=grade, school=school, subjects=grade_subjects)
 
-@app.route('/quiz/<grade>/<subject>/<int:chapter>')
-def quiz(grade, subject, chapter):
+@app.route('/quiz/<grade>/<subject>')
+def quiz(grade, subject):
     username = session.get('username')
-    quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter}.json'
+    quiz_file = f'quizzes/{grade}/{subject}/quiz.json'
     try:
         with open(quiz_file) as f:
             questions = json.load(f)
@@ -60,27 +63,41 @@ def quiz(grade, subject, chapter):
     session['score'] = 0
     session['incorrect'] = []
     session['start_time'] = datetime.utcnow()
-    return render_template('quiz.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
+    return render_template('quiz.html', grade=grade, subject=subject, chapter='', question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
 
 @app.route('/next_question', methods=['POST'])
 def next_question():
     answer = request.form.get('answer')
     current_question = session.get('current_question')
     questions = session.get('questions')
-    if answer == questions[current_question]['answer']:
-        session['score'] += 1
+
+    if isinstance(answer, list):
+        correct_answers = set(questions[current_question]['answer'])
+        given_answers = set(answer)
+        if correct_answers == given_answers:
+            session['score'] += 1
+        else:
+            session['incorrect'].append({
+                'question': questions[current_question]['question'],
+                'given_answer': ', '.join(given_answers),
+                'correct_answer': ', '.join(correct_answers)
+            })
     else:
-        session['incorrect'].append({
-            'question': questions[current_question]['question'],
-            'given_answer': answer,
-            'correct_answer': questions[current_question]['answer']
-        })
+        if answer == questions[current_question]['answer']:
+            session['score'] += 1
+        else:
+            session['incorrect'].append({
+                'question': questions[current_question]['question'],
+                'given_answer': answer,
+                'correct_answer': questions[current_question]['answer']
+            })
+
     session['current_question'] += 1
 
     if session['current_question'] < len(questions):
-        return redirect(url_for('quiz_question', grade=request.form['grade'], subject=request.form['subject'], chapter=request.form['chapter']))
+        return redirect(url_for('quiz_question'))
     else:
-        return redirect(url_for('quiz_result', grade=request.form['grade'], subject=request.form['subject'], chapter=request.form['chapter']))
+        return redirect(url_for('quiz_result'))
 
 @app.route('/quiz_question')
 def quiz_question():
@@ -88,15 +105,13 @@ def quiz_question():
     questions = session.get('questions')
     grade = request.args.get('grade')
     subject = request.args.get('subject')
-    chapter = request.args.get('chapter')
-    return render_template('quiz.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=10)
+    return render_template('quiz.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter='', time_limit=10)
 
 @app.route('/quiz_result')
 def quiz_result():
     username = session.get('username')
     grade = request.args.get('grade')
     subject = request.args.get('subject')
-    chapter = request.args.get('chapter')
     score = session.get('score')
     total_questions = len(session.get('questions'))
     incorrect = session.get('incorrect')
@@ -124,7 +139,7 @@ def quiz_result():
         "username": username,
         "grade": grade,
         "subject": subject,
-        "chapter": chapter,
+        "chapter": "",
         "score": score,
         "total_questions": total_questions,
         "rating": rating,
@@ -145,7 +160,18 @@ def quiz_result():
     with open(history_file, 'w') as f:
         json.dump(history, f, indent=4)
 
-    return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter, incorrect=incorrect)
+    return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter='', incorrect=incorrect)
+
+@app.route('/revise/<grade>/<subject>')
+def revise(grade, subject):
+    subtopics = subtopics_content.get(grade, {}).get(subject, {}).keys()
+    return render_template('revise.html', grade=grade, subject=subject, subtopics=subtopics)
+
+@app.route('/revise/<grade>/<subject>/<subtopic>')
+def revise_subtopic(grade, subject, subtopic):
+    content = subtopics_content.get(grade, {}).get(subject, {}).get(subtopic, [])
+    content_type = 'bullet_points' if isinstance(content, list) else 'flash_cards'
+    return render_template('subtopic.html', grade=grade, subject=subject, subtopic=subtopic, content=content, content_type=content_type)
 
 @app.route('/abort_quiz', methods=['POST'])
 def abort_quiz():
