@@ -95,4 +95,133 @@
         ],
         "answer": "Skin"
     }
+    ,
+    {
+        "id": "q20",
+        "question": "Each Kidney is made up of about a million tiny filtering units called __________.",
+        "type": "fill_in_the_blank",
+        "answer": "nephrons"
+    },
+    {
+        "id": "q21",
+        "question": "The structures present in the kidney which acts as filter are  __________.",
+        "type": "mcq",
+        "options": [
+            "Alveoli",
+            "Nephrons",
+            "Uretor",
+            "None of these"
+        ],
+        "answer": "Nephrons"
+    },
+    {
+        "id": "q22",
+        "question": "Urethera acts as an outlet passage for",
+        "type": "mcq",
+        "options": [
+            "sweat",
+            "urine",
+            "waste food",
+            "uric acid"
+        ],
+        "answer": "urine"
+    },
+    {
+        "id": "q23",
+        "question": "Kidney are connected to the urinary bladder by long tubes called",
+        "type": "mcq",
+        "options": [
+            "Urine",
+            "Ureters",
+            "Bladder",
+            "Urethra"
+        ],
+        "answer": "Ureters"
+    },
+    {
+        "id": "q24",
+        "question": "Urinary bladder opens into another tube called the _____; Urine is expelled to outside through _______",
+        "type": "mcq",
+        "options": [
+            "Urine",
+            "Ureters",
+            "Bladder",
+            "Urethra"
+        ],
+        "answer": "Urethra"
+    }
+    ,
+    {
+        "id": "q25",
+        "question": "Different substances which are excreted from our body, except ______",
+        "type": "mcq",
+        "options": [
+            "Extra food",
+            "Extra salts",
+            "Extra vitamins",
+            "Uric acid Urea "
+        ],
+        "answer": "Extra food"
+    },
+    {
+        "id": "q26",
+        "question": "Below Disorder of urinary tract are correct , except ______",
+        "type": "mcq",
+        "options": [
+            "UTI",
+            "Kidney Stones",
+            "Renal calculi",
+            "Uric acid infections"
+        ],
+        "answer": "Uric acid infections"
+    }
+    ,
+    {
+        "id": "q27",
+        "question": "Below crystal forming substancs are source of kidney stones , except ______",
+        "type": "mcq",
+        "options": [
+            "Uric Acid",
+            "Sweat",
+            "Calcium Oxalate",
+            "Calcium Phosphate"
+        ],
+        "answer": "Sweat"
+    }  ,
+    {
+        "id": "q28",
+        "question": "When kidney fail to filter blood efficiently , treatment given does not inlcude ______",
+        "type": "mcq",
+        "options": [
+            "Dialysis",
+            "Drinking water",
+            "Artifical Kidney",
+            "None of the above"
+        ],
+        "answer": "Drinking water"
+    },
+    {
+        "id": "q29",
+        "question": "UTI is caused by ______ entering the urinary tract",
+        "type": "mcq",
+        "options": [
+            "Virus",
+            "Anemia",
+            "Bacteria",
+            "None of the above"
+        ],
+        "answer": "Bacteria"
+    },
+    {
+        "id": "q30",
+        "question": "UTI symptoms exclude ____",
+        "type": "mcq",
+        "options": [
+            "Frequent urge to drink water",
+            "Frequent urge to urinate",
+            "Smelly cloudy urine",
+            "Pain during urinating"
+        ],
+        "answer": "Frequent urge to drink water"
+    }
 ]
