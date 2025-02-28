@@ -1,0 +1,33 @@
+{
+  "Grade 5": {
+    "Math": {
+      "Chapter 1: Percentage": ["Concept of Percentage", "Calculating Percentage", "Applications of Percentage"],
+      "Chapter 2: Ratio": ["Understanding Ratio", "Simplifying Ratios", "Real-life Applications of Ratios"],
+      "Chapter 3: Average": ["Definition of Average", "Calculating Average", "Use of Averages in Different Scenarios"]
+    },
+    "Science": {
+      "Chapter 1: Animal Habitat": ["Types of Habitats", "Adaptations of Animals", "Conservation of Habitats"],
+      "Chapter 2: Plants": ["Parts of a Plant", "Photosynthesis Process", "Types of Plants"],
+      "Chapter 3: Skeletal System": ["Bones and Joints", "Functions of Skeletal System", "Common Bone Diseases"]
+    }
+  },
+  "Grade 7": {
+    "Math": {
+      "Chapter 1: Algebra": ["Basic Algebraic Operations", "Solving Equations", "Real-life Applications of Algebra"],
+      "Chapter 2: Ratios and Proportions": ["Understanding Ratios and Proportions", "Solving Ratio Problems", "Practical Applications of Ratios and Proportions"],
+      "Chapter 3: Profit Loss": ["Concept of Profit and Loss", "Calculating Profit and Loss", "Applications in Business"]
+    },
+    "Biology": {
+      "Chapter 1: Allergy": ["Types of Allergies", "Causes of Allergies", "Treatment and Prevention"],
+      "Chapter 2: Excretory System": ["Organs of the Excretory System", "Functions of the Excretory System", "Common Disorders of the Excretory System"],
+      "Chapter 3: Nervous System": ["Structure of the Nervous System", "Functions of the Nervous System", "Diseases of the Nervous System"],
+      "Chapter 4: Respiratory System": ["Anatomy of the Respiratory System", "Breathing Process", "Respiratory Diseases"],
+      "Chapter 5: Photosynthesis": ["Process of Photosynthesis", "Importance of Photosynthesis", "Factors Affecting Photosynthesis"]
+    },
+    "Physics": {
+      "Chapter 1: Heat": ["Concept of Heat", "Heat Transfer Methods", "Effects of Heat"],
+      "Chapter 2: Sound": ["Nature of Sound", "Sound Propagation", "Applications of Sound"],
+      "Chapter 3: Electricity and Magnetism": ["Basics of Electricity", "Magnetic Effects of Electric Current", "Applications of Electricity and Magnetism"]
+    }
+  }
+}
