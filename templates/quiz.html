@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quiz - {{ subject }} Chapter {{ chapter }}</title>
+    <title>Quiz</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
     <style>
         body {
@@ -16,31 +16,38 @@
             color: #333;
         }
 
-        .container {
+        .quiz-container {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            width: 600px;
             text-align: center;
         }
 
-        .question-container {
-            text-align: left;
-            margin-top: 20px;
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
         }
 
-        .question-container p {
-            font-size: 18px;
+        .question {
             margin-bottom: 20px;
         }
 
-        .question-container label {
-            display: block;
-            margin-bottom: 10px;
+        .options {
+            list-style: none;
+            padding: 0;
         }
 
-        input[type="submit"] {
+        .options li {
+            margin: 10px 0;
+        }
+
+        .options input[type="radio"], .options input[type="text"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"], .abort-button {
             background-color: #0056b3;
             color: #fff;
             padding: 10px;
@@ -48,57 +55,84 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            margin: 10px;
         }
 
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, .abort-button:hover {
             background-color: #004494;
         }
 
-        #timer {
-            font-size: 16px;
+        .info {
             margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .timer {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: red;
         }
     </style>
-    <script>
-        let timeRemaining = {{ time_limit }} * 60;
-
-        function startTimer() {
-            const timerElement = document.getElementById('timer');
-            setInterval(() => {
-                if (timeRemaining <= 0) {
-                    alert('Time is up!');
-                    document.getElementById('quiz-form').submit();
-                } else {
-                    timeRemaining--;
-                    const minutes = Math.floor(timeRemaining / 60);
-                    const seconds = timeRemaining % 60;
-                    timerElement.textContent = `${minutes} minutes and ${seconds} seconds remaining`;
-                }
-            }, 1000);
-        }
-
-        window.onload = startTimer;
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h2>{{ subject.capitalize() }} Quiz - Chapter {{ chapter }}</h2>
-        <div id="timer"></div>
-        <form id="quiz-form" method="post" action="{{ url_for('next_question') }}">
+    <div class="quiz-container">
+        <div class="info">
+            <p>Student: {{ username }}</p>
+            <p>Grade: {{ grade }}</p>
+            <p>Subject: {{ subject }}</p>
+            <p>Chapter: {{ chapter }}</p>
+        </div>
+        <div class="timer" id="timer"></div>
+        <h2>Question {{ current_question }} of {{ total_questions }}</h2>
+        <div class="question">
+            <p>{{ question.question }}</p>
+        </div>
+        <form method="post" action="{{ url_for('next_question') }}">
+            <ul class="options">
+                {% if question.type == 'multiple_choice' %}
+                    {% for option in question.options %}
+                        <li>
+                            <label>
+                                <input type="radio" name="answer" value="{{ option }}" required>
+                                {{ option }}
+                            </label>
+                        </li>
+                    {% endfor %}
+                {% elif question.type == 'fill_in_the_blank' %}
+                    <li>
+                        <label>
+                            <input type="text" name="answer" required>
+                        </label>
+                    </li>
+                {% endif %}
+            </ul>
             <input type="hidden" name="grade" value="{{ grade }}">
             <input type="hidden" name="subject" value="{{ subject }}">
             <input type="hidden" name="chapter" value="{{ chapter }}">
-            <div class="question-container">
-                <p>Question {{ current_question }} of {{ total_questions }}</p>
-                <p>{{ question.question }}</p>
-                {% for option in question.options %}
-                <label>
-                    <input type="radio" name="answer" value="{{ option }}"> {{ option }}
-                </label><br>
-                {% endfor %}
-            </div>
-            <input type="submit" value="Next">
+            <input type="submit" value="Next Question">
+        </form>
+        <form method="post" action="{{ url_for('abort_quiz') }}">
+            <button type="submit" class="abort-button">Abort Quiz</button>
         </form>
     </div>
+    <script>
+        let totalSeconds = {{ time_limit }} * 60;
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            timerElement.textContent = `Time left: ${minutes} minutes ${seconds} seconds`;
+            if (totalSeconds > 0) {
+                totalSeconds--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                alert("Time's up!");
+                document.querySelector('form[action="{{ url_for('abort_quiz') }}"]').submit();
+            }
+        }
+
+        updateTimer();
+    </script>
 </body>
 </html>
