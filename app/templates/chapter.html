@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Chapter: {{ chapter }}{% endblock %}
+
+{% block header %}Chapter: {{ chapter }}{% endblock %}
+
+{% block content %}
+<div class="chapter-container">
+    <h2>{{ chapter }}</h2>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('revise')">Revise Chapter</div>
+        <div class="tab" onclick="showTab('quiz')">Take Quiz</div>
+        <div class="tab" onclick="showTab('history')">Quiz History</div>
+    </div>
+    <div class="content" id="revise">
+        <h3>Revise {{ chapter }}</h3>
+        <ul class="subtopic-list">
+            {% for subtopic in subtopics %}
+            <li onclick="reviseSubtopic('{{ grade }}', '{{ subject }}', '{{ chapter }}', '{{ subtopic }}')">{{ subtopic }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="content" id="quiz" style="display: none;">
+        <h3>Take Quiz on {{ chapter }}</h3>
+        <button class="start-quiz-button" onclick="startQuiz('{{ grade }}', '{{ subject }}', '{{ chapter }}')">Start Quiz</button>
+        <iframe id="quiz-iframe" class="quiz-iframe"></iframe>
+    </div>
+    <div class="content" id="history" style="display: none;">
+        <h3>Quiz History for {{ chapter }}</h3>
+        <ul class="history-list">
+            {% for entry in history %}
+            <li>Date: {{ entry.date }}, Score: {{ entry.score }}/{{ entry.total_questions }}, Rating: {{ entry.rating }}, Time Taken: {{ entry.time_taken }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script>
+function showTab(tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
+
+    document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
+    document.getElementById(tab).style.display = 'block';
+}
+
+function startQuiz(grade, subject, chapter) {
+    const iframe = document.getElementById('quiz-iframe');
+    iframe.src = `/quiz/${grade}/${subject}/${chapter}`;
+    iframe.style.display = 'block';
+}
+
+function reviseSubtopic(grade, subject, chapter, subtopic) {
+    window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
+}
+
+function goBack() {
+    window.location.href = '/dashboard';
+}
+</script>
+{% endblock %}
