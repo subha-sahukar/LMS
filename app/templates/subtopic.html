@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Subtopic: {{ subtopic }}{% endblock %}
+
+{% block header %}Subtopic: {{ subtopic }}{% endblock %}
+
+{% block content %}
+<div class="subtopic-container">
+    <h2>{{ subtopic }}</h2>
+    {% if content_type == 'bullet_points' %}
+    <ul>
+        {% for point in content %}
+        <li>{{ point }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div class="flashcard">
+        {{ content }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
