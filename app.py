@@ -59,7 +59,7 @@ def chapter(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('home'))
 
-    subtopics = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys()
+    subtopics = list(subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys())
     username = session['username']
     history_file = f'history/{username}_history.json'
     if os.path.exists(history_file):
