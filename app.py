@@ -60,7 +60,8 @@ def quiz(grade, subject, chapter):
         return redirect(url_for('home'))
 
     username = session['username']
-    quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter.split()[-1]}.json'
+    chapter_number = chapter.split()[-1]
+    quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter_number}.json'
     try:
         with open(quiz_file) as f:
             questions = json.load(f)
@@ -109,9 +110,9 @@ def next_question():
     session['current_question'] += 1
 
     if session['current_question'] < len(questions):
-        return redirect(url_for('quiz_question'))
+        return redirect(url_for('quiz_question', grade=request.form.get('grade'), subject=request.form.get('subject'), chapter=request.form.get('chapter')))
     else:
-        return redirect(url_for('quiz_result'))
+        return redirect(url_for('quiz_result', grade=request.form.get('grade'), subject=request.form.get('subject'), chapter=request.form.get('chapter')))
 
 @app.route('/quiz_question')
 def quiz_question():
