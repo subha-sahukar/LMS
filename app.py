@@ -92,7 +92,7 @@ def quiz(grade, subject, chapter):
     session['score'] = 0
     session['incorrect'] = []
     session['start_time'] = datetime.utcnow()
-    return render_template('quiz.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
+    return render_template('quiz_content.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
 
 @app.route('/next_question', methods=['POST'])
 def next_question():
@@ -141,7 +141,7 @@ def quiz_question():
     grade = request.args.get('grade')
     subject = request.args.get('subject')
     chapter = request.args.get('chapter')
-    return render_template('quiz.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=10)
+    return render_template('quiz_content.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=10)
 
 @app.route('/quiz_result')
 def quiz_result():
