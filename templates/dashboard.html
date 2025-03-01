@@ -1,130 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            color: #333;
-        }
+{% extends "base.html" %}
 
-        .header {
-            width: 100%;
-            background-color: #0056b3;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 24px;
-        }
+{% block title %}Dashboard{% endblock %}
 
-        .dashboard-container {
-            display: flex;
-            height: 100vh;
-        }
+{% block header %}Welcome, {{ username }}{% endblock %}
 
-        .sidebar {
-            width: 25%;
-            background-color: #f0f0f0;
-            border-right: 1px solid #ddd;
-            padding: 20px;
-            overflow-y: auto;
-        }
+{% block content %}
+<div class="dashboard-container">
+    <h2>Your Subjects</h2>
+    <ul class="subject-list">
+        {% for subject in subjects %}
+        <li onclick="showTopics('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<script>
+function showTopics(grade, subject) {
+    fetch(`/get_topics/${grade}/${subject}`)
+        .then(response => response.json())
+        .then(data => {
+            let topicsHtml = `
+                <h2>${subject} Topics</h2>
+                <ul class="topic-list">
+            `;
+            data.topics.forEach(topic => {
+                topicsHtml += `<li onclick="navigateToChapter('${grade}', '${subject}', '${topic}')">${topic}</li>`;
+            });
+            topicsHtml += `</ul>`;
+            document.querySelector('.dashboard-container').innerHTML = topicsHtml;
+        });
+}
 
-        .content {
-            width: 75%;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        .subject-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .subject-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .subject-list li:hover {
-            background-color: #e0e0e0;
-        }
-
-        .topic-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .topic-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .topic-list li:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        Welcome, {{ username }}
-    </div>
-    <div class="dashboard-container">
-        <div class="sidebar">
-            <h2>Your Subjects</h2>
-            <ul class="subject-list">
-                {% for subject in subjects %}
-                    <li onclick="showTopics('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="content">
-            <div id="topic-container">
-                <h2>Select a subject to see topics</h2>
-            </div>
-        </div>
-    </div>
-    <script>
-        function showTopics(grade, subject) {
-            fetch(`/get_topics/${grade}/${subject}`)
-                .then(response => response.json())
-                .then(data => {
-                    let topicsHtml = `
-                        <h2>${subject} Topics</h2>
-                        <ul class="topic-list">
-                    `;
-                    data.topics.forEach(topic => {
-                        topicsHtml += `<li onclick="navigateToChapter('${grade}', '${subject}', '${topic}')">${topic}</li>`;
-                    });
-                    topicsHtml += `</ul>`;
-                    document.getElementById('topic-container').innerHTML = topicsHtml;
-                });
-        }
-
-        function navigateToChapter(grade, subject, topic) {
-            window.location.href = `/chapter/${grade}/${subject}/${topic}`;
-        }
-    </script>
-</body>
-</html>
+function navigateToChapter(grade, subject, topic) {
+    window.location.href = `/chapter/${grade}/${subject}/${topic}`;
+}
+</script>
+{% endblock %}
