@@ -51,10 +51,10 @@ def get_topics(grade, subject):
     topics = subjects.get(grade, {}).get(subject, [])
     return jsonify({'topics': topics})
 
-@app.route('/quiz/<grade>/<subject>/<topic>')
-def quiz(grade, subject, topic):
+@app.route('/quiz/<grade>/<subject>/<chapter>')
+def quiz(grade, subject, chapter):
     username = session.get('username')
-    quiz_file = f'quizzes/{grade}/{subject}/quiz.json'
+    quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter.split()[-1]}.json'
     try:
         with open(quiz_file) as f:
             questions = json.load(f)
@@ -68,7 +68,7 @@ def quiz(grade, subject, topic):
     session['score'] = 0
     session['incorrect'] = []
     session['start_time'] = datetime.utcnow()
-    return render_template('quiz.html', grade=grade, subject=subject, chapter=topic, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
+    return render_template('quiz.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
 
 @app.route('/next_question', methods=['POST'])
 def next_question():
@@ -169,10 +169,10 @@ def quiz_result():
 
     return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter, incorrect=incorrect)
 
-@app.route('/revise/<grade>/<subject>/<topic>')
-def revise(grade, subject, topic):
-    subtopics = subtopics_content.get(grade, {}).get(subject, {}).get(topic, {}).keys()
-    return render_template('revise.html', grade=grade, subject=subject, chapter=topic, subtopics=subtopics)
+@app.route('/revise/<grade>/<subject>/<chapter>')
+def revise(grade, subject, chapter):
+    subtopics = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys()
+    return render_template('revise.html', grade=grade, subject=subject, chapter=chapter, subtopics=subtopics)
 
 @app.route('/revise/<grade>/<subject>/<chapter>/<subtopic>')
 def revise_subtopic(grade, subject, chapter, subtopic):
