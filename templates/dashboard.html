@@ -84,26 +84,6 @@
         .topic-list li:hover {
             background-color: #e0e0e0;
         }
-
-        .option-buttons {
-            margin-top: 20px;
-        }
-
-        .option-buttons button {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .option-buttons button:hover {
-            background-color: #004494;
-        }
     </style>
 </head>
 <body>
@@ -135,29 +115,15 @@
                         <ul class="topic-list">
                     `;
                     data.topics.forEach(topic => {
-                        topicsHtml += `<li onclick="showOptions('${grade}', '${subject}', '${topic}')">${topic}</li>`;
+                        topicsHtml += `<li onclick="navigateToChapter('${grade}', '${subject}', '${topic}')">${topic}</li>`;
                     });
                     topicsHtml += `</ul>`;
                     document.getElementById('topic-container').innerHTML = topicsHtml;
                 });
         }
 
-        function showOptions(grade, subject, topic) {
-            const optionButtonsHtml = `
-                <div class="option-buttons">
-                    <button onclick="takeQuiz('${grade}', '${subject}', '${topic}')">Take Quiz on ${topic}</button>
-                    <button onclick="reviseChapter('${grade}', '${subject}', '${topic}')">Revise ${topic}</button>
-                </div>
-            `;
-            document.getElementById('topic-container').innerHTML += optionButtonsHtml;
-        }
-
-        function takeQuiz(grade, subject, topic) {
-            window.location.href = `/quiz/${grade}/${subject}/${topic}`;
-        }
-
-        function reviseChapter(grade, subject, topic) {
-            window.location.href = `/revise/${grade}/${subject}/${topic}`;
+        function navigateToChapter(grade, subject, topic) {
+            window.location.href = `/chapter/${grade}/${subject}/${topic}`;
         }
     </script>
 </body>
