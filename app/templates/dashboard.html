@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block header %}Welcome, {{ username }}{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Your Subjects</h2>
+    <ul class="subject-list">
+        {% for subject in subjects %}
+        <li onclick="showTopics('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<script>
+function showTopics(grade, subject) {
+    fetch(`/get_topics/${grade}/${subject}`)
+        .then(response => response.json())
+        .then(data => {
+            let topicsHtml = `
+                <h2>${subject} Topics</h2>
+                <ul class="topic-list">
+            `;
+            data.topics.forEach(topic => {
+                topicsHtml += `<li onclick="navigateToChapter('${grade}', '${subject}', '${topic}')">${topic}</li>`;
+            });
+            topicsHtml += `</ul>`;
+            document.querySelector('.dashboard-container').innerHTML = topicsHtml;
+        });
+}
+
+function navigateToChapter(grade, subject, topic) {
+    window.location.href = `/chapter/${grade}/${subject}/${topic}`;
+}
+</script>
+{% endblock %}
