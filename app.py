@@ -54,6 +54,12 @@ def get_topics(grade, subject):
     topics = subjects.get(grade, {}).get(subject, [])
     return jsonify({'topics': topics})
 
+@app.route('/chapter/<grade>/<subject>/<chapter>')
+def chapter(grade, subject, chapter):
+    if 'username' not in session:
+        return redirect(url_for('home'))
+    return render_template('chapter.html', grade=grade, subject=subject, chapter=chapter)
+
 @app.route('/quiz/<grade>/<subject>/<chapter>')
 def quiz(grade, subject, chapter):
     if 'username' not in session:
@@ -217,8 +223,8 @@ def failure():
 def styles():
     return send_from_directory(os.path.dirname(__file__), 'styles.css')
 
-@app.route('/history')
-def history():
+@app.route('/history/<grade>/<subject>/<chapter>')
+def history(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('home'))
 
@@ -229,7 +235,8 @@ def history():
             history = json.load(f)
     else:
         history = []
-    return render_template('history.html', history=history)
+    chapter_history = [entry for entry in history if entry['grade'] == grade and entry['subject'] == subject and entry['chapter'] == chapter]
+    return render_template('history.html', history=chapter_history)
 
 @app.route('/edit_profile')
 def edit_profile():
