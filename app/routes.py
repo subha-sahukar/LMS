@@ -4,7 +4,6 @@ import json
 import random
 from datetime import datetime, timedelta
 from app import app
-from app.models import User, History
 from app.utils import load_json_file, save_json_file, get_user_history, save_user_history
 
 # Load data from JSON files
@@ -224,8 +223,8 @@ def edit_profile():
         return redirect(url_for('home'))
 
     username = session['username']
-    user = User.query.filter_by(username=username).first()
-    return render_template('edit_profile.html', username=username, first_name=user.first_name, last_name=user.last_name, grade=session.get('grade'), school=session.get('school'))
+    user = users[username]
+    return render_template('edit_profile.html', username=username, first_name=user.get('first_name', ''), last_name=user.get('last_name', ''), grade=session.get('grade'), school=session.get('school'))
 
 @app.route('/update_profile', methods=['POST'])
 def update_profile():
@@ -235,10 +234,11 @@ def update_profile():
     username = session['username']
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
-    user = User.query.filter_by(username=username).first()
-    user.first_name = first_name
-    user.last_name = last_name
-    db.session.commit()
+    users[username]['first_name'] = first_name
+    users[username]['last_name'] = last_name
+
+    # Save updated user data to JSON file
+    save_json_file('users.json', users)
 
     return redirect(url_for('dashboard'))
 
