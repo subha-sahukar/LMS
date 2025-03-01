@@ -11,7 +11,6 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
             color: #333;
         }
 
@@ -25,14 +24,22 @@
         }
 
         .dashboard-container {
-            background-color: #fff;
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ddd;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 800px;
-            margin-top: 20px;
-            text-align: center;
+            overflow-y: auto;
+        }
+
+        .content {
+            width: 75%;
+            padding: 20px;
+            overflow-y: auto;
         }
 
         h2 {
@@ -51,11 +58,30 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             cursor: pointer;
-            background-color: #f0f0f0;
+            background-color: #fff;
             transition: background-color 0.3s;
         }
 
         .subject-list li:hover {
+            background-color: #e0e0e0;
+        }
+
+        .topic-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-list li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .topic-list li:hover {
             background-color: #e0e0e0;
         }
 
@@ -80,16 +106,6 @@
             background-color: #004494;
         }
 
-        .footer {
-            width: 100%;
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-        }
-
         .back-button {
             background-color: #e0e0e0;
             color: #333;
@@ -112,39 +128,55 @@
         Welcome, {{ username }}
     </div>
     <div class="dashboard-container">
-        <h2>Your Subjects</h2>
-        <p>Select a subject to proceed:</p>
-        <ul class="subject-list">
-            {% for subject in subjects %}
-                <li onclick="showOptions('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
-            {% endfor %}
-        </ul>
-        <div class="option-buttons" id="option-buttons">
-            <button onclick="takeQuiz()">Take Quiz on Chapter</button>
-            <button onclick="reviseChapter()">Revise Chapter</button>
+        <div class="sidebar">
+            <h2>Your Subjects</h2>
+            <ul class="subject-list">
+                {% for subject in subjects %}
+                    <li onclick="showTopics('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
+                {% endfor %}
+            </ul>
         </div>
-        <button class="back-button" onclick="goBack()">Back to Home</button>
-    </div>
-    <div class="footer">
-        &copy; 2025 Your School
+        <div class="content">
+            <div id="topic-container">
+                <h2>Select a subject to see topics</h2>
+            </div>
+        </div>
     </div>
     <script>
-        function showOptions(grade, subject) {
-            document.getElementById('option-buttons').style.display = 'block';
-            sessionStorage.setItem('selectedGrade', grade);
-            sessionStorage.setItem('selectedSubject', subject);
+        function showTopics(grade, subject) {
+            fetch(`/get_topics/${grade}/${subject}`)
+                .then(response => response.json())
+                .then(data => {
+                    let topicsHtml = `
+                        <h2>${subject} Topics</h2>
+                        <ul class="topic-list">
+                    `;
+                    data.topics.forEach(topic => {
+                        topicsHtml += `<li onclick="showOptions('${grade}', '${subject}', '${topic}')">${topic}</li>`;
+                    });
+                    topicsHtml += `</ul>`;
+                    document.getElementById('topic-container').innerHTML = topicsHtml;
+                });
         }
 
-        function takeQuiz() {
-            const grade = sessionStorage.getItem('selectedGrade');
-            const subject = sessionStorage.getItem('selectedSubject');
-            window.location.href = `/quiz/${grade}/${subject}`;
+        function showOptions(grade, subject, topic) {
+            const optionButtonsHtml = `
+                <div class="option-buttons">
+                    <button onclick="takeQuiz('${grade}', '${subject}', '${topic}')">Take Quiz on ${topic}</button>
+                    <button onclick="reviseChapter('${grade}', '${subject}', '${topic}')">Revise ${topic}</button>
+                </div>
+                <button class="back-button" onclick="goBack()">Back to Home</button>
+            `;
+            document.getElementById('topic-container').innerHTML += optionButtonsHtml;
+            document.querySelector('.option-buttons').style.display = 'block';
         }
 
-        function reviseChapter() {
-            const grade = sessionStorage.getItem('selectedGrade');
-            const subject = sessionStorage.getItem('selectedSubject');
-            window.location.href = `/revise/${grade}/${subject}`;
+        function takeQuiz(grade, subject, topic) {
+            window.location.href = `/quiz/${grade}/${subject}/${topic}`;
+        }
+
+        function reviseChapter(grade, subject, topic) {
+            window.location.href = `/revise/${grade}/${subject}/${topic}`;
         }
 
         function goBack() {
