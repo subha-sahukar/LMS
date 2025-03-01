@@ -1,208 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter: {{ chapter }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
-        }
+{% extends "base.html" %}
 
-        .header {
-            width: 100%;
-            background-color: #0056b3;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 24px;
-            position: relative;
-        }
+{% block title %}Chapter: {{ chapter }}{% endblock %}
 
-        .chapter-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 800px;
-            margin-top: 20px;
-            text-align: center;
-        }
+{% block header %}Chapter: {{ chapter }}{% endblock %}
 
-        h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .tab {
-            flex: 1;
-            padding: 10px 20px;
-            cursor: pointer;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #f0f0f0;
-            transition: background-color 0.3s;
-            text-align: center;
-        }
-
-        .tab:hover {
-            background-color: #e0e0e0;
-        }
-
-        .tab.active {
-            background-color: #ddd;
-        }
-
-        .content {
-            margin-top: 20px;
-        }
-
-        .back-button {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #004494;
-        }
-
-        .subtopic-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .subtopic-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .subtopic-list li:hover {
-            background-color: #e0e0e0;
-        }
-
-        .history-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .history-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #fff;
-        }
-
-        .start-quiz-button {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .start-quiz-button:hover {
-            background-color: #004494;
-        }
-
-        .quiz-iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            margin-top: 20px;
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        Chapter: {{ chapter }}
-        <button class="back-button" onclick="goBack()">Back to Dashboard</button>
+{% block content %}
+<div class="chapter-container">
+    <h2>{{ chapter }}</h2>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('revise')">Revise Chapter</div>
+        <div class="tab" onclick="showTab('quiz')">Take Quiz</div>
+        <div class="tab" onclick="showTab('history')">Quiz History</div>
     </div>
-    <div class="chapter-container">
-        <h2>{{ chapter }}</h2>
-        <div class="tabs">
-            <div class="tab active" onclick="showTab('revise')">Revise Chapter</div>
-            <div class="tab" onclick="showTab('quiz')">Take Quiz</div>
-            <div class="tab" onclick="showTab('history')">Quiz History</div>
-        </div>
-        <div class="content" id="revise">
-            <h3>Revise {{ chapter }}</h3>
-            <ul class="subtopic-list">
-                {% for subtopic in subtopics %}
-                    <li onclick="reviseSubtopic('{{ grade }}', '{{ subject }}', '{{ chapter }}', '{{ subtopic }}')">{{ subtopic }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="content" id="quiz" style="display: none;">
-            <h3>Take Quiz on {{ chapter }}</h3>
-            <button class="start-quiz-button" onclick="startQuiz('{{ grade }}', '{{ subject }}', '{{ chapter }}')">Start Quiz</button>
-            <iframe id="quiz-iframe" class="quiz-iframe"></iframe>
-        </div>
-        <div class="content" id="history" style="display: none;">
-            <h3>Quiz History for {{ chapter }}</h3>
-            <ul class="history-list">
-                {% for entry in history %}
-                    <li>Date: {{ entry.date }}, Score: {{ entry.score }}/{{ entry.total_questions }}, Rating: {{ entry.rating }}, Time Taken: {{ entry.time_taken }}</li>
-                {% endfor %}
-            </ul>
-        </div>
+    <div class="content" id="revise">
+        <h3>Revise {{ chapter }}</h3>
+        <ul class="subtopic-list">
+            {% for subtopic in subtopics %}
+            <li onclick="reviseSubtopic('{{ grade }}', '{{ subject }}', '{{ chapter }}', '{{ subtopic }}')">{{ subtopic }}</li>
+            {% endfor %}
+        </ul>
     </div>
-    <script>
-        function showTab(tab) {
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
+    <div class="content" id="quiz" style="display: none;">
+        <h3>Take Quiz on {{ chapter }}</h3>
+        <button class="start-quiz-button" onclick="startQuiz('{{ grade }}', '{{ subject }}', '{{ chapter }}')">Start Quiz</button>
+        <iframe id="quiz-iframe" class="quiz-iframe"></iframe>
+    </div>
+    <div class="content" id="history" style="display: none;">
+        <h3>Quiz History for {{ chapter }}</h3>
+        <ul class="history-list">
+            {% for entry in history %}
+            <li>Date: {{ entry.date }}, Score: {{ entry.score }}/{{ entry.total_questions }}, Rating: {{ entry.rating }}, Time Taken: {{ entry.time_taken }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script>
+function showTab(tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
 
-            document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
-            document.getElementById(tab).style.display = 'block';
-        }
+    document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
+    document.getElementById(tab).style.display = 'block';
+}
 
-        function startQuiz(grade, subject, chapter) {
-            const iframe = document.getElementById('quiz-iframe');
-            iframe.src = `/quiz/${grade}/${subject}/${chapter}`;
-            iframe.style.display = 'block';
-        }
+function startQuiz(grade, subject, chapter) {
+    const iframe = document.getElementById('quiz-iframe');
+    iframe.src = `/quiz/${grade}/${subject}/${chapter}`;
+    iframe.style.display = 'block';
+}
 
-        function reviseSubtopic(grade, subject, chapter, subtopic) {
-            window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
-        }
+function reviseSubtopic(grade, subject, chapter, subtopic) {
+    window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
+}
 
-        function goBack() {
-            window.location.href = '/dashboard';
-        }
-    </script>
-</body>
-</html>
+function goBack() {
+    window.location.href = '/dashboard';
+}
+</script>
+{% endblock %}
