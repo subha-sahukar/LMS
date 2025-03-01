@@ -6,7 +6,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     color: #333;
 }
 
@@ -30,22 +29,22 @@ body {
     text-align: center;
 }
 
-.subject-list, .subtopic-list {
+.subject-list, .subtopic-list, .topic-list {
     list-style: none;
     padding: 0;
 }
 
-.subject-list li, .subtopic-list li {
+.subject-list li, .subtopic-list li, .topic-list li {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #fff;
     transition: background-color 0.3s;
 }
 
-.subject-list li:hover, .subtopic-list li:hover {
+.subject-list li:hover, .subtopic-list li:hover, .topic-list li:hover {
     background-color: #e0e0e0;
 }
 
