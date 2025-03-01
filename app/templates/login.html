@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" name="grade" required>
+            <label for="school">School:</label>
+            <input type="text" id="school" name="school" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
