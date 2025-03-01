@@ -1,99 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #333;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            text-align: center;
-        }
-
-        h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input[type="text"], input[type="password"], select {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        input[type="submit"] {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #004494;
-        }
-
-        .disclaimer {
-            margin-top: 20px;
-            font-size: 12px;
-            color: #666;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Login to Smart Scholar - Home Revision App</h2>
-        <form method="post" action="{{ url_for('login') }}">
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="{{ url_for('login') }}" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-            <br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <br>
             <label for="grade">Grade:</label>
-            <select id="grade" name="grade" required>
-                <option value="Grade 7">Grade 7</option>
-                <option value="Grade 5">Grade 5</option>
-        
-                
-            </select>
-            <br>
+            <input type="text" id="grade" name="grade" required>
             <label for="school">School:</label>
-            <input type="text" id="school" name="school" value="NPS East" required>
-            <br>
-            <input type="submit" value="Login">
+            <input type="text" id="school" name="school" required>
+            <button type="submit">Login</button>
         </form>
-        <div class="disclaimer">
-            This is an educational support non-commercial project and meant for personal use for closed group students. Though all care has been taken to ensure accuracy of content, the content creator cannot be blamed for any issues. Always refer to school material.Parental supervision is recommended. </div>
     </div>
 </body>
 </html>
