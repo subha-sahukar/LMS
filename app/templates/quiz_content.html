@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz: {{ chapter }}{% endblock %}
+
+{% block header %}Quiz: {{ chapter }}{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+    <h2>Question {{ current_question }} of {{ total_questions }}</h2>
+    <p>{{ question.question }}</p>
+    <form action="{{ url_for('next_question') }}" method="post">
+        {% for option in question.options %}
+        <label>
+            <input type="radio" name="answer" value="{{ option }}" required>
+            {{ option }}
+        </label><br>
+        {% endfor %}
+        <input type="hidden" name="grade" value="{{ grade }}">
+        <input type="hidden" name="subject" value="{{ subject }}">
+        <input type="hidden" name="chapter" value="{{ chapter }}">
+        <button type="submit">Next</button>
+    </form>
+</div>
+{% endblock %}
