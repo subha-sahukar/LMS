@@ -58,7 +58,18 @@ def get_topics(grade, subject):
 def chapter(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('home'))
-    return render_template('chapter.html', grade=grade, subject=subject, chapter=chapter)
+
+    subtopics = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys()
+    username = session['username']
+    history_file = f'history/{username}_history.json'
+    if os.path.exists(history_file):
+        with open(history_file, 'r') as f:
+            history = json.load(f)
+    else:
+        history = []
+    chapter_history = [entry for entry in history if entry['grade'] == grade and entry['subject'] == subject and entry['chapter'] == chapter]
+    
+    return render_template('chapter.html', grade=grade, subject=subject, chapter=chapter, subtopics=subtopics, history=chapter_history)
 
 @app.route('/quiz/<grade>/<subject>/<chapter>')
 def quiz(grade, subject, chapter):
@@ -196,8 +207,15 @@ def revise(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('home'))
 
-    subtopics = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys()
-    return render_template('revise.html', grade=grade, subject=subject, chapter=chapter, subtopics=subtopics)
+    content = get_revise_content(subject, chapter)
+    return render_template('revise.html', grade=grade, subject=subject, chapter=chapter, content=content)
+
+def get_revise_content(subject, chapter):
+    # This function should be updated to fetch the correct content based on subject and chapter.
+    # For now, we return a static summary for the example provided.
+    if subject == "Science" and chapter == "Animal Habitat":
+        return "Adaptations in living beings: The presence of specific body features and certain habits which enable a plant or an animal to live in a particular habitat is called adaptation."
+    return "Content not available."
 
 @app.route('/revise/<grade>/<subject>/<chapter>/<subtopic>')
 def revise_subtopic(grade, subject, chapter, subtopic):
