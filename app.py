@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import os
 import json
 import random
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.urandom(24)
 
 # Load user data from JSON file
 with open('users.json') as f:
@@ -40,10 +40,13 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-    username = session.get('username')
-    grade = session.get('grade')
-    school = session.get('school')
-    grade_subjects = subjects.get(grade, {})  # Get subjects for the specific grade
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
+    grade = session['grade']
+    school = session['school']
+    grade_subjects = subjects.get(grade, {})
     return render_template('dashboard.html', username=username, grade=grade, school=school, subjects=grade_subjects)
 
 @app.route('/get_topics/<grade>/<subject>')
@@ -53,7 +56,10 @@ def get_topics(grade, subject):
 
 @app.route('/quiz/<grade>/<subject>/<chapter>')
 def quiz(grade, subject, chapter):
-    username = session.get('username')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
     quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter.split()[-1]}.json'
     try:
         with open(quiz_file) as f:
@@ -62,7 +68,7 @@ def quiz(grade, subject, chapter):
         return f"Quiz file {quiz_file} not found", 404
 
     sample_size = min(len(questions), 10)
-    questions = random.sample(list(questions), sample_size)  # Ensure questions is a list
+    questions = random.sample(list(questions), sample_size)
     session['questions'] = questions
     session['current_question'] = 0
     session['score'] = 0
@@ -72,9 +78,12 @@ def quiz(grade, subject, chapter):
 
 @app.route('/next_question', methods=['POST'])
 def next_question():
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
     answer = request.form.get('answer')
-    current_question = session.get('current_question')
-    questions = session.get('questions')
+    current_question = session['current_question']
+    questions = session['questions']
 
     if isinstance(answer, list):
         correct_answers = set(questions[current_question]['answer'])
@@ -106,8 +115,11 @@ def next_question():
 
 @app.route('/quiz_question')
 def quiz_question():
-    current_question = session.get('current_question')
-    questions = session.get('questions')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    current_question = session['current_question']
+    questions = session['questions']
     grade = request.args.get('grade')
     subject = request.args.get('subject')
     chapter = request.args.get('chapter')
@@ -115,19 +127,22 @@ def quiz_question():
 
 @app.route('/quiz_result')
 def quiz_result():
-    username = session.get('username')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
     grade = request.args.get('grade')
     subject = request.args.get('subject')
     chapter = request.args.get('chapter')
-    score = session.get('score')
-    total_questions = len(session.get('questions'))
-    incorrect = session.get('incorrect')
+    score = session['score']
+    total_questions = len(session['questions'])
+    incorrect = session['incorrect']
     percentage = (score / total_questions) * 100
 
     # Calculate time taken
-    start_time = session.get('start_time')
+    start_time = session['start_time']
     end_time = datetime.utcnow()
-    time_taken = end_time.replace(tzinfo=None) - start_time.replace(tzinfo=None)
+    time_taken = end_time - start_time
     minutes, seconds = divmod(time_taken.total_seconds(), 60)
     time_taken_str = f"{int(minutes)} minutes and {int(seconds)} seconds"
 
@@ -171,17 +186,26 @@ def quiz_result():
 
 @app.route('/revise/<grade>/<subject>/<chapter>')
 def revise(grade, subject, chapter):
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
     subtopics = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys()
     return render_template('revise.html', grade=grade, subject=subject, chapter=chapter, subtopics=subtopics)
 
 @app.route('/revise/<grade>/<subject>/<chapter>/<subtopic>')
 def revise_subtopic(grade, subject, chapter, subtopic):
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
     content = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).get(subtopic, [])
     content_type = 'bullet_points' if isinstance(content, list) else 'flash_cards'
     return render_template('subtopic.html', grade=grade, subject=subject, chapter=chapter, subtopic=subtopic, content=content, content_type=content_type)
 
 @app.route('/abort_quiz', methods=['POST'])
 def abort_quiz():
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
     return redirect(url_for('dashboard'))
 
 @app.route('/failure')
@@ -194,7 +218,10 @@ def styles():
 
 @app.route('/history')
 def history():
-    username = session.get('username')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
     history_file = f'history/{username}_history.json'
     if os.path.exists(history_file):
         with open(history_file, 'r') as f:
@@ -205,13 +232,19 @@ def history():
 
 @app.route('/edit_profile')
 def edit_profile():
-    username = session.get('username')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
     user = users.get(username, {})
     return render_template('edit_profile.html', username=username, first_name=user.get('first_name', ''), last_name=user.get('last_name', ''), grade=session.get('grade'), school=session.get('school'))
 
 @app.route('/update_profile', methods=['POST'])
 def update_profile():
-    username = session.get('username')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     users[username]['first_name'] = first_name
@@ -225,7 +258,10 @@ def update_profile():
 
 @app.route('/reset_password')
 def reset_password():
-    username = session.get('username')
+    if 'username' not in session:
+        return redirect(url_for('home'))
+
+    username = session['username']
     return render_template('reset_password.html', username=username)
 
 @app.route('/logout')
