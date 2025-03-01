@@ -1,102 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Revise Chapter</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #333;
-        }
+{% extends "base.html" %}
 
-        .header {
-            width: 100%;
-            background-color: #0056b3;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 24px;
-        }
+{% block title %}Revise: {{ chapter }}{% endblock %}
 
-        .revise-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 800px;
-            margin-top: 20px;
-            text-align: center;
-        }
+{% block header %}Revise: {{ chapter }}{% endblock %}
 
-        h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        .subtopic-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .subtopic-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .subtopic-list li:hover {
-            background-color: #e0e0e0;
-        }
-
-        .back-button {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #004494;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        Revise Chapter: {{ subject }} - {{ chapter }}
-    </div>
-    <div class="revise-container">
-        <h2>Select a subtopic to revise:</h2>
-        <ul class="subtopic-list">
-            {% for subtopic in subtopics %}
-                <li onclick="reviseSubtopic('{{ grade }}', '{{ subject }}', '{{ chapter }}', '{{ subtopic }}')">{{ subtopic }}</li>
-            {% endfor %}
-        </ul>
-        <button class="back-button" onclick="goBack()">Back to Dashboard</button>
-    </div>
-    <script>
-        function reviseSubtopic(grade, subject, chapter, subtopic) {
-            window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
-        }
-
-        function goBack() {
-            window.location.href = '/dashboard';
-        }
-    </script>
-</body>
-</html>
+{% block content %}
+<div class="revise-container">
+    <h2>Revise {{ chapter }}</h2>
+    <p>{{ content }}</p>
+</div>
+{% endblock %}
