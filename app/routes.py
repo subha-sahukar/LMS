@@ -1,9 +1,9 @@
-from flask import render_template, request, redirect, url_for, session, jsonify
+from flask import render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import os
 import json
 import random
 from datetime import datetime, timedelta
-from app import app, db
+from app import app
 from app.models import User, History
 from app.utils import load_json_file, save_json_file, get_user_history, save_user_history
 
