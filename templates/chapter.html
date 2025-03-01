@@ -43,11 +43,12 @@
 
         .tabs {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-top: 20px;
         }
 
         .tab {
+            flex: 1;
             padding: 10px 20px;
             cursor: pointer;
             border: 1px solid #ddd;
@@ -141,7 +142,7 @@
         </div>
         <div class="content" id="quiz" style="display: none;">
             <h3>Take Quiz on {{ chapter }}</h3>
-            <button class="back-button" onclick="takeQuiz('{{ grade }}', '{{ subject }}', '{{ chapter }}')">Start Quiz</button>
+            <button class="start-quiz-button" onclick="takeQuiz('{{ grade }}', '{{ subject }}', '{{ chapter }}')">Start Quiz</button>
         </div>
         <div class="content" id="history" style="display: none;">
             <h3>Quiz History for {{ chapter }}</h3>
