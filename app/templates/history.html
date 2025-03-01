@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz History{% endblock %}
+
+{% block header %}Quiz History{% endblock %}
+
+{% block content %}
+<div class="history-container">
+    <h2>Quiz History</h2>
+    <ul class="history-list">
+        {% for entry in history %}
+        <li>Date: {{ entry.date }}, Score: {{ entry.score }}/{{ entry.total_questions }}, Rating: {{ entry.rating }}, Time Taken: {{ entry.time_taken }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
