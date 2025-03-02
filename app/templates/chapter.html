@@ -8,24 +8,33 @@
 <div class="chapter-container">
     <h2>{{ chapter }}</h2>
     <div class="tabs">
-        <div class="tab active" onclick="showTab('revise')">Revise Chapter</div>
-        <div class="tab" onclick="showTab('quiz')">Take Quiz</div>
-        <div class="tab" onclick="showTab('history')">Quiz History</div>
+        <button class="tab-button" onclick="openTab(event, 'toggleable')">Toggleable Tabs</button>
+        <button class="tab-button" onclick="openTab(event, 'revise')">Revise Chapter</button>
+        <button class="tab-button" onclick="openTab(event, 'quiz')">Quiz on Chapter</button>
+        <button class="tab-button" onclick="openTab(event, 'history')">Quiz History</button>
     </div>
-    <div class="content" id="revise">
+    <div id="toggleable" class="tab-content">
+        <h3>Toggleable Tabs</h3>
+        <p>Content for toggleable tabs...</p>
+    </div>
+    <div id="revise" class="tab-content" style="display: none;">
         <h3>Revise {{ chapter }}</h3>
-        <ul class="subtopic-list">
-            {% for subtopic in subtopics %}
-            <li onclick="reviseSubtopic('{{ grade }}', '{{ subject }}', '{{ chapter }}', '{{ subtopic }}')">{{ subtopic }}</li>
-            {% endfor %}
-        </ul>
+        <div class="summary">
+            <p>Summary of points from <a href="https://kitabcd.org/7th/the-living-world-adaptations-and-classifications/" target="_blank">kitabcd.org</a>:</p>
+            <ul>
+                <li>Adaptations in plants and animals</li>
+                <li>Classification of living organisms</li>
+                <li>Characteristics of different habitats</li>
+                <li>Importance of biodiversity</li>
+            </ul>
+        </div>
     </div>
-    <div class="content" id="quiz" style="display: none;">
-        <h3>Take Quiz on {{ chapter }}</h3>
+    <div id="quiz" class="tab-content" style="display: none;">
+        <h3>Quiz on {{ chapter }}</h3>
         <button class="start-quiz-button" onclick="startQuiz('{{ grade }}', '{{ subject }}', '{{ chapter }}')">Start Quiz</button>
         <iframe id="quiz-iframe" class="quiz-iframe"></iframe>
     </div>
-    <div class="content" id="history" style="display: none;">
+    <div id="history" class="tab-content" style="display: none;">
         <h3>Quiz History for {{ chapter }}</h3>
         <ul class="history-list">
             {% for entry in history %}
@@ -35,26 +44,24 @@
     </div>
 </div>
 <script>
-function showTab(tab) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-
-    document.querySelector(`.tab[onclick="showTab('${tab}')"]`).classList.add('active');
-    document.getElementById(tab).style.display = 'block';
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
 }
 
 function startQuiz(grade, subject, chapter) {
     const iframe = document.getElementById('quiz-iframe');
     iframe.src = `/quiz/${grade}/${subject}/${chapter}`;
     iframe.style.display = 'block';
-}
-
-function reviseSubtopic(grade, subject, chapter, subtopic) {
-    window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
-}
-
-function goBack() {
-    window.location.href = '/dashboard';
 }
 </script>
 {% endblock %}
