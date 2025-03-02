@@ -1,33 +1,101 @@
 {
   "Grade 5": {
     "Math": {
-      "Chapter 1: Percentage": ["Concept of Percentage", "Calculating Percentage", "Applications of Percentage"],
-      "Chapter 2: Ratio": ["Understanding Ratio", "Simplifying Ratios", "Real-life Applications of Ratios"],
-      "Chapter 3: Average": ["Definition of Average", "Calculating Average", "Use of Averages in Different Scenarios"]
+      "Chapter 1: Percentage": [
+        "Subtopic 1: Definition of Percentage",
+        "Subtopic 2: Calculating Percentages",
+        "Subtopic 3: Applications of Percentages"
+      ],
+      "Chapter 2: Ratio": [
+        "Subtopic 1: Definition of Ratio",
+        "Subtopic 2: Simplifying Ratios",
+        "Subtopic 3: Ratios in Real Life"
+      ],
+      "Chapter 3: Average": [
+        "Subtopic 1: Definition of Average",
+        "Subtopic 2: Calculating Averages",
+        "Subtopic 3: Applications of Averages"
+      ]
     },
     "Science": {
-      "Chapter 1: Animal Habitat": ["Types of Habitats", "Adaptations of Animals", "Conservation of Habitats"],
-      "Chapter 2: Plants": ["Parts of a Plant", "Photosynthesis Process", "Types of Plants"],
-      "Chapter 3: Skeletal System": ["Bones and Joints", "Functions of Skeletal System", "Common Bone Diseases"]
+      "Chapter 1: Animal Habitat": [
+        "Subtopic 1: Types of Habitats",
+        "Subtopic 2: Habitat Adaptations",
+        "Subtopic 3: Habitat Conservation"
+      ],
+      "Chapter 2: Plants": [
+        "Subtopic 1: Plant Structure",
+        "Subtopic 2: Photosynthesis",
+        "Subtopic 3: Plant Reproduction"
+      ],
+      "Chapter 3: Skeletal System": [
+        "Subtopic 1: Bones",
+        "Subtopic 2: Joints",
+        "Subtopic 3: Muscles"
+      ]
     }
   },
   "Grade 7": {
     "Math": {
-      "Chapter 1: Algebra": ["Basic Algebraic Operations", "Solving Equations", "Real-life Applications of Algebra"],
-      "Chapter 2: Ratios and Proportions": ["Understanding Ratios and Proportions", "Solving Ratio Problems", "Practical Applications of Ratios and Proportions"],
-      "Chapter 3: Profit Loss": ["Concept of Profit and Loss", "Calculating Profit and Loss", "Applications in Business"]
+      "Chapter 1: Algebra": [
+        "Subtopic 1: Variables and Expressions",
+        "Subtopic 2: Solving Equations",
+        "Subtopic 3: Algebraic Identities"
+      ],
+      "Chapter 2: Ratios and Proportions": [
+        "Subtopic 1: Definition of Ratios",
+        "Subtopic 2: Proportional Relationships",
+        "Subtopic 3: Solving Ratio Problems"
+      ],
+      "Chapter 3: Profit Loss": [
+        "Subtopic 1: Calculating Profit",
+        "Subtopic 2: Calculating Loss",
+        "Subtopic 3: Applications of Profit and Loss"
+      ]
     },
     "Biology": {
-      "Chapter 1: Allergy": ["Types of Allergies", "Causes of Allergies", "Treatment and Prevention"],
-      "Chapter 2: Excretory System": ["Organs of the Excretory System", "Functions of the Excretory System", "Common Disorders of the Excretory System"],
-      "Chapter 3: Nervous System": ["Structure of the Nervous System", "Functions of the Nervous System", "Diseases of the Nervous System"],
-      "Chapter 4: Respiratory System": ["Anatomy of the Respiratory System", "Breathing Process", "Respiratory Diseases"],
-      "Chapter 5: Photosynthesis": ["Process of Photosynthesis", "Importance of Photosynthesis", "Factors Affecting Photosynthesis"]
+      "Chapter 1: Allergy": [
+        "Subtopic 1: Definition of Allergy",
+        "Subtopic 2: Causes of Allergies",
+        "Subtopic 3: Allergy Treatments"
+      ],
+      "Chapter 2: Excretory System": [
+        "Subtopic 1: Organs of Excretion",
+        "Subtopic 2: Process of Excretion",
+        "Subtopic 3: Excretory System Disorders"
+      ],
+      "Chapter 3: Nervous System": [
+        "Subtopic 1: Structure of the Nervous System",
+        "Subtopic 2: Function of Neurons",
+        "Subtopic 3: Nervous System Disorders"
+      ],
+      "Chapter 4: Respiratory System": [
+        "Subtopic 1: Organs of the Respiratory System",
+        "Subtopic 2: Process of Respiration",
+        "Subtopic 3: Respiratory System Disorders"
+      ],
+      "Chapter 5: Photosynthesis": [
+        "Subtopic 1: Process of Photosynthesis",
+        "Subtopic 2: Factors Affecting Photosynthesis",
+        "Subtopic 3: Importance of Photosynthesis"
+      ]
     },
     "Physics": {
-      "Chapter 1: Heat": ["Concept of Heat", "Heat Transfer Methods", "Effects of Heat"],
-      "Chapter 2: Sound": ["Nature of Sound", "Sound Propagation", "Applications of Sound"],
-      "Chapter 3: Electricity and Magnetism": ["Basics of Electricity", "Magnetic Effects of Electric Current", "Applications of Electricity and Magnetism"]
+      "Chapter 1: Heat": [
+        "Subtopic 1: Definition of Heat",
+        "Subtopic 2: Transfer of Heat",
+        "Subtopic 3: Effects of Heat"
+      ],
+      "Chapter 2: Sound": [
+        "Subtopic 1: Nature of Sound",
+        "Subtopic 2: Propagation of Sound",
+        "Subtopic 3: Sound Measurement"
+      ],
+      "Chapter 3: Electricity and Magnetism": [
+        "Subtopic 1: Electric Charge",
+        "Subtopic 2: Electric Current",
+        "Subtopic 3: Magnetic Fields"
+      ]
     }
   }
 }
