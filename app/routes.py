@@ -1,4 +1,4 @@
-# Version 1.1 - Updated routes to support revised dashboard and chapter pages with tabs
+# Version 1.2 - Fixed 'list' object has no attribute 'keys' error in chapter route
 
 from flask import render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import os
@@ -54,7 +54,13 @@ def chapter(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('home'))
 
-    subtopics = list(subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).keys())
+    subtopics_data = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {})
+    
+    if isinstance(subtopics_data, dict):
+        subtopics = list(subtopics_data.keys())
+    else:
+        subtopics = subtopics_data
+
     username = session['username']
     chapter_history = get_user_history(username)
     return render_template('chapter.html', grade=grade, subject=subject, chapter=chapter, subtopics=subtopics, history=chapter_history)
