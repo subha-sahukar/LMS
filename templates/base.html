@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My App{% endblock %}</title>
+    <title>{% block title %}Smart Scholar -Home Revision% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 <body>
     <div class="header">
-        <h1>{% block header %}Welcome{% endblock %}</h1>
+        <h1>{% block header %}Welcome to Smart Scholar - Education Aid - Home Revision{% endblock %}</h1>
     </div>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
     <div class="footer">
-        <p>Footer content here</p>
+        <p>This is non commercial education aid for home revision for students and parents. While  we have taken all care to produce the right content, school material is always recommended for revisiosn.</p>
     </div>
 </body>
 </html>
