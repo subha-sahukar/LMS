@@ -1,3 +1,5 @@
+# Version 1.1 - Updated routes to support revised dashboard and chapter pages with tabs
+
 from flask import render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import os
 import json
@@ -22,6 +24,7 @@ def login():
     grade = request.form.get('grade')
     school = request.form.get('school')
 
+    # Authenticate user
     if username in users and users[username] == password:
         session['username'] = username
         session['grade'] = grade
@@ -253,4 +256,4 @@ def reset_password():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('
+    return redirect(url_for('home'))
