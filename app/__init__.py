@@ -8,11 +8,9 @@
 #from app import routes
 
 
+from app import create_app
 
-from flask import Flask
+app = create_app()
 
-# Initialize the Flask app
-app = Flask(__name__)
-
-# Import the routes defined in this app
-import app.routes
+if __name__ == '__main__':
+    app.run(debug=True)
