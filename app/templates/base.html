@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My App{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <title>{% block title %} Smart Scholar - your home revision mate {% endblock %}</title>
+<!--     <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 <body>
     <div class="header">
@@ -14,7 +16,7 @@
         {% block content %}{% endblock %}
     </div>
     <div class="footer">
-        <p>Footer content here</p>
+        <p>This is non commercial pilot application to provide education aid for home revision. While all care has been taken to ensure the content are based on school text books, school material reference is always recommended. </p>
     </div>
 </body>
 </html>
