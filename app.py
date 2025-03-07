@@ -239,7 +239,7 @@ def failure():
 
 @app.route('/styles.css')
 def styles():
-    return send_from_directory(os.path.dirname(__file__), 'styles.css')
+    return send_from_directory(app.static_folder, 'styles.css')
 
 @app.route('/history/<grade>/<subject>/<chapter>')
 def history(grade, subject, chapter):
