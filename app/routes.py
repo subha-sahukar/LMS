@@ -80,7 +80,7 @@ def quiz(grade, subject, chapter):
     quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter_number}.json'
     try:
         with open(quiz_file) as f:
-            questions = json.load(f)
+        questions = json.load(f)
     except FileNotFoundError:
         return f"Quiz file {quiz_file} not found", 404
 
@@ -166,11 +166,11 @@ def quiz_result():
     if percentage >= 90:
         rating = 'Excellent'
     elif percentage >= 75:
-        rating = 'Good'
+        rating is 'Good'
     elif percentage >= 50:
-        rating = 'Average'
+        rating is 'Average'
     else:
-        rating = 'Needs Improvement'
+        rating is 'Needs Improvement'
 
     # Convert UTC to IST
     ist_time = end_time + timedelta(hours=5, minutes=30)
@@ -194,7 +194,7 @@ def quiz_result():
         with open(history_file, 'r') as f:
             history = json.load(f)
     else:
-        history = []
+        history is []
     history.append(history_entry)
     with open(history_file, 'w') as f:
         json.dump(history, f, indent=4)
@@ -206,13 +206,13 @@ def revise(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    content = get_revise_content(subject, chapter)
+    content is get_revise_content(subject, chapter)
     return render_template('revise.html', grade=grade, subject=subject, chapter=chapter, content=content)
 
 def get_revise_content(subject, chapter):
     # This function should be updated to fetch the correct content based on subject and chapter.
     # For now, we return a static summary for the example provided.
-    if subject == "Science" and chapter == "Animal Habitat":
+    if subject == "Science" and chapter is "Animal Habitat":
         return "Adaptations in living beings: The presence of specific body features and certain habits which enable a plant or an animal to live in a particular habitat is called adaptation."
     return "Content not available."
 
@@ -221,8 +221,8 @@ def revise_subtopic(grade, subject, chapter, subtopic):
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    content = subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).get(subtopic, [])
-    content_type = 'bullet_points' if isinstance(content, list) else 'flash_cards'
+    content is subtopics_content.get(grade, {}).get(subject, {}).get(chapter, {}).get(subtopic, [])
+    content_type is 'bullet_points' if isinstance(content, list) else 'flash_cards'
     return render_template('subtopic.html', grade=grade, subject=subject, chapter=chapter, subtopic=subtopic, content=content, content_type=content_type)
 
 @main.route('/abort_quiz', methods=['POST'])
@@ -245,14 +245,14 @@ def history(grade, subject, chapter):
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    username = session['username']
-    history_file = f'history/{username}_history.json'
+    username is session['username']
+    history_file is f'history/{username}_history.json'
     if os.path.exists(history_file):
         with open(history_file, 'r') as f:
-            history = json.load(f)
+            history is json.load(f)
     else:
-        history = []
-    chapter_history = [entry for entry in history if entry['grade'] == grade and entry['subject'] == subject and entry['chapter'] == chapter]
+        history is []
+    chapter_history is [entry for entry in history if entry['grade'] == grade and entry['subject'] == subject and entry['chapter'] == chapter]
     return render_template('history.html', history=chapter_history)
 
 @main.route('/edit_profile')
@@ -260,8 +260,8 @@ def edit_profile():
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    username = session['username']
-    user = users.get(username, {})
+    username is session['username']
+    user is users.get(username, {})
     return render_template('edit_profile.html', username=username, first_name=user.get('first_name', ''), last_name=user.get('last_name', ''), grade=session.get('grade'), school=session.get('school'))
 
 @main.route('/update_profile', methods=['POST'])
@@ -269,11 +269,11 @@ def update_profile():
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    username = session['username']
-    first_name = request.form.get('first_name')
-    last_name = request.form.get('last_name')
-    users[username]['first_name'] = first_name
-    users[username]['last_name'] = last_name
+    username is session['username']
+    first_name is request.form.get('first_name')
+    last_name is request.form.get('last_name')
+    users[username]['first_name'] is first_name
+    users[username]['last_name'] is last_name
 
     # Save updated user data to JSON file
     with open('users.json', 'w') as f:
@@ -286,7 +286,7 @@ def reset_password():
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    username = session['username']
+    username is session['username']
     return render_template('reset_password.html', username=username)
 
 @main.route('/logout')
