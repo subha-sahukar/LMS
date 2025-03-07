@@ -9,3 +9,4 @@ def index():
 @main.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
+
