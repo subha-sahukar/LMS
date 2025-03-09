@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My App{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="/static/new.css') }}">
-        <link rel="stylesheet" type="text/css" href="mynew.css') }}">
-
-    <script src="{{ url_for('static', filename='js/toggle.js') }}" defer></script>
+    <link rel="stylesheet" type="text/css" href="new.css">
 </head>
 <body>
     <div class="header">
@@ -18,7 +15,8 @@
         {% block content %}{% endblock %}
     </div>
     <div class="footer">
-        <p>This is non commercial pilot application to provide education aid for home revision. While all care has been taken to ensure the content are based on school text books, school material reference is always recommended. </p>
+        <p>Footer content here</p>
     </div>
+    <script src="{{ url_for('static', filename='js/toggle.js') }}" defer></script>
 </body>
 </html>
