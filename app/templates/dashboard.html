@@ -1,144 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="mynew.css">
-
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
     <style>
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f8ff; /* powder blue background */
-    color: #000;
-}
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
 
-body.dark-mode {
-    background-color: #2e3b4e; /* darker shade for dark mode */
-    color: #fff;
-}
+        .dashboard-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
 
-.header {
-    background-color: #b0e0e6; /* lighter powder blue */
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
 
-.header.dark-mode {
-    background-color: #333; /* dark header for dark mode */
-}
+        .subject-list {
+            list-style: none;
+            padding: 0;
+        }
 
-.dashboard-container {
-    display: flex;
-}
+        .subject-list li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-.sidebar {
-    width: 250px;
-    background-color: #f5f5dc; /* beige background */
-    padding: 15px;
-    border-right: 1px solid #ccc;
-}
+        .subject-list li:hover {
+            background-color: #f0f0f0;
+        }
 
-.main-content {
-    flex: 1;
-    padding: 15px;
-}
+        .option-buttons {
+            display: none;
+            margin-top: 20px;
+        }
 
-.subject-item {
-    list-style: none;
-    margin-bottom: 10px;
-}
+        .option-buttons button {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
 
-.subject-item .collapsible {
-    background-color: #b0e0e6; /* lighter powder blue */
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    width: 100%;
-}
-
-.subject-item .collapsible.active, .subject-item .collapsible:hover {
-    background-color: #add8e6; /* even lighter powder blue */
-}
-
-.subject-item .content {
-    display: none;
-    overflow: hidden;
-    background-color: #f5f5dc; /* beige background */
-    padding-left: 15px;
-    margin-top: 5px;
-}
-
-.chapter-item {
-    list-style: none;
-    margin-bottom: 5px;
-}
-
-.chapter-item button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-    border: none;
-    background-color: #b0e0e6; /* lighter powder blue */
-    color: white;
-}
-
-.chapter-item button:hover {
-    background-color: #add8e6; /* even lighter powder blue */
-}
-
-.footer {
-    background-color: #b0e0e6; /* lighter powder blue */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer.dark-mode {
-    background-color: #333; /* dark footer for dark mode */
-}
-        
+        .option-buttons button:hover {
+            background-color: #004494;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Dashboard</h1>
-        <button id="theme-toggle">Toggle Theme</button>
-    </div>
-    <div class="content">
-        <h2>Welcome, {{ username }}!</h2>
-        <p>Grade: {{ grade }}</p>
-        <p>School: {{ school }}</p>
-        <h3>Subjects:</h3>
-        <ul>
-            {% for subject, chapters in subjects.items() %}
-                <li>
-                    <strong>{{ subject }}</strong>
-                    <ul>
-                        {% for chapter in chapters %}
-                            <li>
-                                <a href="{{ url_for('main.chapter', grade=grade, subject=subject, chapter=chapter) }}">{{ chapter }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
+    <div class="dashboard-container">
+        <h2>Welcome, {{ username }}</h2>
+        <p>Select a subject to proceed:</p>
+        <ul class="subject-list">
+            {% for subject in subjects %}
+                <li onclick="showOptions('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
             {% endfor %}
         </ul>
+        <div class="option-buttons" id="option-buttons">
+            <button onclick="takeQuiz()">Take Quiz on Chapter</button>
+            <button onclick="reviseChapter()">Revise Chapter</button>
+        </div>
     </div>
-    <div class="footer">
-        <p>Footer content here</p>
-    </div>
-    <script src="{{ url_for('static', filename='js/toggle.js') }}" defer></script>
+    <script>
+        function showOptions(grade, subject) {
+            document.getElementById('option-buttons').style.display = 'block';
+            sessionStorage.setItem('selectedGrade', grade);
+            sessionStorage.setItem('selectedSubject', subject);
+        }
+
+        function takeQuiz() {
+            const grade = sessionStorage.getItem('selectedGrade');
+            const subject = sessionStorage.getItem('selectedSubject');
+            window.location.href = `/quiz/${grade}/${subject}`;
+        }
+
+        function reviseChapter() {
+            const grade = sessionStorage.getItem('selectedGrade');
+            const subject = sessionStorage.getItem('selectedSubject');
+            window.location.href = `/revise/${grade}/${subject}`;
+        }
+    </script>
 </body>
 </html>
