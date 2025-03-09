@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Smart Scholar - Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('styles') }}">
+    <title>Smart Scholar Dashboard</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -10,19 +9,36 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
             color: #333;
         }
 
-        .dashboard-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 600px;
+        .header {
+            width: 100%;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
+            font-size: 24px;
+        }
+
+        .dashboard-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #f0f0f0;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .content {
+            width: 75%;
+            padding: 20px;
+            overflow-y: auto;
         }
 
         h2 {
@@ -41,64 +57,72 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             cursor: pointer;
+            background-color: #fff;
+            transition: background-color 0.3s;
         }
 
         .subject-list li:hover {
-            background-color: #f0f0f0;
+            background-color: #e0e0e0;
         }
 
-        .option-buttons {
-            display: none;
-            margin-top: 20px;
+        .topic-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .option-buttons button {
-            background-color: #0056b3;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
+        .topic-list li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            margin: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s;
         }
 
-        .option-buttons button:hover {
-            background-color: #004494;
+        .topic-list li:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        Welcome, {{ username }}
+    </div>
     <div class="dashboard-container">
-        <h2>Smart Scholar welcomes you, {{ username }}</h2>
-        <p>Select a subject to proceed:</p>
-        <ul class="subject-list">
-            {% for subject in subjects %}
-                <li onclick="showOptions('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
-            {% endfor %}
-        </ul>
-        <div class="option-buttons" id="option-buttons">
-            <button onclick="takeQuiz()">Take Quiz on Chapter</button>
-            <button onclick="reviseChapter()">Revise Chapter</button>
+        <div class="sidebar">
+            <h2>Your Subjects</h2>
+            <ul class="subject-list">
+                {% for subject in subjects %}
+                    <li onclick="showTopics('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="content">
+            <div id="topic-container">
+                <h2>Select a subject to see topics</h2>
+            </div>
         </div>
     </div>
     <script>
-        function showOptions(grade, subject) {
-            document.getElementById('option-buttons').style.display = 'block';
-            sessionStorage.setItem('selectedGrade', grade);
-            sessionStorage.setItem('selectedSubject', subject);
+        function showTopics(grade, subject) {
+            fetch(`/get_topics/${grade}/${subject}`)
+                .then(response => response.json())
+                .then(data => {
+                    let topicsHtml = `
+                        <h2>${subject} Topics</h2>
+                        <ul class="topic-list">
+                    `;
+                    data.topics.forEach(topic => {
+                        topicsHtml += `<li onclick="navigateToChapter('${grade}', '${subject}', '${topic}')">${topic}</li>`;
+                    });
+                    topicsHtml += `</ul>`;
+                    document.getElementById('topic-container').innerHTML = topicsHtml;
+                });
         }
 
-        function takeQuiz() {
-            const grade = sessionStorage.getItem('selectedGrade');
-            const subject = sessionStorage.getItem('selectedSubject');
-            window.location.href = `/quiz/${grade}/${subject}`;
-        }
-
-        function reviseChapter() {
-            const grade = sessionStorage.getItem('selectedGrade');
-            const subject = sessionStorage.getItem('selectedSubject');
-            window.location.href = `/revise/${grade}/${subject}`;
+        function navigateToChapter(grade, subject, topic) {
+            window.location.href = `/chapter/${grade}/${subject}/${topic}`;
         }
     </script>
 </body>
