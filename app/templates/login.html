@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Smart School - Home Education Aid </title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Login - Smart Scholar</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="login-container">
-        <h1> Student Login</h1>
-        <form method="POST" action="{{ url_for('main.login') }}">
+        <h2>Login to Smart Scholar</h2>
+        <form action="{{ url_for('main.login') }}" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <label for="grade">Grade:</label>
-            <select id="grade" name="grade" required>
-                <option value="Grade 7">Grade 7</option>
-                <option value="Grade 5">Grade 5</option>
-        
-            </select>
-
+            <input type="text" id="grade" name="grade" required>
             <label for="school">School:</label>
-            <input type="text" id="school" name="school" required value="EISB">
+            <input type="text" id="school" name="school" required>
             <button type="submit">Login</button>
         </form>
     </div>
