@@ -18,13 +18,13 @@ with open('subjects.json') as f:
 with open('subtopics.json') as f:
     subtopics_content = json.load(f)
 
-@main.route('/')
-def home():
-    return render_template('home.html')
-
 # @main.route('/')
 # def home():
-#    return render_template('login.html')
+#    return render_template('home.html')
+
+@main.route('/')
+def home():
+    return render_template('login.html')
 
 @main.route('/login', methods=['POST'])
 def login():
