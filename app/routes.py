@@ -6,8 +6,6 @@ from datetime import datetime, timedelta
 
 main = Blueprint('main', __name__)
 
-
-
 # Load user data from JSON file
 with open('users.json') as f:
     users = json.load(f)
@@ -19,10 +17,6 @@ with open('subjects.json') as f:
 # Load subtopics and their content from JSON file
 with open('subtopics.json') as f:
     subtopics_content = json.load(f)
-
-# @main.route('/')
-# def home():
-#    return render_template('home.html')
 
 @main.route('/')
 def home():
@@ -83,7 +77,7 @@ def quiz(grade, subject, chapter):
 
     username = session['username']
     chapter_number = chapter.split()[-1]
-    quiz_file = f'quizzes/{grade}/{subject}/Grade{grade[-1]}_{subject}_chapter{chapter_number}.json'
+    quiz_file = f'quizzes/{grade}/{subject}/Grade{grade.split()[-1]}_{subject}_chapter{chapter_number}.json'
     try:
         with open(quiz_file) as f:
             questions = json.load(f)
