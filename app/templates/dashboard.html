@@ -94,35 +94,40 @@
             <h2>Your Subjects</h2>
             <ul class="subject-list">
                 {% for subject in subjects %}
-                    <li onclick="showTopics('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
+                    <li onclick="showChapters('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
                 {% endfor %}
             </ul>
         </div>
         <div class="content">
-            <div id="topic-container">
-                <h2>Select a subject to see topics</h2>
+            <div id="chapter-container">
+                <h2>Select a subject to see chapters</h2>
             </div>
         </div>
     </div>
     <script>
-        function showTopics(grade, subject) {
+        function showChapters(grade, subject) {
             fetch(`/get_topics/${grade}/${subject}`)
                 .then(response => response.json())
                 .then(data => {
-                    let topicsHtml = `
-                        <h2>${subject} Topics</h2>
-                        <ul class="topic-list">
+                    let chaptersHtml = `
+                        <h2>${subject} Chapters</h2>
+                        <ul class="chapter-list">
                     `;
                     data.topics.forEach(topic => {
-                        topicsHtml += `<li onclick="navigateToChapter('${grade}', '${subject}', '${topic}')">${topic}</li>`;
+                        chaptersHtml += `
+                            <li>
+                                ${topic}
+                                <button onclick="startQuiz('${grade}', '${subject}', '${topic}')">Start Quiz</button>
+                            </li>
+                        `;
                     });
-                    topicsHtml += `</ul>`;
-                    document.getElementById('topic-container').innerHTML = topicsHtml;
+                    chaptersHtml += `</ul>`;
+                    document.getElementById('chapter-container').innerHTML = chaptersHtml;
                 });
         }
 
-        function navigateToChapter(grade, subject, topic) {
-            window.location.href = `/chapter/${grade}/${subject}/${topic}`;
+        function startQuiz(grade, subject, chapter) {
+            window.location.href = `/quiz/${grade}/${subject}/${chapter}`;
         }
     </script>
 </body>
