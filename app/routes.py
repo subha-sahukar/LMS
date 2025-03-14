@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 
 main = Blueprint('main', __name__)
 
+
+
 # Load user data from JSON file
 with open('users.json') as f:
     users = json.load(f)
