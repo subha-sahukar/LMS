@@ -151,6 +151,7 @@
                             <li>
                                 ${topic}
                                 <button onclick="startQuiz('${grade}', '${subject}', '${topic}')">Start Quiz</button>
+                                <button onclick="reviseChapter('${grade}', '${subject}', '${topic}')">Revise</button>
                             </li>
                         `;
                     });
@@ -161,6 +162,10 @@
 
         function startQuiz(grade, subject, chapter) {
             window.location.href = `/quiz/${grade}/${subject}/${chapter}`;
+        }
+
+        function reviseChapter(grade, subject, chapter) {
+            window.location.href = `/revise/${grade}/${subject}/${chapter}`;
         }
     </script>
 </body>
