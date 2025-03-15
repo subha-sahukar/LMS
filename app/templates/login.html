@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Login - Smart Scholar</title>
- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
- <style>
+    <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: #f7f7f7;
@@ -13,76 +12,57 @@
             flex-direction: column;
             color: #333;
         }
-
-        .header {
+        
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+        
+        .login-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container select {
             width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .login-container button {
+            width: 100%;
+            padding: 10px;
             background-color: #0056b3;
             color: #fff;
-            padding: 20px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-container button:hover {
+            background-color: #004494;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
             text-align: center;
-            font-size: 24px;
-        }
-
-        .dashboard-container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 25%;
-            background-color: #f0f0f0;
-            border-right: 1px solid #ddd;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .content {
-            width: 75%;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        .subject-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .subject-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .subject-list li:hover {
-            background-color: #e0e0e0;
-        }
-
-        .topic-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .topic-list li {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
-            transition: background-color 0.3s;
-        }
-
-        .topic-list li:hover {
-            background-color: #e0e0e0;
         }
     </style>
 </head>
@@ -97,15 +77,18 @@
             <label for="grade">Grade:</label>
             <select id="grade" name="grade" required>
                 <option value="" disabled selected>Select your grade</option>
-                <option value="Grade 5">Grade 5</option>
-                <option value="Grade 7" selected>Grade 7</option>
-                <option value="Grade 9" disabled>Grade 9</option>
-                <option value="Grade 10" disabled>Grade 10</option>
+                <option value="Grade 7">Grade 7</option>
+                <option value="Grade 8">Grade 8</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
             </select>
             <label for="school">School:</label>
-            <input type="text" id="school" name="school" required value="NPS East">
+            <input type="text" id="school" name="school" required>
             <button type="submit">Login</button>
         </form>
+        <div class="disclaimer">
+           While all care has been taken to provide the right content. please use your school textbook for official study material always. This is a home hobby project for free educational aid project.
+        </div>
     </div>
 </body>
 </html>
