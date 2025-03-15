@@ -51,7 +51,41 @@
         .quiz-container .question {
             margin: 20px 0;
         }
+
+        .timer {
+            font-size: 18px;
+            color: #d9534f;
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        // Timer function
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    alert("Time is up!");
+                    document.getElementById("quizForm").submit();
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let timeLimit = {{ time_limit }} * 60;
+            let display = document.querySelector('.timer');
+            startTimer(timeLimit, display);
+        };
+    </script>
 </head>
 <body>
     <div class="quiz-container">
@@ -59,7 +93,7 @@
         <p>Question {{ current_question }} of {{ total_questions }}</p>
         <div class="question">
             <p>{{ question.question }}</p>
-            <form action="{{ url_for('main.next_question') }}" method="POST">
+            <form id="quizForm" action="{{ url_for('main.next_question') }}" method="POST">
                 {% if question.type == 'multiple_choice' %}
                     {% for option in question.options %}
                         <label>
@@ -81,6 +115,7 @@
                 <button type="submit">Next</button>
             </form>
         </div>
+        <div class="timer">05:00</div>
     </div>
 </body>
 </html>
