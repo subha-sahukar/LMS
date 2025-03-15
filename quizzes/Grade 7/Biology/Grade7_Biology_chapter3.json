@@ -8,7 +8,7 @@
     {
         "id": "q12",
         "question": "Which of the following is the main control center of the nervous system?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Heart",
             "Liver",
@@ -26,7 +26,7 @@
     {
         "id": "q14",
         "question": "Which part of the brain controls balance and coordination?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Cerebrum",
             "Cerebellum",
@@ -44,7 +44,7 @@
     {
         "id": "q16",
         "question": "Which of the following controls involuntary actions like heartbeat and breathing?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Cerebrum",
             "Cerebellum",
@@ -68,7 +68,7 @@
     {
         "id": "q19",
         "question": "Which part of the nervous system controls reflex actions?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Cerebrum",
             "Cerebellum",
@@ -86,7 +86,7 @@
     {
         "id": "q21",
         "question": "Which type of neuron carries messages from the sense organs to the brain?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Sensory neuron",
             "Motor neuron",
@@ -104,7 +104,7 @@
     {
         "id": "q23",
         "question": "Which part of the brain is responsible for thinking and memory?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Cerebrum",
             "Cerebellum",
@@ -116,7 +116,7 @@
     {
         "id": "q24",
         "question": "Reflex actions are __________.",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Voluntary actions",
             "Involuntary actions",
@@ -134,7 +134,7 @@
     {
         "id": "q26",
         "question": "Which of the following protects the spinal cord?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Skull",
             "Rib cage",
@@ -152,7 +152,7 @@
     {
         "id": "q28",
         "question": "Which system works closely with the nervous system to maintain body functions?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Digestive system",
             "Circulatory system",
@@ -170,7 +170,7 @@
     {
         "id": "q30",
         "question": "Which of the following connects the brain to the rest of the body?",
-        "type": "mcq",
+        "type": "multiple_choice"
         "options": [
             "Cerebrum",
             "Cerebellum",
