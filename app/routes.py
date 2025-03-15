@@ -1,3 +1,4 @@
+import re
 from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import os
 import json
@@ -76,7 +77,14 @@ def quiz(grade, subject, chapter):
         return redirect(url_for('main.home'))
 
     username = session['username']
-    chapter_number = chapter.split()[-1]
+    
+    # Extract the chapter number using regex
+    chapter_number_match = re.search(r'\d+', chapter)
+    if chapter_number_match:
+        chapter_number = chapter_number_match.group()  # Get the first match
+    else:
+        return "Invalid chapter format", 400
+
     quiz_file = f'quizzes/{grade}/{subject}/Grade{grade.split()[-1]}_{subject}_chapter{chapter_number}.json'
     try:
         with open(quiz_file) as f:
