@@ -1,12 +1,151 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Revise - {{ subject }} - {{ grade }} - {{ chapter }}</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .dashboard-container {
+            display: flex;
+            flex-direction: row;
+            margin: 20px;
+        }
+        
+        .sidebar {
+            width: 200px;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .content {
+            flex-grow: 1;
+            background-color: #fff;
+            padding: 20px;
+            margin-left: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .chapter-list, .subtopic-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .chapter-list li, .subtopic-list li {
+            background-color: #e7e7e7;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list li:hover, .subtopic-list li:hover {
+            background-color: #d0d0d0;
+        }
+        
+        .history-link, .logout-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .history-link:hover, .logout-link:hover {
+            background-color: #004494;
+        }
+        
+        .study-tips {
+            margin-top: 20px;
+            background-color: #e7f4ff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .study-tips h3 {
+            margin-top: 0;
+            color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Welcome, {{ username }}
+    </div>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>{{ subject }}</h2>
+            <ul class="chapter-list">
+                {% for chapter in chapters %}
+                    <li onclick="showSubtopics('{{ grade }}', '{{ subject }}', '{{ chapter }}')">{{ chapter }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('main.history', username=username) }}" class="history-link">View Quiz History</a>
+            <a href="{{ url_for('main.logout') }}" class="logout-link">Logout</a>
+        </div>
+        <div class="content">
+            <div id="subtopic-container">
+                <h2>Select a chapter to see subtopics</h2>
+            </div>
+            <div class="study-tips">
+                <h3>Study Tips from Dr. Huberman Labs</h3>
+                <ul>
+                    <li>Take regular breaks to rest your brain and improve focus.</li>
+                    <li>Stay hydrated and eat a balanced diet to keep your brain functioning optimally.</li>
+                    <li>Practice active recall and spaced repetition to enhance memory retention.</li>
+                    <li>Ensure you get enough sleep to consolidate learning and refresh your mind.</li>
+                    <li>Engage in physical exercise to boost cognitive function and reduce stress.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSubtopics(grade, subject, chapter) {
+            fetch(`/get_subtopics/${grade}/${subject}/${chapter}`)
+                .then(response => response.json())
+                .then(data => {
+                    let subtopicsHtml = `
+                        <h2>${chapter} Subtopics</h2>
+                        <ul class="subtopic-list">
+                    `;
+                    data.subtopics.forEach(subtopic => {
+                        subtopicsHtml += `
+                            <li onclick="reviseSubtopic('${grade}', '${subject}', '${chapter}', '${subtopic}')">
+                                ${subtopic}
+                            </li>
+                        `;
+                    });
+                    subtopicsHtml += `</ul>`;
+                    document.getElementById('subtopic-container').innerHTML = subtopicsHtml;
+                });
+        }
 
-{% block title %}Revise: {{ chapter }}{% endblock %}
-
-{% block header %}Revise: {{ chapter }}{% endblock %}
-
-{% block content %}
-<div class="revise-container">
-    <h2>Revise {{ chapter }}</h2>
-    <p>{{ content }}</p>
-</div>
-{% endblock %}
+        function reviseSubtopic(grade, subject, chapter, subtopic) {
+            window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
+        }
+    </script>
+</body>
+</html>
