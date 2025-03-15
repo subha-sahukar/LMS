@@ -2,175 +2,175 @@
     {
         "id": "q1",
         "question": "What is the primary function of the respiratory system?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["To pump blood", "To digest food", "To exchange gases like oxygen and carbon dioxide"],
         "answer": "To exchange gases like oxygen and carbon dioxide"
     },
     {
         "id": "q2",
         "question": "Which of the following is the main organ involved in the process of breathing?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Heart", "Lungs", "Stomach"],
         "answer": "Lungs"
     },
     {
         "id": "q3",
         "question": "What is the name of the process by which the body takes in oxygen and expels carbon dioxide?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Photosynthesis", "Respiration", "Digestion"],
         "answer": "Respiration"
     },
     {
         "id": "q4",
         "question": "Where does gas exchange occur in the lungs?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["In the alveoli", "In the trachea", "In the bronchi"],
         "answer": "In the alveoli"
     },
     {
         "id": "q5",
         "question": "Which of the following structures prevents food from entering the trachea?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Esophagus", "Larynx", "Epiglottis"],
         "answer": "Epiglottis"
     },
     {
         "id": "q6",
         "question": "What happens during inhalation?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["The diaphragm moves upward", "The diaphragm moves downward", "The lungs contract"],
         "answer": "The diaphragm moves downward"
     },
     {
         "id": "q7",
         "question": "Which of these is responsible for carrying oxygen from the lungs to the heart?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Veins", "Arteries", "Capillaries"],
         "answer": "Arteries"
     },
     {
         "id": "q8",
         "question": "Which part of the respiratory system filters the air we breathe?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Nose", "Lungs", "Alveoli"],
         "answer": "Nose"
     },
     {
         "id": "q9",
         "question": "Which gas is primarily exhaled from the body?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Oxygen", "Carbon Dioxide", "Nitrogen"],
         "answer": "Carbon Dioxide"
     },
     {
         "id": "q10",
         "question": "What is the role of the diaphragm in the breathing process?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["To filter air", "To expand and contract the lungs", "To control the flow of oxygen into the body"],
         "answer": "To expand and contract the lungs"
     },
     {
         "id": "q11",
         "question": "What is the name of the windpipe that carries air to the lungs?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Trachea", "Bronchi", "Larynx"],
         "answer": "Trachea"
     },
     {
         "id": "q12",
         "question": "What is the term for the process of breathing in air?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Exhalation", "Inhalation", "Ventilation"],
         "answer": "Inhalation"
     },
     {
         "id": "q13",
         "question": "What happens to the diaphragm when you inhale?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["It moves up", "It moves down", "It stays the same"],
         "answer": "It moves down"
     },
     {
         "id": "q14",
         "question": "What is the function of the epiglottis?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["To prevent food from entering the lungs", "To filter air", "To produce sound"],
         "answer": "To prevent food from entering the lungs"
     },
     {
         "id": "q15",
         "question": "Where does the oxygen go after it enters the alveoli?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["It is carried to the heart", "It enters the bloodstream", "It is stored in the lungs"],
         "answer": "It enters the bloodstream"
     },
     {
         "id": "q16",
         "question": "Which of the following is true about the bronchi?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["They are the tiny air sacs in the lungs", "They are the tubes that lead from the trachea to the lungs", "They are the muscles that help the lungs expand"],
         "answer": "They are the tubes that lead from the trachea to the lungs"
     },
     {
         "id": "q17",
         "question": "What is the name of the flap that closes over the trachea during swallowing?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Bronchi", "Epiglottis", "Larynx"],
         "answer": "Epiglottis"
     },
     {
         "id": "q18",
         "question": "What gas is exhaled from the lungs?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Oxygen", "Carbon dioxide", "Nitrogen"],
         "answer": "Carbon dioxide"
     },
     {
         "id": "q19",
         "question": "What is the name of the muscle that helps with breathing by contracting and relaxing?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Diaphragm", "Lungs", "Heart"],
         "answer": "Diaphragm"
     },
     {
         "id": "q20",
         "question": "Which of the following is a part of the upper respiratory tract?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Bronchi", "Lungs", "Nose"],
         "answer": "Nose"
     },
     {
         "id": "q21",
         "question": "The exchange of gases in the lungs happens between which two structures?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Bronchi and alveoli", "Alveoli and capillaries", "Larynx and trachea"],
         "answer": "Alveoli and capillaries"
     },
     {
         "id": "q22",
         "question": "What part of the respiratory system is responsible for producing sound?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Lungs", "Larynx", "Trachea"],
         "answer": "Larynx"
     },
     {
         "id": "q23",
         "question": "What is the primary component of the air that we inhale?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["Carbon dioxide", "Oxygen", "Nitrogen"],
         "answer": "Nitrogen"
     },
     {
         "id": "q24",
         "question": "How do the lungs help in regulating the body's temperature?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["By absorbing heat from the air", "By exhaling warm air", "By cooling down the oxygen"],
         "answer": "By exhaling warm air"
     },
     {
         "id": "q25",
         "question": "What happens when the respiratory system is infected or damaged?",
-       "type": "multiple_choice"
+       "type": "multiple_choice",
         "options": ["The lungs become more efficient", "Breathing becomes difficult", "The body starts producing more oxygen"],
         "answer": "Breathing becomes difficult"
     }
