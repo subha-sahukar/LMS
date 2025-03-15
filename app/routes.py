@@ -1,9 +1,8 @@
-import re
 from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify, send_from_directory
 import os
 import json
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 main = Blueprint('main', __name__)
 
@@ -98,8 +97,8 @@ def quiz(grade, subject, chapter):
     session['current_question'] = 0
     session['score'] = 0
     session['incorrect'] = []
-    session['start_time'] = datetime.utcnow()
-    return render_template('quiz_content.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=10)
+    session['start_time'] = datetime.utcnow().replace(tzinfo=timezone.utc)  # Make start_time offset-aware
+    return render_template('quiz_content.html', grade=grade, subject=subject, chapter=chapter, question=questions[0], total_questions=len(questions), current_question=1, username=username, time_limit=5)
 
 @main.route('/next_question', methods=['POST'])
 def next_question():
@@ -148,7 +147,7 @@ def quiz_question():
     grade = request.args.get('grade')
     subject = request.args.get('subject')
     chapter = request.args.get('chapter')
-    return render_template('quiz_content.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=10)
+    return render_template('quiz_content.html', question=questions[current_question], total_questions=len(questions), current_question=current_question + 1, grade=grade, subject=subject, chapter=chapter, time_limit=5)
 
 @main.route('/quiz_result')
 def quiz_result():
@@ -166,7 +165,7 @@ def quiz_result():
 
     # Calculate time taken
     start_time = session['start_time']
-    end_time = datetime.utcnow()
+    end_time = datetime.utcnow().replace(tzinfo=timezone.utc)  # Make end_time offset-aware
     time_taken = end_time - start_time
     minutes, seconds = divmod(time_taken.total_seconds(), 60)
     time_taken_str = f"{int(minutes)} minutes and {int(seconds)} seconds"
@@ -181,7 +180,7 @@ def quiz_result():
         rating = 'Needs Improvement'
 
     # Convert UTC to IST
-    ist_time = end_time + timedelta(hours=5, minutes=30)
+    ist_time = end_time.astimezone(timezone(timedelta(hours=5, minutes=30)))
     history_entry = {
         "username": username,
         "grade": grade,
@@ -191,7 +190,8 @@ def quiz_result():
         "total_questions": total_questions,
         "rating": rating,
         "date": ist_time.strftime("%Y-%m-%d %H:%M:%S"),
-        "time_taken": time_taken_str
+        "time_taken": time_taken_str,
+        "incorrect_answers": incorrect
     }
 
     # Save history locally (example implementation, adjust as necessary)
@@ -248,20 +248,18 @@ def failure():
 def styles():
     return send_from_directory(main.static_folder, 'styles.css')
 
-@main.route('/history/<grade>/<subject>/<chapter>')
-def history(grade, subject, chapter):
+@main.route('/history/<username>')
+def history(username):
     if 'username' not in session:
         return redirect(url_for('main.home'))
 
-    username = session['username']
     history_file = f'history/{username}_history.json'
     if os.path.exists(history_file):
         with open(history_file, 'r') as f:
             history = json.load(f)
     else:
         history = []
-    chapter_history = [entry for entry in history if entry['grade'] == grade and entry['subject'] == subject and entry['chapter'] == chapter]
-    return render_template('history.html', history=chapter_history)
+    return render_template('history.html', history=history, username=username)
 
 @main.route('/edit_profile')
 def edit_profile():
