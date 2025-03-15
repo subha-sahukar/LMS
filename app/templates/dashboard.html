@@ -76,7 +76,7 @@
             background-color: #004494;
         }
         
-        .history-link {
+        .history-link, .logout-link {
             display: block;
             text-align: center;
             margin-top: 20px;
@@ -88,8 +88,21 @@
             transition: background-color 0.3s;
         }
         
-        .history-link:hover {
+        .history-link:hover, .logout-link:hover {
             background-color: #004494;
+        }
+        
+        .study-tips {
+            margin-top: 20px;
+            background-color: #e7f4ff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .study-tips h3 {
+            margin-top: 0;
+            color: #004494;
         }
     </style>
 </head>
@@ -106,10 +119,21 @@
                 {% endfor %}
             </ul>
             <a href="{{ url_for('main.history', username=username) }}" class="history-link">View Quiz History</a>
+            <a href="{{ url_for('main.logout') }}" class="logout-link">Logout</a>
         </div>
         <div class="content">
             <div id="chapter-container">
                 <h2>Select a subject to see chapters</h2>
+            </div>
+            <div class="study-tips">
+                <h3>Study Tips from Dr. Huberman Labs</h3>
+                <ul>
+                    <li>Take regular breaks to rest your brain and improve focus.</li>
+                    <li>Stay hydrated and eat a balanced diet to keep your brain functioning optimally.</li>
+                    <li>Practice active recall and spaced repetition to enhance memory retention.</li>
+                    <li>Ensure you get enough sleep to consolidate learning and refresh your mind.</li>
+                    <li>Engage in physical exercise to boost cognitive function and reduce stress.</li>
+                </ul>
             </div>
         </div>
     </div>
