@@ -71,9 +71,9 @@
         <h2>Login to Smart Scholar</h2>
         <form action="{{ url_for('main.login') }}" method="POST">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" required width=100>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required width=100>
             <label for="grade">Grade:</label>
             <select id="grade" name="grade" required>
                 <option value="" disabled selected>Select your grade</option>
@@ -87,7 +87,7 @@
             <button type="submit">Login</button>
         </form>
         <div class="disclaimer">
-           While all care has been taken to provide the right content. please use your school textbook for official study material always. This is a home hobby project for free educational aid project.
+           While all care has been taken to provide the right content. please use your school textbook always as source of truth. This is only home hobby project for providing free educational aid for home revision.
         </div>
     </div>
 </body>
