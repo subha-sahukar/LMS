@@ -89,6 +89,30 @@
             margin-top: 0;
             color: #004494;
         }
+
+        .flashcard {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.05);
+        }
+
+        .flashcard .question {
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        .flashcard .answer {
+            display: none;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -107,8 +131,14 @@
             <a href="{{ url_for('main.logout') }}" class="logout-link">Logout</a>
         </div>
         <div class="content">
-            <div id="subtopic-container">
-                <h2>Select a chapter to see subtopics</h2>
+            <div id="flashcard-container">
+                <h2>Flashcards for {{ chapter }}</h2>
+                {% for flashcard in content %}
+                    <div class="flashcard" onclick="toggleAnswer(this)">
+                        <div class="question">{{ flashcard.question }}</div>
+                        <div class="answer">{{ flashcard.answer }}</div>
+                    </div>
+                {% endfor %}
             </div>
             <div class="study-tips">
                 <h3>Study Tips from Dr. Huberman Labs</h3>
@@ -145,6 +175,11 @@
 
         function reviseSubtopic(grade, subject, chapter, subtopic) {
             window.location.href = `/revise/${grade}/${subject}/${chapter}/${subtopic}`;
+        }
+
+        function toggleAnswer(flashcard) {
+            let answer = flashcard.querySelector('.answer');
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 </body>
