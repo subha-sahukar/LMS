@@ -1,16 +1,101 @@
-{% extends "base.html" %}
-
-{% block title %}Quiz History{% endblock %}
-
-{% block header %}Quiz History{% endblock %}
-
-{% block content %}
-<div class="history-container">
-    <h2>Quiz History</h2>
-    <ul class="history-list">
-        {% for entry in history %}
-        <li>Date: {{ entry.date }}, Score: {{ entry.score }}/{{ entry.total_questions }}, Rating: {{ entry.rating }}, Time Taken: {{ entry.time_taken }}</li>
-        {% endfor %}
-    </ul>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz History - {{ username }}</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+        
+        .header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .history-container {
+            margin: 20px auto;
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .history-title {
+            margin-bottom: 20px;
+            color: #0056b3;
+            text-align: center;
+        }
+        
+        .history-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .history-list li {
+            background-color: #e7e7e7;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-link:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Quiz History - {{ username }}
+    </div>
+    <div class="history-container">
+        <h2 class="history-title">Quiz History</h2>
+        <ul class="history-list">
+            {% for entry in history %}
+                <li>
+                    <p><strong>Quiz Date:</strong> {{ entry.date }}</p>
+                    <p><strong>Grade:</strong> {{ entry.grade }}</p>
+                    <p><strong>Subject:</strong> {{ entry.subject }}</p>
+                    <p><strong>Chapter:</strong> {{ entry.chapter }}</p>
+                    <p><strong>Score:</strong> {{ entry.score }} / {{ entry.total_questions }}</p>
+                    <p><strong>Rating:</strong> {{ entry.rating }}</p>
+                    <p><strong>Time Taken:</strong> {{ entry.time_taken }}</p>
+                    <div class="incorrect-answers">
+                        <h3>Incorrect Answers:</h3>
+                        <ul>
+                            {% for incorrect in entry.incorrect_answers %}
+                                <li>
+                                    <p><strong>Question:</strong> {{ incorrect.question }}</p>
+                                    <p><strong>Your Answer:</strong> {{ incorrect.given_answer }}</p>
+                                    <p><strong>Correct Answer:</strong> {{ incorrect.correct_answer }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('main.dashboard') }}" class="back-link">Back to Dashboard</a>
+    </div>
+</body>
+</html>
