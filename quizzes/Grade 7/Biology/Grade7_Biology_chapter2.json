@@ -2,7 +2,7 @@
     {
         "id": "q11",
         "question": "Which of the following is the main excretory organ in the human body?",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Heart",
             "Lungs",
@@ -20,7 +20,7 @@
     {
         "id": "q13",
         "question": "Which waste product is removed by the lungs during excretion?",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Carbon dioxide",
             "Urea",
@@ -38,7 +38,7 @@
     {
         "id": "q15",
         "question": "Urine is stored in which organ before it is excreted from the body?",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Liver",
             "Bladder",
@@ -50,7 +50,7 @@
     {
         "id": "q16",
         "question": "Which of the following is NOT a function of the kidneys?",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Filtering blood",
             "Producing urine",
@@ -68,7 +68,7 @@
     {
         "id": "q18",
         "question": "Which organ converts toxic ammonia into urea?",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Kidneys",
             "Liver",
@@ -86,7 +86,7 @@
     {
         "id": "q20",
         "question": "Which of the following organs is involved in the excretion of sweat?",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Skin",
             "Liver",
@@ -94,18 +94,17 @@
             "Pancreas"
         ],
         "answer": "Skin"
-    }
-    ,
+    },
     {
-        "id": "q20",
+        "id": "q21",
         "question": "Each Kidney is made up of about a million tiny filtering units called __________.",
         "type": "fill_in_the_blank",
         "answer": "nephrons"
     },
     {
-        "id": "q21",
+        "id": "q22",
         "question": "The structures present in the kidney which acts as filter are  __________.",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Alveoli",
             "Nephrons",
@@ -115,9 +114,9 @@
         "answer": "Nephrons"
     },
     {
-        "id": "q22",
+        "id": "q23",
         "question": "Urethera acts as an outlet passage for",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "sweat",
             "urine",
@@ -127,9 +126,9 @@
         "answer": "urine"
     },
     {
-        "id": "q23",
+        "id": "q24",
         "question": "Kidney are connected to the urinary bladder by long tubes called",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Urine",
             "Ureters",
@@ -139,9 +138,9 @@
         "answer": "Ureters"
     },
     {
-        "id": "q24",
+        "id": "q25",
         "question": "Urinary bladder opens into another tube called the _____; Urine is expelled to outside through _______",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Urine",
             "Ureters",
@@ -149,24 +148,23 @@
             "Urethra"
         ],
         "answer": "Urethra"
-    }
-    ,
+    },
     {
-        "id": "q25",
+        "id": "q26",
         "question": "Different substances which are excreted from our body, except ______",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Extra food",
             "Extra salts",
             "Extra vitamins",
-            "Uric acid Urea "
+            "Uric acid Urea"
         ],
         "answer": "Extra food"
     },
     {
-        "id": "q26",
-        "question": "Below Disorder of urinary tract are correct , except ______",
-        "type": "mcq",
+        "id": "q27",
+        "question": "Below Disorder of urinary tract are correct, except ______",
+"type": "multiple_choice",
         "options": [
             "UTI",
             "Kidney Stones",
@@ -174,12 +172,11 @@
             "Uric acid infections"
         ],
         "answer": "Uric acid infections"
-    }
-    ,
+    },
     {
-        "id": "q27",
-        "question": "Below crystal forming substancs are source of kidney stones , except ______",
-        "type": "mcq",
+        "id": "q28",
+        "question": "Below crystal forming substances are source of kidney stones, except ______",
+"type": "multiple_choice",
         "options": [
             "Uric Acid",
             "Sweat",
@@ -187,23 +184,23 @@
             "Calcium Phosphate"
         ],
         "answer": "Sweat"
-    }  ,
+    },
     {
-        "id": "q28",
-        "question": "When kidney fail to filter blood efficiently , treatment given does not inlcude ______",
-        "type": "mcq",
+        "id": "q29",
+        "question": "When kidney fail to filter blood efficiently, treatment given does not include ______",
+"type": "multiple_choice",
         "options": [
             "Dialysis",
             "Drinking water",
-            "Artifical Kidney",
+            "Artificial Kidney",
             "None of the above"
         ],
         "answer": "Drinking water"
     },
     {
-        "id": "q29",
+        "id": "q30",
         "question": "UTI is caused by ______ entering the urinary tract",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Virus",
             "Anemia",
@@ -213,9 +210,9 @@
         "answer": "Bacteria"
     },
     {
-        "id": "q30",
+        "id": "q31",
         "question": "UTI symptoms exclude ____",
-        "type": "mcq",
+"type": "multiple_choice",
         "options": [
             "Frequent urge to drink water",
             "Frequent urge to urinate",
