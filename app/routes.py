@@ -3,6 +3,7 @@ import os
 import json
 import random
 from datetime import datetime, timedelta, timezone
+import re
 
 main = Blueprint('main', __name__)
 
@@ -84,6 +85,7 @@ def quiz(grade, subject, chapter):
     else:
         return "Invalid chapter format", 400
 
+    # Create the quiz file path based on the provided structure
     quiz_file = f'quizzes/{grade}/{subject}/Grade{grade.split()[-1]}_{subject}_chapter{chapter_number}.json'
     try:
         with open(quiz_file) as f:
@@ -207,7 +209,7 @@ def quiz_result():
     with open(history_file, 'w') as f:
         json.dump(history, f, indent=4)
 
-    return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter, incorrect=incorrect)
+    return render_template('result.html', score=score, total_questions=total_questions, rating=rating, time_taken=time_taken_str, username=username, grade=grade, subject=subject, chapter=chapter, incorrect=incorrect, date=ist_time.strftime("%Y-%m-%d %H:%M:%S"))
 
 @main.route('/revise/<grade>/<subject>/<chapter>')
 def revise(grade, subject, chapter):
