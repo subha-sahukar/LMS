@@ -2,181 +2,211 @@
     {
         "id": "q1",
         "question": "Photosynthesis primarily occurs in which part of the plant?",
+        "type": "multiple_choice",
         "options": ["Root", "Stem", "Leaves", "Flowers", "Seeds"],
-        "answer": "3"
+        "answer": "Leaves"
     },
     {
         "id": "q2",
         "question": "Which pigment is responsible for absorbing sunlight during photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Carotene", "Chlorophyll", "Xanthophyll", "Anthocyanin", "Melanin"],
-        "answer": "2"
+        "answer": "Chlorophyll"
     },
     {
         "id": "q3",
         "question": "The gas released during photosynthesis is ____.",
+        "type": "multiple_choice",
         "options": ["Carbon dioxide", "Nitrogen", "Oxygen", "Hydrogen", "Methane"],
-        "answer": "3"
+        "answer": "Oxygen"
     },
     {
         "id": "q4",
         "question": "Which raw material is NOT required for photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Water", "Carbon dioxide", "Sunlight", "Oxygen", "Chlorophyll"],
-        "answer": "4"
+        "answer": "Oxygen"
     },
     {
         "id": "q5",
         "question": "Which process in plants uses carbon dioxide and releases oxygen?",
+        "type": "multiple_choice",
         "options": ["Respiration", "Photosynthesis", "Transpiration", "Germination", "Pollination"],
-        "answer": "2"
+        "answer": "Photosynthesis"
     },
     {
         "id": "q6",
         "question": "The end product of photosynthesis is ____.",
+        "type": "multiple_choice",
         "options": ["Starch", "Fat", "Protein", "Vitamin", "Mineral"],
-        "answer": "1"
+        "answer": "Starch"
     },
     {
         "id": "q7",
         "question": "The energy required for photosynthesis is provided by ____.",
+        "type": "multiple_choice",
         "options": ["Moonlight", "Starlight", "Sunlight", "Electric light", "Fire"],
-        "answer": "3"
+        "answer": "Sunlight"
     },
     {
         "id": "q8",
         "question": "Stomata are present on the ____ of leaves.",
+        "type": "multiple_choice",
         "options": ["Upper surface", "Lower surface", "Stem", "Roots", "Flowers"],
-        "answer": "2"
+        "answer": "Lower surface"
     },
     {
         "id": "q9",
         "question": "Which of these is a by-product of photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Carbon dioxide", "Water", "Oxygen", "Nitrogen", "Sulfur"],
-        "answer": "3"
+        "answer": "Oxygen"
     },
     {
         "id": "q10",
         "question": "Photosynthesis helps in maintaining the balance of ____ in the atmosphere.",
+        "type": "multiple_choice",
         "options": ["Oxygen and Nitrogen", "Carbon dioxide and Oxygen", "Hydrogen and Methane", "Water vapor and Dust", "None of the above"],
-        "answer": "2"
+        "answer": "Carbon dioxide and Oxygen"
     },
     {
         "id": "q11",
         "question": "The food produced during photosynthesis is stored in the form of ____.",
+        "type": "multiple_choice",
         "options": ["Protein", "Starch", "Fat", "Vitamin", "Fiber"],
-        "answer": "2"
+        "answer": "Starch"
     },
     {
         "id": "q12",
         "question": "Which part of the leaf carries out the process of gas exchange?",
+        "type": "multiple_choice",
         "options": ["Midrib", "Veins", "Stomata", "Petiole", "Blade"],
-        "answer": "3"
+        "answer": "Stomata"
     },
     {
         "id": "q13",
         "question": "In which organelle does photosynthesis occur?",
+        "type": "multiple_choice",
         "options": ["Mitochondria", "Chloroplast", "Nucleus", "Vacuole", "Golgi body"],
-        "answer": "2"
+        "answer": "Chloroplast"
     },
     {
         "id": "q14",
         "question": "Which of the following is a necessary condition for photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Darkness", "Wind", "Sunlight", "Sound", "Pressure"],
-        "answer": "3"
+        "answer": "Sunlight"
     },
     {
         "id": "q15",
         "question": "Which factor does NOT affect photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Light intensity", "Temperature", "Water availability", "Soil type", "Carbon dioxide concentration"],
-        "answer": "4"
+        "answer": "Soil type"
     },
     {
         "id": "q16",
         "question": "The green pigment in plants is called ____.",
+        "type": "multiple_choice",
         "options": ["Carotene", "Chlorophyll", "Anthocyanin", "Xanthophyll", "Melanin"],
-        "answer": "2"
+        "answer": "Chlorophyll"
     },
     {
         "id": "q17",
         "question": "Photosynthesis occurs mainly during ____.",
+        "type": "multiple_choice",
         "options": ["Night", "Morning", "Afternoon", "Daytime", "Evening"],
-        "answer": "4"
+        "answer": "Daytime"
     },
     {
         "id": "q18",
         "question": "What is the main source of carbon dioxide for plants?",
+        "type": "multiple_choice",
         "options": ["Soil", "Water", "Air", "Fertilizers", "Rocks"],
-        "answer": "3"
+        "answer": "Air"
     },
     {
         "id": "q19",
         "question": "Which gas is absorbed by plants during photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Hydrogen", "Methane"],
-        "answer": "3"
+        "answer": "Carbon dioxide"
     },
     {
         "id": "q20",
         "question": "The main function of chloroplasts is to ____.",
+        "type": "multiple_choice",
         "options": ["Store water", "Absorb sunlight", "Provide structural support", "Produce seeds", "Absorb nutrients"],
-        "answer": "2"
+        "answer": "Absorb sunlight"
     },
     {
         "id": "q21",
         "question": "Which element is essential for chlorophyll formation?",
+        "type": "multiple_choice",
         "options": ["Iron", "Magnesium", "Calcium", "Potassium", "Sodium"],
-        "answer": "2"
+        "answer": "Magnesium"
     },
     {
         "id": "q22",
         "question": "Which experiment shows the importance of sunlight in photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Potometer experiment", "Moll's half-leaf experiment", "Bell jar experiment", "Water culture experiment", "Root pressure experiment"],
-        "answer": "2"
+        "answer": "Moll's half-leaf experiment"
     },
     {
         "id": "q23",
         "question": "Which part of the leaf is mainly involved in photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Spongy mesophyll", "Palisade mesophyll", "Epidermis", "Xylem", "Phloem"],
-        "answer": "2"
+        "answer": "Palisade mesophyll"
     },
     {
         "id": "q24",
         "question": "Which of these plants show CAM photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Rice", "Maize", "Cactus", "Wheat", "Bamboo"],
-        "answer": "3"
+        "answer": "Cactus"
     },
     {
         "id": "q25",
         "question": "Which scientist discovered the process of photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Newton", "Einstein", "Priestley", "Darwin", "Mendel"],
-        "answer": "3"
+        "answer": "Priestley"
     },
     {
         "id": "q26",
         "question": "Which tissue in plants transports water for photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Phloem", "Xylem", "Cortex", "Cambium", "Pith"],
-        "answer": "2"
+        "answer": "Xylem"
     },
     {
         "id": "q27",
         "question": "Which component is fixed during the Calvin cycle?",
+        "type": "multiple_choice",
         "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Water", "Hydrogen"],
-        "answer": "3"
+        "answer": "Carbon dioxide"
     },
     {
         "id": "q28",
         "question": "Which scientist demonstrated the role of sunlight in photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Priestley", "Ingenhousz", "Mendel", "Darwin", "Newton"],
-        "answer": "2"
+        "answer": "Ingenhousz"
     },
     {
         "id": "q29",
         "question": "During photosynthesis, light energy is converted into ____ energy.",
+        "type": "multiple_choice",
         "options": ["Mechanical", "Electrical", "Chemical", "Nuclear", "Sound"],
-        "answer": "3"
+        "answer": "Chemical"
     },
     {
         "id": "q30",
         "question": "Which cycle is involved in the dark reaction of photosynthesis?",
+        "type": "multiple_choice",
         "options": ["Krebs cycle", "Calvin cycle", "Glycolysis", "Pentose phosphate pathway", "Citric acid cycle"],
-        "answer": "2"
+        "answer": "Calvin cycle"
     }
 ]
