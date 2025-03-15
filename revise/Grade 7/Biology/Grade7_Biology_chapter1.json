@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is an allergy?",
+        "answer": "An allergy is an abnormal reaction of the immune system to certain substances that are normally harmless."
+    },
+    {
+        "question": "What are common allergens?",
+        "answer": "Common allergens include pollen, dust mites, animal dander, certain foods, insect stings, and medications."
+    },
+    {
+        "question": "What are the symptoms of an allergic reaction?",
+        "answer": "Symptoms can include sneezing, runny or blocked nose, itching, rashes, swelling, and in severe cases, anaphylaxis."
+    },
+    {
+        "question": "What is anaphylaxis?",
+        "answer": "Anaphylaxis is a severe, potentially life-threatening allergic reaction that requires immediate medical attention."
+    },
+    {
+        "question": "How can allergies be diagnosed?",
+        "answer": "Allergies can be diagnosed through skin tests, blood tests, and a thorough medical history."
+    },
+    {
+        "question": "What treatments are available for allergies?",
+        "answer": "Treatments include avoiding allergens, taking medications like antihistamines, and in some cases, immunotherapy."
+    },
+    {
+        "question": "What is the role of histamines in allergic reactions?",
+        "answer": "Histamines are chemicals released by the immune system during an allergic reaction that cause symptoms like itching and swelling."
+    },
+    {
+        "question": "How can one prevent allergic reactions?",
+        "answer": "Preventing allergic reactions involves avoiding known allergens, keeping living areas clean, and using air filters."
+    },
+    {
+        "question": "What is the difference between food allergy and food intolerance?",
+        "answer": "A food allergy involves the immune system and can cause severe reactions, while food intolerance usually involves the digestive system and is less severe."
+    },
+    {
+        "question": "Why is it important to have an action plan for severe allergies?",
+        "answer": "An action plan helps individuals know what to do in case of a severe allergic reaction, including using emergency medications like epinephrine."
+    }
+]
