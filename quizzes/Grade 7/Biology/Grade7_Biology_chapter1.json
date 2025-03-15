@@ -2,154 +2,153 @@
     {
         "id": "q1",
         "question": "Hypersensitivity to allergen is due to ____",
-        "options": ["Food", "Air", "Improper functioning of immune system","lifestyle","water pollution"],
-        "answer": "Improper functioning of immune system"
+        "options": ["Food", "Air", "Improper functioning of immune system", "Lifestyle", "Water pollution"],
+        "answer": "Improper functioning of immune system",
+        "type": "multiple_choice"
     },
     {
         "id": "q2",
         "question": "Which of the following cannot act as an allergen",
-        "options": ["Air", "Pure Water", "StarFish","Pollen","Dust"],
-        "answer": "Pure Water"
+        "options": ["Air", "Pure Water", "StarFish", "Pollen", "Dust"],
+        "answer": "Pure Water",
+        "type": "multiple_choice"
     },
     {
         "id": "q3",
         "question": "Eczema is related to",
-        "options": ["Skin", "Stomach", "Lungs","Throat"],
-        "answer": "Skin"
+        "options": ["Skin", "Stomach", "Lungs", "Throat"],
+        "answer": "Skin",
+        "type": "multiple_choice"
     },
-
-   {
+    {
         "id": "q4",
-        "question": "Inflammation response to allergy is due to release of ___ by mast cells ",
-        "options": ["mucus", "antibodies", "antiseptic","histamines"],
-        "answer": "histamines"
+        "question": "Inflammation response to allergy is due to release of ___ by mast cells",
+        "options": ["Mucus", "Antibodies", "Antiseptic", "Histamines"],
+        "answer": "Histamines",
+        "type": "multiple_choice"
     },
-   {
+    {
         "id": "q5",
         "question": "One of the following body parts is not how allergy enter our body",
-        "options": ["Skin", "Stomach", "Nose","Mouth"],
-        "answer": "Stomach"
+        "options": ["Skin", "Stomach", "Nose", "Mouth"],
+        "answer": "Stomach",
+        "type": "multiple_choice"
     },
-   {
+    {
         "id": "q6",
         "question": "We do have permanent treatment for allergy",
         "options": ["True", "False"],
-        "answer": "False"
+        "answer": "False",
+        "type": "multiple_choice"
     },
-   {
+    {
         "id": "q7",
-        "question": "what is allergy",
-        "options": ["No reaction of immune systems","Overreaction of immune systems","Underreaction of immune systems"],
-        "answer": "Overreaction of immune systems"
+        "question": "What is allergy?",
+        "options": ["No reaction of immune systems", "Overreaction of immune systems", "Underreaction of immune systems"],
+        "answer": "Overreaction of immune systems",
+        "type": "multiple_choice"
     },
-   {
+    {
         "id": "q8",
-        "question": "What is histamine",
-        "options": ["Skin", "Pollutant", "Antibody","Inflammatory substance"],
-        "answer": "Inflammatory substance"
+        "question": "What is histamine?",
+        "options": ["Skin", "Pollutant", "Antibody", "Inflammatory substance"],
+        "answer": "Inflammatory substance",
+        "type": "multiple_choice"
     },
-
     {
         "id": "q11",
         "question": "What is an allergy?",
-        "type": "mcq",
         "options": [
             "A response of the immune system to harmless substances",
             "A type of bacterial infection",
             "A digestive disorder",
             "A skin disease"
         ],
-        "answer": "A response of the immune system to harmless substances"
+        "answer": "A response of the immune system to harmless substances",
+        "type": "multiple_choice"
     },
     {
         "id": "q12",
         "question": "Which of the following is a common allergen?",
-        "type": "mcq",
         "options": [
             "Pollen",
             "Water",
             "Salt",
             "Glass"
         ],
-        "answer": "Pollen"
+        "answer": "Pollen",
+        "type": "multiple_choice"
     },
     {
         "id": "q13",
         "question": "What are the common symptoms of an allergy?",
-        "type": "mcq",
         "options": [
             "Sneezing and itching",
             "Fever and chills",
             "Stomach ache",
             "Headache"
         ],
-        "answer": "Sneezing and itching"
+        "answer": "Sneezing and itching",
+        "type": "multiple_choice"
     },
     {
         "id": "q14",
         "question": "The immune system reacts to allergens by releasing __________.",
-        "type": "fill_in_the_blank",
-        "answer": "histamines"
+        "answer": "histamines",
+        "type": "fill_in_the_blank"
     },
     {
         "id": "q15",
         "question": "Which of the following is a difference between an allergy and a cold?",
-        "type": "mcq",
         "options": [
             "Allergies are not caused by viruses",
             "Colds last longer than allergies",
             "Allergies cause fever",
             "Colds never cause sneezing"
         ],
-        "answer": "Allergies are not caused by viruses"
+        "answer": "Allergies are not caused by viruses",
+        "type": "multiple_choice"
     },
     {
         "id": "q16",
         "question": "An allergy test is conducted to __________.",
-        "type": "fill_in_the_blank",
-        "answer": "identify the allergen"
+        "answer": "identify the allergen",
+        "type": "fill_in_the_blank"
     },
     {
         "id": "q17",
         "question": "Which of the following helps in preventing allergic reactions?",
-        "type": "mcq",
         "options": [
             "Avoiding allergens",
             "Eating more sugar",
             "Drinking less water",
             "Sleeping less"
         ],
-        "answer": "Avoiding allergens"
+        "answer": "Avoiding allergens",
+        "type": "multiple_choice"
     },
     {
         "id": "q18",
         "question": "Antihistamines help in managing allergies by __________.",
-        "type": "fill_in_the_blank",
-        "answer": "blocking histamines"
+        "answer": "blocking histamines",
+        "type": "fill_in_the_blank"
     },
     {
         "id": "q19",
         "question": "Why is it important to identify the cause of an allergy?",
-        "type": "mcq",
         "options": [
             "To avoid the allergen and prevent reactions",
             "To increase the allergy symptoms",
             "To catch a cold easily",
             "To become more sensitive to allergens"
         ],
-        "answer": "To avoid the allergen and prevent reactions"
+        "answer": "To avoid the allergen and prevent reactions",
+        "type": "multiple_choice"
     },
     {
         "id": "q20",
         "question": "Lifestyle changes like maintaining cleanliness can help in managing __________.",
-        "type": "fill_in_the_blank",
-        "answer": "allergies"
+        "answer": "allergies",
+        "type": "fill_in_the_blank"
     }
-
-
-
-
-
-
-
 ]
