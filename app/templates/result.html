@@ -1,12 +1,78 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Result - {{ subject }} - {{ grade }} - {{ chapter }}</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+        
+        .result-container {
+            width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .result-container h2 {
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
 
-{% block title %}Revise: {{ chapter }}{% endblock %}
+        .result-container p {
+            margin: 10px 0;
+        }
 
-{% block header %}Revise: {{ chapter }}{% endblock %}
+        .incorrect-answers {
+            margin-top: 20px;
+        }
 
-{% block content %}
-<div class="revise-container">
-    <h2>Revise {{ chapter }}</h2>
-    <p>{{ content }}</p>
-</div>
-{% endblock %}
+        .incorrect-answers h3 {
+            color: #d9534f;
+        }
+
+        .incorrect-answers ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .incorrect-answers li {
+            background-color: #f8d7da;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h2>Quiz Result - {{ subject }} - {{ grade }} - {{ chapter }}</h2>
+        <p><strong>Student:</strong> {{ username }}</p>
+        <p><strong>Date of Attempt:</strong> {{ date }}</p>
+        <p><strong>Score:</strong> {{ score }} / {{ total_questions }}</p>
+        <p><strong>Rating:</strong> {{ rating }}</p>
+        <p><strong>Time Taken:</strong> {{ time_taken }}</p>
+        <div class="incorrect-answers">
+            <h3>Incorrect Answers:</h3>
+            <ul>
+                {% for incorrect in incorrect %}
+                    <li>
+                        <p><strong>Question:</strong> {{ incorrect.question }}</p>
+                        <p><strong>Your Answer:</strong> {{ incorrect.given_answer }}</p>
+                        <p><strong>Correct Answer:</strong> {{ incorrect.correct_answer }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="{{ url_for('main.dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>
