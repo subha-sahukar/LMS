@@ -12,76 +12,84 @@
             flex-direction: column;
             color: #333;
         }
-
+        
         .header {
-            width: 100%;
             background-color: #0056b3;
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
-            font-size: 24px;
         }
-
+        
         .dashboard-container {
             display: flex;
-            height: 100vh;
+            flex-direction: row;
+            margin: 20px;
         }
-
+        
         .sidebar {
-            width: 25%;
-            background-color: #f0f0f0;
-            border-right: 1px solid #ddd;
+            width: 200px;
+            background-color: #f1f1f1;
             padding: 20px;
-            overflow-y: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
+        
         .content {
-            width: 75%;
+            flex-grow: 1;
+            background-color: #fff;
             padding: 20px;
-            overflow-y: auto;
+            margin-left: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        h2 {
-            color: #0056b3;
-            margin-top: 0;
-        }
-
-        .subject-list {
-            list-style: none;
+        
+        .subject-list, .chapter-list {
+            list-style-type: none;
             padding: 0;
         }
-
-        .subject-list li {
+        
+        .subject-list li, .chapter-list li {
+            background-color: #e7e7e7;
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
-            background-color: #fff;
             transition: background-color 0.3s;
         }
-
-        .subject-list li:hover {
-            background-color: #e0e0e0;
+        
+        .subject-list li:hover, .chapter-list li:hover {
+            background-color: #d0d0d0;
         }
-
-        .topic-list {
-            list-style: none;
-            padding: 0;
+        
+        .chapter-list button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-
-        .topic-list li {
-            margin: 10px 0;
+        
+        .chapter-list button:hover {
+            background-color: #004494;
+        }
+        
+        .history-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            background-color: #fff;
+            background-color: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
             transition: background-color 0.3s;
         }
-
-        .topic-list li:hover {
-            background-color: #e0e0e0;
+        
+        .history-link:hover {
+            background-color: #004494;
         }
     </style>
 </head>
@@ -97,6 +105,7 @@
                     <li onclick="showChapters('{{ grade }}', '{{ subject }}')">{{ subject }}</li>
                 {% endfor %}
             </ul>
+            <a href="{{ url_for('main.history', username=username) }}" class="history-link">View Quiz History</a>
         </div>
         <div class="content">
             <div id="chapter-container">
