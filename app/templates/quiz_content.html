@@ -94,20 +94,17 @@
         <div class="question">
             <p>{{ question.question }}</p>
             <form id="quizForm" action="{{ url_for('main.next_question') }}" method="POST">
-                {% if question.type == 'multiple_choice' %}
+                {% if question.type == 'mcq' %}
                     {% for option in question.options %}
                         <label>
                             <input type="radio" name="answer" value="{{ option }}">
                             {{ option }}
                         </label><br>
                     {% endfor %}
-                {% elif question.type == 'multiple_select' %}
-                    {% for option in question.options %}
-                        <label>
-                            <input type="checkbox" name="answer" value="{{ option }}">
-                            {{ option }}
-                        </label><br>
-                    {% endfor %}
+                {% elif question.type == 'fill_in_the_blank' %}
+                    <label>
+                        <input type="text" name="answer" placeholder="Enter your answer here">
+                    </label><br>
                 {% endif %}
                 <input type="hidden" name="grade" value="{{ grade }}">
                 <input type="hidden" name="subject" value="{{ subject }}">
