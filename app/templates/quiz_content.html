@@ -94,7 +94,7 @@
         <div class="question">
             <p>{{ question.question }}</p>
             <form id="quizForm" action="{{ url_for('main.next_question') }}" method="POST">
-                {% if question.type == 'mcq' %}
+                {% if question.type == 'multiple_choice' %}
                     {% for option in question.options %}
                         <label>
                             <input type="radio" name="answer" value="{{ option }}">
