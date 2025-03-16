@@ -1,93 +1,107 @@
 [
   {
     "id": "q1",
+    "type": "multiple-choice",
     "question": "Which of the following is not right type of Animal Habitat",
     "options": ["Terrestrial", "Aquarium", "Mountainous", "Aquatic","Grasslands"],
     "answer": "Aquarium"
   },
   {
     "id": "q2",
+    "type": "multiple-choice",
     "question": "A habitat helps animals by providing all of below needs except?",
     "options": ["Food", "HotAir", "Shelter", "Water"],
     "answer": "HotAir"
   },
   {
     "id": "q3",
+    "type": "multiple-choice",
     "question": "Camels can live without water for many days",
     "options": ["True", "False", "Uncertain"],
     "answer": "True"
   },
   {
     "id": "q4",
+    "type": "multiple-choice",
     "question": "Which animal does not live in cold weather ?",
     "options": ["Yak", "Polar Bear", "Mountain Goats", "Leopards"],
     "answer": "Leopards"
   },
   {
     "id": "q5",
+    "type": "multiple-choice",
     "question": "The inner portion of camels mount is like ------",
     "options": ["Water", "Rubber", "leather", "Paper"],
     "answer": "leather"
   },
   {
     "id": "q6",
+    "type": "multiple-choice",
     "question": "Excess amount of food is stored as fat in camels ____",
     "options": ["Ears", "Stomach", "Skin", "Hump"],
     "answer": "Hump"
   },
   {
     "id": "q7",
+    "type": "multiple-choice",
     "question": "Polar regions of earth are extremely ____",
     "options": ["Cold", "Hot", "Rainy", "Sunny"],
     "answer": "Cold"
   },
   {
     "id": "q8",
+    "type": "multiple-choice",
     "question": "Polar bear is covered with thick layer",
     "options": ["fat", "skin", "fur", "hair"],
     "answer": "fur"
   },
   {
     "id": "q9",
+    "type": "multiple-choice",
     "question": "In winter Polar bear sleep for _____",
     "options": ["0 hours", "8 hours", "18-20 hours", "20-24 hours"],
     "answer": "18-20 hours"
   },
- {
+  {
     "id": "q10",
+    "type": "multiple-choice",
     "question": "Polar bear is covered with thick layer",
     "options": ["fat", "skin", "fur", "hair"],
     "answer": "fur"
   },
- {
+  {
     "id": "q11",
+    "type": "multiple-choice",
     "question": "____ and  ___ live in mountains",
     "options": ["Goats and Cows", "Cows and Sheep", "Goat Yak", "Yak Bear"],
     "answer": "Goat Yak"
   },
- {
+  {
     "id": "q12",
+    "type": "multiple-choice",
     "question": "_____ protect eyes from strong sandy winds in camel",
     "options": ["fat", "eyelashes", "fur", "hair"],
     "answer": "eyelashes"
   },
- {
+  {
     "id": "q13",
+    "type": "multiple-choice",
     "question": "_____ protect camel from hot sand",
     "options": ["skin", "tail", "hump", "long legs"],
     "answer": "long legs"
   },
- {
+  {
     "id": "q14",
+    "type": "multiple-choice",
     "question": "Many plants grow in polar regions",
     "options": ["True", "False", "Uncertain"],
     "answer": "False"
   },
- {
+  {
     "id": "q15",
+    "type": "multiple-choice",
     "question": "Crows are found all over the world because they eat",
     "options": ["milk", "chocolate", "insects", "fish"],
     "answer": "insects"
   }
-
 ]
