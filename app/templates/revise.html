@@ -133,12 +133,6 @@
         <div class="content">
             <div id="flashcards-container">
                 <h2>Flashcards for {{ chapter }}</h2>
-                {% for flashcard in content %}
-                    <div class="flashcard" onclick="toggleAnswer(this)">
-                        <div class="question">{{ flashcard.question }}</div>
-                        <div class="answer">{{ flashcard.answer }}</div>
-                    </div>
-                {% endfor %}
             </div>
         </div>
     </div>
@@ -178,12 +172,14 @@
 
             fetch(jsonFilePath)
                 .then(response => {
+                    console.log('Response status:', response.status);
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Data loaded:', data);
                     if (data.length === 0) {
                         flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
                         return;
