@@ -1,0 +1,43 @@
+
+[
+    {
+        "question": "What is a magnet?",
+        "answer": "A magnet is an object that can attract certain metals, such as iron, cobalt, and nickel."
+    },
+    {
+        "question": "What are the two poles of a magnet?",
+        "answer": "The two poles of a magnet are the North Pole and the South Pole."
+    },
+    {
+        "question": "What is magnetic force?",
+        "answer": "Magnetic force is the force exerted by a magnet when it attracts or repels another object."
+    },
+    {
+        "question": "What materials are attracted by magnets?",
+        "answer": "Materials that are attracted by magnets include iron, cobalt, and nickel."
+    },
+    {
+        "question": "What is a magnetic field?",
+        "answer": "A magnetic field is the area around a magnet where its magnetic force can be felt."
+    },
+    {
+        "question": "What happens when you bring two like poles of a magnet together?",
+        "answer": "When you bring two like poles of a magnet together (North-North or South-South), they repel each other."
+    },
+    {
+        "question": "What happens when you bring two unlike poles of a magnet together?",
+        "answer": "When you bring two unlike poles of a magnet together (North-South), they attract each other."
+    },
+    {
+        "question": "How can you make a temporary magnet?",
+        "answer": "You can make a temporary magnet by rubbing a piece of iron or steel with a strong magnet in one direction."
+    },
+    {
+        "question": "What is the difference between a permanent magnet and a temporary magnet?",
+        "answer": "A permanent magnet retains its magnetic properties for a long time, while a temporary magnet loses its magnetism after a short period."
+    },
+    {
+        "question": "How can you demagnetize a magnet?",
+        "answer": "You can demagnetize a magnet by heating it, hammering it, or placing it in a strong magnetic field opposite to its own."
+    }
+]
