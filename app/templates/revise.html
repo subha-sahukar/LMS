@@ -176,7 +176,7 @@
          
         document.addEventListener("DOMContentLoaded", function() {
             const flashcardsContainer = document.getElementById('flashcards-container');
-            const jsonFilePath = "{{ url_for('static', filename='revise/Grade 7/Biology/Grade7_Biology_chapter1.json') }}";
+            const jsonFilePath = "/revise/Grade%207/Biology/Grade7_Biology_chapter1.json";
 
             fetch(jsonFilePath)
                 .then(response => response.json())
