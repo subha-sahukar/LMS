@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is first aid?",
+        "answer": "First aid is the immediate help given to an injured or sick person before professional medical help arrives."
+    },
+    {
+        "question": "Why is it important to know first aid?",
+        "answer": "Knowing first aid can save lives, prevent a situation from worsening, and promote recovery."
+    },
+    {
+        "question": "What should you do if someone is bleeding heavily?",
+        "answer": "Apply pressure to the wound with a clean cloth or bandage to stop the bleeding and seek medical help immediately."
+    },
+    {
+        "question": "What is the recovery position?",
+        "answer": "The recovery position is a way to position an unconscious person on their side to keep their airway open and prevent choking."
+    },
+    {
+        "question": "How do you treat a burn?",
+        "answer": "Cool the burn with running water for at least 10 minutes, cover it with a sterile dressing, and seek medical help if necessary."
+    },
+    {
+        "question": "What should you do if someone is choking?",
+        "answer": "Encourage them to cough up the object, and if they can't, perform back blows and abdominal thrusts to dislodge the object."
+    },
+    {
+        "question": "Why is it important to check for danger before giving first aid?",
+        "answer": "Checking for danger ensures that you do not put yourself or others at risk while giving first aid."
+    },
+    {
+        "question": "What is CPR and when should it be used?",
+        "answer": "Cardiopulmonary resuscitation (CPR) is a life-saving technique used when someone is not breathing or their heart has stopped. It involves chest compressions and rescue breaths."
+    },
+    {
+        "question": "How can you prevent accidents at home?",
+        "answer": "Keep floors clear of clutter, use safety gates, store hazardous substances out of reach, and use smoke detectors and fire extinguishers."
+    },
+    {
+        "question": "What should you do in case of a fire?",
+        "answer": "Stay calm, alert others, evacuate the building, use stairs instead of elevators, and call emergency services."
+    }
+]
