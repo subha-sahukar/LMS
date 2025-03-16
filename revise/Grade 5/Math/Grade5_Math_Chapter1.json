@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the sum of numbers?",
+        "answer": "The sum of numbers is the total amount you get when you add two or more numbers together."
+    },
+    {
+        "question": "How do you find the sum of 8, 12, and 5?",
+        "answer": "To find the sum, you add the numbers together: 8 + 12 + 5 = 25."
+    },
+    {
+        "question": "What is the mean of a set of numbers?",
+        "answer": "The mean is the average of a set of numbers. It is found by dividing the sum of the numbers by the count of numbers."
+    },
+    {
+        "question": "How do you calculate the mean of 4, 8, and 6?",
+        "answer": "First, find the sum of the numbers: 4 + 8 + 6 = 18. Then, divide the sum by the number of values: 18 ÷ 3 = 6. The mean is 6."
+    },
+    {
+        "question": "What is an average?",
+        "answer": "An average is a single value that represents the central point of a set of numbers. The mean is a type of average."
+    },
+    {
+        "question": "Is the mean always a whole number?",
+        "answer": "No, the mean is not always a whole number. It can be a fraction or a decimal."
+    },
+    {
+        "question": "How do you find the average of 10, 20, and 30?",
+        "answer": "Find the sum of the numbers: 10 + 20 + 30 = 60. Then divide the sum by the number of values: 60 ÷ 3 = 20. The average is 20."
+    },
+    {
+        "question": "What is the difference between sum and mean?",
+        "answer": "The sum is the total of all numbers added together, while the mean is the average, calculated by dividing the sum by the count of numbers."
+    },
+    {
+        "question": "Can the mean of a set be one of the numbers in the set?",
+        "answer": "Yes, the mean of a set of numbers can be one of the numbers in the set, but it is not always the case."
+    },
+    {
+        "question": "How do you find the sum, mean, and average of 5, 10, and 15?",
+        "answer": "First, find the sum: 5 + 10 + 15 = 30. To find the mean (average), divide the sum by the number of values: 30 ÷ 3 = 10. So, the sum is 30 and the mean (average) is 10."
+    }
+]
