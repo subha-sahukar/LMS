@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the Earth?",
+        "answer": "The Earth is the third planet from the Sun and the only known planet to support life."
+    },
+    {
+        "question": "What is the Moon?",
+        "answer": "The Moon is Earth's only natural satellite and it orbits the Earth."
+    },
+    {
+        "question": "How does the Moon affect the Earth?",
+        "answer": "The Moon affects the Earth by causing tides in the oceans due to its gravitational pull."
+    },
+    {
+        "question": "What is the Sun?",
+        "answer": "The Sun is a star at the center of our solar system that provides light and heat to the Earth."
+    },
+    {
+        "question": "What is light?",
+        "answer": "Light is a form of energy that enables us to see. It travels in straight lines and can be reflected or refracted."
+    },
+    {
+        "question": "How are shadows formed?",
+        "answer": "Shadows are formed when an object blocks light from reaching a surface. The shape of the shadow depends on the shape of the object and the direction of the light source."
+    },
+    {
+        "question": "What are the phases of the Moon?",
+        "answer": "The phases of the Moon are the different shapes of the Moon visible from Earth, including new moon, crescent moon, first quarter, gibbous moon, and full moon."
+    },
+    {
+        "question": "Why do we have day and night?",
+        "answer": "We have day and night because the Earth rotates on its axis, causing different parts of the Earth to face the Sun or away from the Sun at different times."
+    },
+    {
+        "question": "What causes the seasons?",
+        "answer": "The seasons are caused by the tilt of the Earth's axis and its orbit around the Sun, resulting in different parts of the Earth receiving varying amounts of sunlight throughout the year."
+    },
+    {
+        "question": "How does the Earth's rotation affect the length of shadows?",
+        "answer": "The Earth's rotation causes the Sun to appear to move across the sky, changing the angle of sunlight and the length of shadows throughout the day. Shadows are longest in the early morning and late afternoon, and shortest at noon."
+    }
+]
