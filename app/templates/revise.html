@@ -140,16 +140,6 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="study-tips">
-                <h3>Study Tips from Dr. Huberman Labs</h3>
-                <ul>
-                    <li>Take regular breaks to rest your brain and improve focus.</li>
-                    <li>Stay hydrated and eat a balanced diet to keep your brain functioning optimally.</li>
-                    <li>Practice active recall and spaced repetition to enhance memory retention.</li>
-                    <li>Ensure you get enough sleep to consolidate learning and refresh your mind.</li>
-                    <li>Engage in physical exercise to boost cognitive function and reduce stress.</li>
-                </ul>
-            </div>
         </div>
     </div>
     <script>
@@ -181,6 +171,36 @@
             let answer = flashcard.querySelector('.answer');
             answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
         }
+
+
+         
+        document.addEventListener("DOMContentLoaded", function() {
+            const flashcardsContainer = document.getElementById('flashcards-container');
+            const jsonFilePath = "{{ url_for('static', filename='revise/Grade 7/Biology/Grade7_Biology_chapter1.json') }}";
+
+            fetch(jsonFilePath)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(flashcard => {
+                        const card = document.createElement('div');
+                        card.classList.add('flashcard');
+
+                        const question = document.createElement('div');
+                        question.classList.add('question');
+                        question.textContent = flashcard.question;
+
+                        const answer = document.createElement('div');
+                        answer.classList.add('answer');
+                        answer.textContent = flashcard.answer;
+
+                        card.appendChild(question);
+                        card.appendChild(answer);
+                        flashcardsContainer.appendChild(card);
+                    });
+                })
+                .catch(error => console.error('Error loading flashcards:', error));
+        });
+    
     </script>
 </body>
 </html>
