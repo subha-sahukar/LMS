@@ -131,7 +131,7 @@
             <a href="{{ url_for('main.logout') }}" class="logout-link">Logout</a>
         </div>
         <div class="content">
-            <div id="flashcard-container">
+            <div id="flashcards-container">
                 <h2>Flashcards for {{ chapter }}</h2>
                 {% for flashcard in content %}
                     <div class="flashcard" onclick="toggleAnswer(this)">
@@ -172,15 +172,22 @@
             answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
         }
 
-
-         
         document.addEventListener("DOMContentLoaded", function() {
             const flashcardsContainer = document.getElementById('flashcards-container');
             const jsonFilePath = "/revise/Grade%207/Biology/Grade7_Biology_chapter1.json";
 
             fetch(jsonFilePath)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
                 .then(data => {
+                    if (data.length === 0) {
+                        flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
+                        return;
+                    }
                     data.forEach(flashcard => {
                         const card = document.createElement('div');
                         card.classList.add('flashcard');
@@ -198,9 +205,11 @@
                         flashcardsContainer.appendChild(card);
                     });
                 })
-                .catch(error => console.error('Error loading flashcards:', error));
+                .catch(error => {
+                    console.error('Error loading flashcards:', error);
+                    flashcardsContainer.innerHTML = '<p>Error loading flashcards.</p>';
+                });
         });
-    
     </script>
 </body>
 </html>
