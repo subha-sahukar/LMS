@@ -175,7 +175,7 @@
 
             fetch(jsonFilePath)
                 .then(response => {
-                    console.log('Response status:', response.status);
+                    console.log('Response status:', response.status + "File Path"  + jsonFilePath);
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
