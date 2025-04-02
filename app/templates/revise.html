@@ -171,9 +171,7 @@
             const grade = "{{ grade }}";
             const subject = "{{ subject }}";
             const chapter = "{{ chapter }}";
-            const jsonFilePath = `/revise/${encodeURIComponent(grade)}/${encodeURIComponent(subject)}/Grade${encodeURIComponent(grade.split(' ')[1])}_${encodeURIComponent(subject)}_${encodeURIComponent(chapter)}.json`;
-
-            console.log('File path:', jsonFilePath);
+            const jsonFilePath = `/revise/${encodeURIComponent(grade)}/${encodeURIComponent(subject)}/${encodeURIComponent(chapter)}.json`;
 
             fetch(jsonFilePath)
                 .then(response => {
@@ -181,37 +179,30 @@
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
-                    return response.text(); // Use text() to log the actual response
+                    return response.json();
                 })
-                .then(text => {
-                    console.log('Response text:', text); // Log the response text
-                    try {
-                        const data = JSON.parse(text); // Parse the JSON data
-                        console.log('Data loaded:', data);
-                        if (data.length === 0) {
-                            flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
-                            return;
-                        }
-                        data.forEach(flashcard => {
-                            const card = document.createElement('div');
-                            card.classList.add('flashcard');
-
-                            const question = document.createElement('div');
-                            question.classList.add('question');
-                            question.textContent = flashcard.question;
-
-                            const answer = document.createElement('div');
-                            answer.classList.add('answer');
-                            answer.textContent = flashcard.answer;
-
-                            card.appendChild(question);
-                            card.appendChild(answer);
-                            flashcardsContainer.appendChild(card);
-                        });
-                    } catch (error) {
-                        console.error('Error parsing JSON:', error);
-                        flashcardsContainer.innerHTML = '<p>Error loading flashcards.</p>';
+                .then(data => {
+                    console.log('Data loaded:', data);
+                    if (data.length === 0) {
+                        flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
+                        return;
                     }
+                    data.forEach(flashcard => {
+                        const card = document.createElement('div');
+                        card.classList.add('flashcard');
+
+                        const question = document.createElement('div');
+                        question.classList.add('question');
+                        question.textContent = flashcard.question;
+
+                        const answer = document.createElement('div');
+                        answer.classList.add('answer');
+                        answer.textContent = flashcard.answer;
+
+                        card.appendChild(question);
+                        card.appendChild(answer);
+                        flashcardsContainer.appendChild(card);
+                    });
                 })
                 .catch(error => {
                     console.error('Error loading flashcards:', error);
