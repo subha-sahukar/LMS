@@ -181,34 +181,47 @@
                     }
                     return response.json();
                 })
-                .then(data => {
-                    console.log('Data loaded:', data);
-                    if (data.length === 0) {
-                        flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
-                        return;
+
+ .then(text => {
+                    <mark style="background-color: yellow;">console.log('Response text:', text);</mark> // Log the response text
+                    console.log('Response text:', text + "File path" + jsonFilePath);
+
+                    try {
+                        const data = JSON.parse(text); // Parse the JSON data
+                        console.log('Data loaded:', data);
+                        if (data.length === 0) {
+                            flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
+                            return;
+                        }
+                        data.forEach(flashcard => {
+                            const card = document.createElement('div');
+                            card.classList.add('flashcard');
+
+                            const question = document.createElement('div');
+                            question.classList.add('question');
+                            question.textContent = flashcard.question;
+
+                            const answer = document.createElement('div');
+                            answer.classList.add('answer');
+                            answer.textContent = flashcard.answer;
+
+                            card.appendChild(question);
+                            card.appendChild(answer);
+                            flashcardsContainer.appendChild(card);
+                        });
+                    } catch (error) {
+                        console.error('Error parsing JSON:', error);
+                        flashcardsContainer.innerHTML = '<p>Error loading flashcards.</p>';
                     }
-                    data.forEach(flashcard => {
-                        const card = document.createElement('div');
-                        card.classList.add('flashcard');
-
-                        const question = document.createElement('div');
-                        question.classList.add('question');
-                        question.textContent = flashcard.question;
-
-                        const answer = document.createElement('div');
-                        answer.classList.add('answer');
-                        answer.textContent = flashcard.answer;
-
-                        card.appendChild(question);
-                        card.appendChild(answer);
-                        flashcardsContainer.appendChild(card);
-                    });
                 })
                 .catch(error => {
                     console.error('Error loading flashcards:', error);
                     flashcardsContainer.innerHTML = '<p>Error loading flashcards.</p>';
                 });
         });
+  
+                
+   
     </script>
 </body>
 </html>
