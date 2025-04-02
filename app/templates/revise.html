@@ -168,7 +168,10 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             const flashcardsContainer = document.getElementById('flashcards-container');
-            const jsonFilePath = "/revise/Grade%207/Biology/Grade7_Biology_chapter1.json";
+            const grade = "{{ grade }}";
+            const subject = "{{ subject }}";
+            const chapter = "{{ chapter }}";
+            const jsonFilePath = `/revise/${encodeURIComponent(grade)}/${encodeURIComponent(subject)}/${encodeURIComponent(chapter)}.json`;
 
             fetch(jsonFilePath)
                 .then(response => {
