@@ -173,18 +173,18 @@
             const chapter = "{{ chapter }}";
             const jsonFilePath = `/revise/${encodeURIComponent(grade)}/${encodeURIComponent(subject)}/Grade${encodeURIComponent(grade.split(' ')[1])}_${encodeURIComponent(subject)}_${encodeURIComponent(chapter)}.json`;
 
-            <mark style="background-color: yellow;">console.log('File path:', jsonFilePath);</mark>
+            console.log('File path:', jsonFilePath);
 
             fetch(jsonFilePath)
                 .then(response => {
-                    <mark style="background-color: yellow;">console.log('Response status:', response.status);</mark>
+                    console.log('Response status:', response.status);
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
                     return response.text(); // Use text() to log the actual response
                 })
                 .then(text => {
-                    <mark style="background-color: yellow;">console.log('Response text:', text);</mark> // Log the response text
+                    console.log('Response text:', text); // Log the response text
                     try {
                         const data = JSON.parse(text); // Parse the JSON data
                         console.log('Data loaded:', data);
