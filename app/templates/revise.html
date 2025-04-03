@@ -95,7 +95,7 @@
         </div>
     </div>
     <div class="footer">
-        &copy; 2025 Your School. All rights reserved.
+        &copy; 2025 SmartScholar. All rights reserved.
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -104,6 +104,7 @@
 
             fetch(jsonFilePath)
                 .then(response => {
+                    console.log ("Loading" + jsonFilePath);
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
