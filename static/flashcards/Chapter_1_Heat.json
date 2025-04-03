@@ -1,0 +1,18 @@
+[
+    {
+        "question": "What is an allergy?",
+        "answer": "An allergy is an abnormal reaction of the immune system to certain substances that are normally harmless."
+    },
+    {
+        "question": "What are common allergens?",
+        "answer": "Common allergens include pollen, dust mites, animal dander, certain foods, insect stings, and medications."
+    },
+    {
+        "question": "What are the symptoms of an allergic reaction?",
+        "answer": "Symptoms can include sneezing, runny or blocked nose, itching, rashes, swelling, and in severe cases, anaphylaxis."
+    },
+    {
+        "question": "What is anaphylaxis?",
+        "answer": "Anaphylaxis is a severe, potentially life-threatening allergic reaction that requires immediate medical attention."
+    }
+]
