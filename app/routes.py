@@ -38,6 +38,12 @@ def login():
     else:
         return redirect(url_for('main.failure'))
 
+
+
+@main.route('/test2')
+def test2():
+    return render_template('test2.html')
+
 @main.route('/dashboard')
 def dashboard():
     if 'username' not in session:
