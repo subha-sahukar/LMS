@@ -171,8 +171,9 @@
             const grade = "{{ grade }}";
             const subject = "{{ subject }}";
             const chapter = "{{ chapter }}";
-            const jsonFilePath = `/revise/${encodeURIComponent(grade)}/${encodeURIComponent(subject)}/${encodeURIComponent(chapter)}.json`;
-
+            //const jsonFilePath = `/revise/${encodeURIComponent(grade)}/${encodeURIComponent(subject)}/${encodeURIComponent(chapter)}.json`;
+            const jsonFilePath = `Chapter%201%3A%20Allergy.json`;
+            
             console.log('File path:', jsonFilePath);
 
             fetch(jsonFilePath)
