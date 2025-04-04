@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test JSON Load</title>
+</head>
+<body>
+    <h1>Test JSON Load</h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const jsonFilePath = 'Chapter_1_Heat.json'; // Path to the JSON file
+
+            fetch(jsonFilePath)
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json(); // Parse JSON
+                })
+                .then(data => {
+                    console.log('JSON data:', data); // Print JSON data to console
+                })
+                .catch(error => {
+                    console.error('Error loading JSON file:', error);
+                });
+        });
+    </script>
+</body>
+</html>
