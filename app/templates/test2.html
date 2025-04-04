@@ -9,7 +9,14 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const jsonFilePath = 'Chapter_1_Heat.json'; // Path to the JSON file
+ try:
+        with open(jsonFilePath) as f:
+            revise1 = json.load(f)
+    except FileNotFoundError:
+        return f"Revise file {jsonFilePath} not found", 404
 
+
+            
             fetch(jsonFilePath)
                 .then(response => {
                     console.log('Response status:', response.status);
