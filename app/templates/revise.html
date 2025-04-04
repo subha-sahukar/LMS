@@ -100,16 +100,22 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const flashcardsContainer = document.getElementById('flashcards-container');
-            const jsonFilePath = 'Chapter_1_Heat.json'; // Simplified path
+            const jsonFilePath1 = 'Chapter_1_Heat.json'; // Simplified path
 
-            fetch(jsonFilePath)
+            fetch(jsonFilePath1)
+ .then(response => response.text())
+   .then(text => console.log(text))
+  
+             /*   
                 .then(response => {
                     console.log('Response status:', response.status);
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
                     return response.json(); // Expecting JSON response
-                })
+
+                    
+                })*/
                 .then(data => {
                     if (data.length === 0) {
                         flashcardsContainer.innerHTML = '<p>No flashcards available.</p>';
